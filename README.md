@@ -1,4 +1,4 @@
-# kepinsam.gg
+# kepinsam.tech
 Cevin Samuel personal site.
 
 ## Getting Started
@@ -6,10 +6,10 @@ Cevin Samuel personal site.
 First, run the development server:
 
 ```bash
-git clone https://github.com/kepinsam/kepinsam.gg.git
+git clone https://github.com/kepinsam/kepinsam.tech.git
 ```
 ```bash
-cd kepinsam.gg
+cd kepinsam.tech
 ```
 ```bash
 pnpm i
