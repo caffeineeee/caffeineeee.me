@@ -1,5 +1,5 @@
 # kepinsam.tech
-Cevin Samuel personal site.
+Personal site of Cevin Samuel.
 
 ## Getting Started
 
