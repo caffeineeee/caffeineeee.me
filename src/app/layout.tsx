@@ -11,6 +11,9 @@ import { Analytics } from "@/components/analytics";
 import { Providers } from "@/components/providers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 
+import { SiteFooter } from "@/components/layouts/site-footer";
+import { SiteHeader } from "@/components/layouts/site-header";
+
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
   title: {
@@ -73,7 +76,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <Providers attribute="class" defaultTheme="system" enableSystem>
-            {children}
+            <SiteHeader />
+            <main className="flex-1">{children}</main>
+            <SiteFooter />
             <TailwindIndicator />
             <Analytics />
           </Providers>

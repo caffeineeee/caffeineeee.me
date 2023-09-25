@@ -4,7 +4,6 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
-import { ThemeToggle } from "@/components/layouts/theme-toggle";
 import { Shell } from "@/components/shells/shell";
 
 export function SiteFooter() {
@@ -29,7 +28,7 @@ export function SiteFooter() {
           <section
             id="footer-links"
             aria-labelledby="footer-links-heading"
-            className="grid flex-1 grid-cols-1 gap-10 xxs:grid-cols-2 sm:grid-cols-4"
+            className="xxs:grid-cols-2 grid flex-1 grid-cols-1 gap-10 sm:grid-cols-4"
           >
             {siteConfig.footerNav.map((item) => (
               <div key={item.title} className="space-y-3">
@@ -86,7 +85,6 @@ export function SiteFooter() {
               <Icons.gitHub className="h-4 w-4" aria-hidden="true" />
               <span className="sr-only">GitHub</span>
             </Link>
-            <ThemeToggle />
           </div>
         </section>
       </Shell>
