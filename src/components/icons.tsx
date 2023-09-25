@@ -25,6 +25,8 @@ import {
   FileTerminal,
   Filter,
   Image,
+  Linkedin,
+  Mail,
   Loader2,
   LogOut,
   Menu,
@@ -39,8 +41,6 @@ import {
   Search,
   Send,
   Settings,
-  ShoppingBag,
-  ShoppingCart,
   Sliders,
   SlidersHorizontal,
   Star,
@@ -54,11 +54,13 @@ import {
   X,
   type LucideIcon,
   type LucideProps,
-} from "lucide-react"
+} from "lucide-react";
 
-export type Icon = LucideIcon
+export type Icon = LucideIcon;
 
 export const Icons = {
+  mail: Mail,
+  linkedin: Linkedin,
   star: Star,
   twitter: Twitter,
   close: X,
@@ -106,29 +108,10 @@ export const Icons = {
   billing: CreditCard,
   wallet: Wallet,
   dollarSign: DollarSign,
-  cart: ShoppingCart,
   product: Package,
-  store: ShoppingBag,
   chart: BarChart3,
   upload: UploadCloud,
   placeholder: Image,
-  logo: (props: LucideProps) => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      stroke="currentColor"
-      fill="none"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <circle cx="7" cy="15" r="2" />
-      <circle cx="17" cy="15" r="2" />
-      <path d="M3 9a2 1 0 0 0 2 1h14a2 1 0 0 0 2 -1" />
-    </svg>
-  ),
   nextjs: (props: LucideProps) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
       <path
@@ -178,4 +161,4 @@ export const Icons = {
       />
     </svg>
   ),
-}
+};
