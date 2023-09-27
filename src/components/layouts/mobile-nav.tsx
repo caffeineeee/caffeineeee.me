@@ -61,7 +61,7 @@ export function MobileNav({ mainNavItems, sidebarNavItems }: MobileNavProps) {
             className="flex items-center"
             onClick={() => setIsOpen(false)}
           >
-            <span className="font-bold">{siteConfig.name}</span>
+            <span className="font-bold">kepinsam.tech</span>
             <span className="sr-only">Home</span>
           </Link>
         </div>

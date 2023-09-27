@@ -9,10 +9,10 @@ const links = {
 };
 
 export const siteConfig = {
-  name: "kepinsam.tech",
+  name: "Cevin Samuel",
   description:
     "Personal site of Cevin Samuel.",
-  url: "https://www.kepinsam.tech",
-  ogImage: "https://www.kepinsam.tech/opengraph-image.png",
+  url: "https://kepinsam.tech",
+  ogImage: "https://kepinsam.tech/opengraph-image.png",
   links,
 };
