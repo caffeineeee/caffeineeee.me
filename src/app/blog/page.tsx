@@ -3,6 +3,8 @@
 import { Shell } from "@/components/shells/shell";
 import { usePathname } from "next/navigation";
 
+import HelloWorld from '../hello.mdx';
+
 export default function BlogPage() {
 
     const currentTab = usePathname();
@@ -17,6 +19,7 @@ export default function BlogPage() {
                     {currentTab}
                 </h1>
             </section>
+            <HelloWorld />
         </Shell>
     );
 }

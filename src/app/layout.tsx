@@ -30,11 +30,11 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "kepinsam",
-      url: "https://github.com/kepinsam",
+      name: "caffeineeee",
+      url: "https://github.com/caffeineeee",
     },
   ],
-  creator: "kepinsam",
+  creator: "caffeineeee",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [`${ siteConfig.url }/og.jpg`],
-    creator: "@kepinsamm",
+    creator: "@caffeeeeine",
   },
   icons: {
     icon: "/favicon.ico",
