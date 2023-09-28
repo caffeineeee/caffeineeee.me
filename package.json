@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@loglib/tracker": "^0.6.2",
+    "@mdx-js/loader": "^2.3.0",
+    "@mdx-js/react": "^2.3.0",
+    "@next/mdx": "^13.5.3",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-avatar": "^1.0.3",
     "@radix-ui/react-dialog": "^1.0.4",
@@ -41,6 +44,7 @@
     "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
     "@total-typescript/ts-reset": "^0.5.1",
     "@types/eslint": "^8.44.3",
+    "@types/mdx": "^2.0.8",
     "@types/node": "20.6.3",
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
