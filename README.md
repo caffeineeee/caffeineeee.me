@@ -1,5 +1,11 @@
+<div align="center">
+<a target="_blank" href="https://kepinsam.tech">
+    <img alt='Personal Site' src="./src/app/opengraph-image.png" />
+</a>
+</div>
+
 # kepinsam.tech
-Personal site of Cevin Samuel.
+💠Personal Site
 
 ## Getting Started
 
