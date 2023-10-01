@@ -11,6 +11,7 @@ const components = {
     <h1
       className={cn(
         "mt-2 scroll-m-20 text-4xl font-bold tracking-tight",
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         className
       )}
       {...props}
@@ -20,6 +21,7 @@ const components = {
     <h2
       className={cn(
         "mt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0",
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         className
       )}
       {...props}
@@ -29,6 +31,7 @@ const components = {
     <h3
       className={cn(
         "mt-8 scroll-m-20 text-2xl font-semibold tracking-tight",
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         className
       )}
       {...props}
@@ -38,6 +41,7 @@ const components = {
     <h4
       className={cn(
         "mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         className
       )}
       {...props}
@@ -47,6 +51,7 @@ const components = {
     <h5
       className={cn(
         "mt-8 scroll-m-20 text-lg font-semibold tracking-tight",
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         className
       )}
       {...props}
@@ -56,6 +61,7 @@ const components = {
     <h6
       className={cn(
         "mt-8 scroll-m-20 text-base font-semibold tracking-tight",
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         className
       )}
       {...props}
@@ -63,29 +69,35 @@ const components = {
   ),
   a: ({ className, ...props }) => (
     <a
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       className={cn("font-medium underline underline-offset-4", className)}
       {...props}
     />
   ),
   p: ({ className, ...props }) => (
     <p
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
       {...props}
     />
   ),
   ul: ({ className, ...props }) => (
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
   ),
   ol: ({ className, ...props }) => (
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
   ),
   li: ({ className, ...props }) => (
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     <li className={cn("mt-2", className)} {...props} />
   ),
   blockquote: ({ className, ...props }) => (
     <blockquote
       className={cn(
-        "[&>*]:text-muted-foreground mt-6 border-l-2 pl-6 italic",
+        "mt-6 border-l-2 pl-6 italic [&>*]:text-muted-foreground",
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         className
       )}
       {...props}
@@ -107,7 +119,7 @@ const components = {
   ),
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
     <tr
-      className={cn("even:bg-muted m-0 border-t p-0", className)}
+      className={cn("m-0 border-t p-0 even:bg-muted", className)}
       {...props}
     />
   ),
@@ -115,6 +127,7 @@ const components = {
     <th
       className={cn(
         "border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         className
       )}
       {...props}
@@ -124,6 +137,7 @@ const components = {
     <td
       className={cn(
         "border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         className
       )}
       {...props}
@@ -133,6 +147,7 @@ const components = {
     <pre
       className={cn(
         "mb-4 mt-6 overflow-x-auto rounded-lg border bg-black py-4",
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         className
       )}
       {...props}
@@ -142,6 +157,7 @@ const components = {
     <code
       className={cn(
         "relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm",
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         className
       )}
       {...props}
@@ -160,6 +176,7 @@ export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
 
   return (
+    // eslint-disable-next-line tailwindcss/no-custom-classname
     <div className="mdx">
       <Component components={components} />
     </div>

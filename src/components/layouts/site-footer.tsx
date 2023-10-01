@@ -8,14 +8,14 @@ import { Shell } from "@/components/shells/shell";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-background w-full border-t">
+    <footer className="w-full border-t bg-background">
       <Shell as="div">
         <section
           id="footer-bottom"
           aria-labelledby="footer-bottom-heading"
           className="flex items-center space-x-4"
         >
-          <div className="text-muted-foreground flex-1 text-left text-sm leading-loose">
+          <div className="flex-1 text-left text-sm leading-loose text-muted-foreground">
             Cevin Samuel
           </div>
           <div className="flex items-center space-x-1">

@@ -12,14 +12,14 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="bg-background sticky top-0 z-50 w-full border-b">
+    <header className="sticky top-0 z-50 w-full border-b bg-background">
       <div className="container flex h-16 items-center">
         <span className="space-x-4">
           <a
             href="/"
             className={
               cn("text-primary/60 hover:text-primary",
-                pathname === "/" && "text-primary font-bold underline decoration-dashed underline-offset-4")
+                pathname === "/" && "font-bold text-primary underline decoration-dashed underline-offset-4")
             }>
             home
           </a>
@@ -27,7 +27,7 @@ export function SiteHeader() {
             href="/projects"
             className={
               cn("text-primary/60 hover:text-primary",
-                pathname === "/projects" && "text-primary font-bold underline decoration-dashed underline-offset-4")
+                pathname === "/projects" && "font-bold text-primary underline decoration-dashed underline-offset-4")
             }>
             projects
           </a>
@@ -35,7 +35,7 @@ export function SiteHeader() {
             href="/blog"
             className={
               cn("text-primary/60 hover:text-primary",
-                pathname === "/blog" && "text-primary font-bold underline decoration-dashed underline-offset-4")
+                pathname === "/blog" && "font-bold text-primary underline decoration-dashed underline-offset-4")
             }>
             blog
           </a>
@@ -43,7 +43,7 @@ export function SiteHeader() {
             href="/guestbook"
             className={
               cn("text-primary/60 hover:text-primary",
-                pathname === "/guestbook" && "text-primary font-bold underline decoration-dashed underline-offset-4")
+                pathname === "/guestbook" && "font-bold text-primary underline decoration-dashed underline-offset-4")
             }>
             guestbook
           </a>

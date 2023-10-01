@@ -28,10 +28,14 @@
     "strictNullChecks": true,
   },
   "include": [
+    ".eslintrc.cjs",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.cjs",
+    "**/*.mjs",
     ".next/types/**/*.ts",
+    "./contentlayer.config.js",
     ".contentlayer/generated"
   ],
   "exclude": ["node_modules"]
