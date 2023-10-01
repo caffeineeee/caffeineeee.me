@@ -6,17 +6,20 @@ import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
 
-  const currentTab = usePathname();
+  let pathname = usePathname();
+  if (pathname.includes('/blog/')) {
+    pathname = '/blog';
+  }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background">
+    <header className="bg-background sticky top-0 z-50 w-full border-b">
       <div className="container flex h-16 items-center">
         <span className="space-x-4">
           <a
             href="/"
             className={
               cn("text-primary/60 hover:text-primary",
-                currentTab === "/" && "font-bold text-primary underline decoration-dashed underline-offset-4")
+                pathname === "/" && "text-primary font-bold underline decoration-dashed underline-offset-4")
             }>
             home
           </a>
@@ -24,7 +27,7 @@ export function SiteHeader() {
             href="/projects"
             className={
               cn("text-primary/60 hover:text-primary",
-                currentTab === "/projects" && "font-bold text-primary underline decoration-dashed underline-offset-4")
+                pathname === "/projects" && "text-primary font-bold underline decoration-dashed underline-offset-4")
             }>
             projects
           </a>
@@ -32,7 +35,7 @@ export function SiteHeader() {
             href="/blog"
             className={
               cn("text-primary/60 hover:text-primary",
-                currentTab === "/blog" && "font-bold text-primary underline decoration-dashed underline-offset-4")
+                pathname === "/blog" && "text-primary font-bold underline decoration-dashed underline-offset-4")
             }>
             blog
           </a>
@@ -40,7 +43,7 @@ export function SiteHeader() {
             href="/guestbook"
             className={
               cn("text-primary/60 hover:text-primary",
-                currentTab === "/guestbook" && "font-bold text-primary underline decoration-dashed underline-offset-4")
+                pathname === "/guestbook" && "text-primary font-bold underline decoration-dashed underline-offset-4")
             }>
             guestbook
           </a>
