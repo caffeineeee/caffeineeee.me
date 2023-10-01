@@ -62,7 +62,7 @@ export function SiteFooter() {
               <span className="sr-only">Twitter</span>
             </Link>
             <Link
-              href={siteConfig.links.github}
+              href={siteConfig.links.githubAccount}
               target="_blank"
               rel="noreferrer"
               className={cn(
