@@ -4,7 +4,6 @@ import { Mdx } from '@/components/mdx-components';
 import { Shell } from "@/components/shells/shell";
 import { formatDate } from "@/lib/utils";
 
-
 interface PageProps {
     params: {
         slug: string;
