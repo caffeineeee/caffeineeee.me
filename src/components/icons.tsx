@@ -9,10 +9,10 @@ import {
   ChevronDown,
   ChevronLeft,
   ChevronRight,
+  ChevronUp,
   ChevronsLeft,
   ChevronsRight,
   ChevronsUpDown,
-  ChevronUp,
   Circle,
   Copy,
   CreditCard,
@@ -26,9 +26,9 @@ import {
   Filter,
   Image,
   Linkedin,
-  Mail,
   Loader2,
   LogOut,
+  Mail,
   Menu,
   MessageSquare,
   Minus,
@@ -54,9 +54,9 @@ import {
   X,
   type LucideIcon,
   type LucideProps,
-} from "lucide-react";
+} from "lucide-react"
 
-export type Icon = LucideIcon;
+export type Icon = LucideIcon
 
 export const Icons = {
   mail: Mail,
@@ -161,4 +161,4 @@ export const Icons = {
       />
     </svg>
   ),
-};
+}

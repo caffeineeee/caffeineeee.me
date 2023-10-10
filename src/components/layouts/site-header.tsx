@@ -1,14 +1,13 @@
-"use client";
+"use client"
 
-import { ThemeToggle } from "./theme-toggle";
-import { usePathname } from 'next/navigation';
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
+import { usePathname } from "next/navigation"
+import { ThemeToggle } from "./theme-toggle"
 
 export function SiteHeader() {
-
-  let pathname = usePathname();
-  if (pathname.includes('/blog/')) {
-    pathname = '/blog';
+  let pathname = usePathname()
+  if (pathname.includes("/blog/")) {
+    pathname = "/blog"
   }
 
   return (
@@ -17,34 +16,42 @@ export function SiteHeader() {
         <span className="space-x-4">
           <a
             href="/"
-            className={
-              cn("text-primary/60 hover:text-primary",
-                pathname === "/" && "font-bold text-primary underline decoration-dashed underline-offset-4")
-            }>
+            className={cn(
+              "text-primary/60 hover:text-primary",
+              pathname === "/" &&
+                "font-bold text-primary underline decoration-dashed underline-offset-4"
+            )}
+          >
             home
           </a>
           <a
             href="/projects"
-            className={
-              cn("text-primary/60 hover:text-primary",
-                pathname === "/projects" && "font-bold text-primary underline decoration-dashed underline-offset-4")
-            }>
+            className={cn(
+              "text-primary/60 hover:text-primary",
+              pathname === "/projects" &&
+                "font-bold text-primary underline decoration-dashed underline-offset-4"
+            )}
+          >
             projects
           </a>
           <a
             href="/blog"
-            className={
-              cn("text-primary/60 hover:text-primary",
-                pathname === "/blog" && "font-bold text-primary underline decoration-dashed underline-offset-4")
-            }>
+            className={cn(
+              "text-primary/60 hover:text-primary",
+              pathname === "/blog" &&
+                "font-bold text-primary underline decoration-dashed underline-offset-4"
+            )}
+          >
             blog
           </a>
           <a
             href="/guestbook"
-            className={
-              cn("text-primary/60 hover:text-primary",
-                pathname === "/guestbook" && "font-bold text-primary underline decoration-dashed underline-offset-4")
-            }>
+            className={cn(
+              "text-primary/60 hover:text-primary",
+              pathname === "/guestbook" &&
+                "font-bold text-primary underline decoration-dashed underline-offset-4"
+            )}
+          >
             guestbook
           </a>
         </span>
@@ -55,5 +62,5 @@ export function SiteHeader() {
         </div>
       </div>
     </header>
-  );
+  )
 }

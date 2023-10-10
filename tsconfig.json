@@ -23,9 +23,9 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "contentlayer/generated": ["./.contentlayer/generated"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     },
-    "strictNullChecks": true,
+    "strictNullChecks": true
   },
   "include": [
     ".eslintrc.cjs",

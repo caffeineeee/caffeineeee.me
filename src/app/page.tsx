@@ -1,9 +1,8 @@
-import { Balancer } from "react-wrap-balancer";
+import { Balancer } from "react-wrap-balancer"
 
-import { Shell } from "@/components/shells/shell";
+import { Shell } from "@/components/shells/shell"
 
 export default function IndexPage() {
-
   return (
     <Shell className="gap-12">
       <section
@@ -18,9 +17,10 @@ export default function IndexPage() {
           {new Date().getFullYear() - 2002} yo • he/him
         </Balancer>
         <Balancer className="max-w-[46rem] text-lg sm:text-xl">
-          I&apos;m a full-stack web developer and a final-year Informatics undergrad student.
+          I&apos;m a full-stack web developer and a final-year Informatics
+          undergrad student.
         </Balancer>
       </section>
     </Shell>
-  );
+  )
 }

@@ -5,6 +5,7 @@
 </div>
 
 # caffeineeee.me
+
 💠Personal Site
 
 ## Getting Started
@@ -14,12 +15,15 @@ First, run the development server:
 ```bash
 git clone https://github.com/caffeineeee/caffeineeee.me.git
 ```
+
 ```bash
 cd caffeineeee.me
 ```
+
 ```bash
 pnpm i
 ```
+
 ```bash
 pnpm dev
 ```
