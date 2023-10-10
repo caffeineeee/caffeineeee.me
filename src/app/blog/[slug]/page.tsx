@@ -2,7 +2,8 @@ import { allPosts } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import { Mdx } from '@/components/mdx-components';
 import { Shell } from "@/components/shells/shell";
-import { formatDate } from "../page";
+import { formatDate } from "@/lib/utils";
+
 
 interface PageProps {
     params: {
