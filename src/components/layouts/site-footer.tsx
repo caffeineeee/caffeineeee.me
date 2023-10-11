@@ -1,10 +1,10 @@
-import Link from "next/link"
+import Link from "next/link";
 
-import { Icons } from "@/components/icons"
-import { Shell } from "@/components/shells/shell"
-import { buttonVariants } from "@/components/ui/button"
-import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
+import { Icons } from "@/components/icons";
+import { Shell } from "@/components/shells/shell";
+import { buttonVariants } from "@/components/ui/button";
+import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
 
 export function SiteFooter() {
   return (
@@ -79,5 +79,5 @@ export function SiteFooter() {
         </section>
       </Shell>
     </footer>
-  )
+  );
 }

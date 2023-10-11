@@ -1,7 +1,7 @@
-import { Shell } from "@/components/shells/shell"
-import { formatDate } from "@/lib/utils"
-import { allPosts } from "contentlayer/generated"
-import Link from "next/link"
+import { Shell } from "@/components/shells/shell";
+import { formatDate } from "@/lib/utils";
+import { allPosts } from "contentlayer/generated";
+import Link from "next/link";
 
 export default function BlogPage() {
   return (
@@ -19,9 +19,9 @@ export default function BlogPage() {
         {allPosts
           .sort((a, b) => {
             if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
-              return -1
+              return -1;
             }
-            return 1
+            return 1;
           })
           .map((post) => (
             <Link key={post.slug} href={`.${post.slug}`}>
@@ -40,5 +40,5 @@ export default function BlogPage() {
           ))}
       </div>
     </Shell>
-  )
+  );
 }

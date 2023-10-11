@@ -1,26 +1,26 @@
-import { Mdx } from "@/components/mdx-components"
-import { Shell } from "@/components/shells/shell"
-import { formatDate } from "@/lib/utils"
-import { allPosts } from "contentlayer/generated"
-import { notFound } from "next/navigation"
+import { Mdx } from "@/components/mdx-components";
+import { Shell } from "@/components/shells/shell";
+import { formatDate } from "@/lib/utils";
+import { allPosts } from "contentlayer/generated";
+import { notFound } from "next/navigation";
 
 interface PageProps {
   params: {
-    slug: string
-  }
+    slug: string;
+  };
 }
 
 // eslint-disable-next-line @typescript-eslint/require-await
 async function getPostFromParams(slug: string) {
-  const post = allPosts.find((post) => post.slugAsParams === slug)
+  const post = allPosts.find((post) => post.slugAsParams === slug);
 
-  if (!post) notFound()
+  if (!post) notFound();
 
-  return post
+  return post;
 }
 
 export default async function Page({ params }: PageProps) {
-  const post = await getPostFromParams(params.slug)
+  const post = await getPostFromParams(params.slug);
   return (
     <Shell className="gap-12" variant="markdown">
       <div className="space-y-1">
@@ -36,5 +36,5 @@ export default async function Page({ params }: PageProps) {
         <Mdx code={post.body.code} />
       </div>
     </Shell>
-  )
+  );
 }

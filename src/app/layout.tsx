@@ -1,18 +1,18 @@
-import { env } from "@/env.mjs"
-import type { Metadata } from "next"
+import { env } from "@/env.mjs";
+import type { Metadata } from "next";
 
-import "@/styles/globals.css"
+import "@/styles/globals.css";
 
-import { Analytics } from "@/components/analytics"
-import { Providers } from "@/components/providers"
-import { TailwindIndicator } from "@/components/tailwind-indicator"
-import { Toaster } from "@/components/ui/toaster"
-import { siteConfig } from "@/config/site"
-import { fontMono, fontSans } from "@/lib/fonts"
-import { cn } from "@/lib/utils"
+import { Analytics } from "@/components/analytics";
+import { Providers } from "@/components/providers";
+import { TailwindIndicator } from "@/components/tailwind-indicator";
+import { Toaster } from "@/components/ui/toaster";
+import { siteConfig } from "@/config/site";
+import { fontMono, fontSans } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
 
-import { SiteFooter } from "@/components/layouts/site-footer"
-import { SiteHeader } from "@/components/layouts/site-header"
+import { SiteFooter } from "@/components/layouts/site-footer";
+import { SiteHeader } from "@/components/layouts/site-header";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
@@ -57,10 +57,10 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-}
+};
 
 interface RootLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
@@ -86,5 +86,5 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </body>
       </html>
     </>
-  )
+  );
 }

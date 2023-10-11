@@ -1,6 +1,7 @@
-import { withContentlayer } from "next-contentlayer"
+import million from "million/compiler";
+import { withContentlayer } from "next-contentlayer";
 
-import "./src/env.mjs"
+import "./src/env.mjs";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,6 +10,13 @@ const nextConfig = {
   images: {
     domains: ["avatars.githubusercontent.com"],
   },
-}
+};
 
-export default withContentlayer(nextConfig)
+const millionConfig = {
+  // auto: true,
+  // if you're using RSC:
+  auto: { rsc: true },
+};
+
+// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+export default million.next(withContentlayer(nextConfig, millionConfig));

@@ -1,4 +1,4 @@
-export type SiteConfig = typeof siteConfig
+export type SiteConfig = typeof siteConfig;
 
 const links = {
   twitter: "https://twitter.com/caffeeeeine",
@@ -6,7 +6,7 @@ const links = {
   githubAccount: "https://github.com/caffeineeee",
   linkedin: "https://www.linkedin.com/in/cevinsamuel",
   email: "mailto:cevin.samuel@yahoo.com",
-}
+};
 
 export const siteConfig = {
   name: "Cevin Samuel",
@@ -14,4 +14,4 @@ export const siteConfig = {
   url: "https://caffeineeee.me",
   ogImage: "https://caffeineeee.me/opengraph-image.png",
   links,
-}
+};

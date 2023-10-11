@@ -1,10 +1,10 @@
-import { useMDXComponent } from "next-contentlayer/hooks"
-import Image from "next/image"
-import * as React from "react"
+import { useMDXComponent } from "next-contentlayer/hooks";
+import Image from "next/image";
+import * as React from "react";
 
-import { Callout } from "@/components/callout"
-import { MdxCard } from "@/components/mdx-card"
-import { cn } from "@/lib/utils"
+import { Callout } from "@/components/callout";
+import { MdxCard } from "@/components/mdx-card";
+import { cn } from "@/lib/utils";
 
 const components = {
   h1: ({ className, ...props }) => (
@@ -166,19 +166,19 @@ const components = {
   Image,
   Callout,
   Card: MdxCard,
-}
+};
 
 interface MdxProps {
-  code: string
+  code: string;
 }
 
 export function Mdx({ code }: MdxProps) {
-  const Component = useMDXComponent(code)
+  const Component = useMDXComponent(code);
 
   return (
     // eslint-disable-next-line tailwindcss/no-custom-classname
     <div className="mdx">
       <Component components={components} />
     </div>
-  )
+  );
 }

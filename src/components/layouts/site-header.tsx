@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { cn } from "@/lib/utils"
-import { usePathname } from "next/navigation"
-import { ThemeToggle } from "./theme-toggle"
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
+import { ThemeToggle } from "./theme-toggle";
 
 export function SiteHeader() {
-  let pathname = usePathname()
+  let pathname = usePathname();
   if (pathname.includes("/blog/")) {
-    pathname = "/blog"
+    pathname = "/blog";
   }
 
   return (
@@ -62,5 +62,5 @@ export function SiteHeader() {
         </div>
       </div>
     </header>
-  )
+  );
 }

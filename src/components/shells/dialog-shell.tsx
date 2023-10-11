@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { useRouter } from "next/navigation"
-import * as React from "react"
+import { useRouter } from "next/navigation";
+import * as React from "react";
 
-import { Icons } from "@/components/icons"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { Icons } from "@/components/icons";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface DialogShellProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export function DialogShell({
@@ -16,19 +16,19 @@ export function DialogShell({
   className,
   ...props
 }: DialogShellProps) {
-  const router = useRouter()
+  const router = useRouter();
 
   React.useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        router.back()
+        router.back();
       }
-    }
-    window.addEventListener("keydown", handleEsc)
+    };
+    window.addEventListener("keydown", handleEsc);
     return () => {
-      window.removeEventListener("keydown", handleEsc)
-    }
-  }, [router])
+      window.removeEventListener("keydown", handleEsc);
+    };
+  }, [router]);
 
   return (
     <div className={cn(className)} {...props}>
@@ -41,5 +41,5 @@ export function DialogShell({
       </Button>
       {children}
     </div>
-  )
+  );
 }

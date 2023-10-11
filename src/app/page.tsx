@@ -1,6 +1,6 @@
-import { Balancer } from "react-wrap-balancer"
+import { Balancer } from "react-wrap-balancer";
 
-import { Shell } from "@/components/shells/shell"
+import { Shell } from "@/components/shells/shell";
 
 export default function IndexPage() {
   return (
@@ -22,5 +22,5 @@ export default function IndexPage() {
         </Balancer>
       </section>
     </Shell>
-  )
+  );
 }

@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { Shell } from "@/components/shells/shell"
-import { usePathname } from "next/navigation"
+import { Shell } from "@/components/shells/shell";
+import { usePathname } from "next/navigation";
 
 export default function GuestbookPage() {
-  const pathname = usePathname()
+  const pathname = usePathname();
   return (
     <Shell className="gap-12">
       <section
@@ -17,5 +17,5 @@ export default function GuestbookPage() {
         </h1>
       </section>
     </Shell>
-  )
+  );
 }
