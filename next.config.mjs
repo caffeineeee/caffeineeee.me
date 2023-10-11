@@ -18,5 +18,4 @@ const millionConfig = {
   auto: { rsc: true },
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
 export default million.next(withContentlayer(nextConfig, millionConfig));

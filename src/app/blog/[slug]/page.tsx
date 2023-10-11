@@ -10,7 +10,6 @@ interface PageProps {
   };
 }
 
-// eslint-disable-next-line @typescript-eslint/require-await
 async function getPostFromParams(slug: string) {
   const post = allPosts.find((post) => post.slugAsParams === slug);
 
