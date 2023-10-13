@@ -26,9 +26,12 @@ export default async function Page({ params }: PageProps) {
         <h1 className="text-4xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-100">
           {post.title}
         </h1>
-        <p className="font-bold tracking-tight text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.publishedAt)}
-        </p>
+        <span className="flex flex-row">
+          <p className="font-semibold italic tracking-tight text-neutral-600 dark:text-neutral-400">Published at:</p>
+          <p className="font-bold tracking-tight text-neutral-600 dark:text-neutral-400">
+            &nbsp;{formatDate(post.publishedAt)}
+          </p>
+        </span>
       </div>
 
       <div className="tracking-tight text-neutral-600 dark:text-neutral-400">

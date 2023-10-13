@@ -24,7 +24,7 @@ export default function BlogPage() {
             return 1;
           })
           .map((post) => (
-            <Link key={post.slug} href={`.${post.slug}`}>
+            <Link key={post.slug} href={`.${ post.slug }`}>
               <div className="flex w-full flex-row justify-between">
                 <h1 className="font-bold text-neutral-900 dark:text-neutral-100">
                   {post.title}
