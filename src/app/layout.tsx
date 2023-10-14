@@ -3,9 +3,11 @@ import type { Metadata } from "next";
 
 import "@/styles/globals.css";
 
+import { getServerSession } from "next-auth";
 import { Analytics } from "@/components/analytics";
 import { Providers } from "@/components/providers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
+import SessionProvider from "@/components/SessionProvider";
 import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from "@/config/site";
 import { fontMono, fontSans } from "@/lib/fonts";
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
   title: {
     default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
+    template: `%s - ${ siteConfig.name }`,
   },
   description: siteConfig.description,
   keywords: [
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [`${siteConfig.url}/og.jpg`],
+    images: [`${ siteConfig.url }/og.jpg`],
     creator: "@caffeeeeine",
   },
   icons: {
@@ -63,7 +65,8 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default async function RootLayout({ children }: RootLayoutProps) {
+  const session = await getServerSession();
   return (
     <>
       <html lang="en" suppressHydrationWarning>
@@ -77,7 +80,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <Providers attribute="class" defaultTheme="system" enableSystem>
             <SiteHeader />
-            <main className="flex-1">{children}</main>
+            <SessionProvider session={session}>
+              <main className="flex-1">{children}</main>
+            </SessionProvider>
             <SiteFooter />
             <TailwindIndicator />
             <Analytics />

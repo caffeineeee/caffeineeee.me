@@ -1,5 +1,6 @@
 "use client";
 
+import { LoginButton } from "@/components/login-btn";
 import { Shell } from "@/components/shells/shell";
 import { usePathname } from "next/navigation";
 
@@ -16,6 +17,7 @@ export default function GuestbookPage() {
           {pathname}
         </h1>
       </section>
+      <LoginButton />
     </Shell>
   );
 }

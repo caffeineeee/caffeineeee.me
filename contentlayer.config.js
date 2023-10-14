@@ -4,11 +4,12 @@ import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
+// This is for all: [Post, Legal, ...]
 /** @type {import("contentlayer/source-files").ComputedFields} */
 const computedFields = {
   slug: {
     type: "string",
-    resolve: (post) => `/${post._raw.flattenedPath}`,
+    resolve: (post) => `/${ post._raw.flattenedPath }`,
   },
   slugAsParams: {
     type: "string",
@@ -36,9 +37,16 @@ export const Post = defineDocumentType(() => ({
   computedFields,
 }));
 
+export const Legal = defineDocumentType(() => ({
+  name: "Legal",
+  filePathPattern: "legal/**/*.mdx",
+  contentType: "mdx",
+  computedFields,
+}));
+
 export default makeSource({
   contentDirPath: "src/content",
-  documentTypes: [Post],
+  documentTypes: [Post, Legal],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [

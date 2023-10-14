@@ -10,6 +10,9 @@ const nextConfig = {
   images: {
     domains: ["avatars.githubusercontent.com"],
   },
+  experimental: {
+    serverActions: true,
+  },
 };
 
 const millionConfig = {

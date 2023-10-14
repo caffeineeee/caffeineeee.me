@@ -52,6 +52,7 @@ import {
   VolumeX,
   Wallet,
   X,
+  Instagram,
   type LucideIcon,
   type LucideProps,
 } from "lucide-react";
@@ -61,6 +62,7 @@ export type Icon = LucideIcon;
 export const Icons = {
   mail: Mail,
   linkedin: Linkedin,
+  instagram: Instagram,
   star: Star,
   twitter: Twitter,
   close: X,
