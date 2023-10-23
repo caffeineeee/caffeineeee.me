@@ -9,7 +9,7 @@ import remarkGfm from "remark-gfm";
 const computedFields = {
   slug: {
     type: "string",
-    resolve: (post) => `/${ post._raw.flattenedPath }`,
+    resolve: (post) => `/${post._raw.flattenedPath}`,
   },
   slugAsParams: {
     type: "string",

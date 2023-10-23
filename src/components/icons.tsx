@@ -25,6 +25,7 @@ import {
   FileTerminal,
   Filter,
   Image,
+  Instagram,
   Linkedin,
   Loader2,
   LogOut,
@@ -52,7 +53,6 @@ import {
   VolumeX,
   Wallet,
   X,
-  Instagram,
   type LucideIcon,
   type LucideProps,
 } from "lucide-react";

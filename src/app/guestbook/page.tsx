@@ -1,23 +1,35 @@
 "use client";
 
-import { LoginButton } from "@/components/login-btn";
+import { SignIn, SignOut } from "@/app/guestbook/buttons";
 import { Shell } from "@/components/shells/shell";
-import { usePathname } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 export default function GuestbookPage() {
-  const pathname = usePathname();
+  const { data: session } = useSession();
+
   return (
-    <Shell className="gap-12">
-      <section
-        id="hero"
-        aria-labelledby="hero-heading"
-        className="mx-auto flex w-full max-w-[64rem] flex-col items-center justify-center gap-4 pb-8 pt-6 text-center md:pb-12 md:pt-10 lg:py-28"
-      >
-        <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]">
-          {pathname}
-        </h1>
-      </section>
-      <LoginButton />
+    <Shell className="gap-12" variant="markdown">
+      <h1 className="text-3xl font-semibold leading-tight tracking-tighter lg:leading-[1.1]">
+        sign my guestbook
+      </h1>
+      {session?.user ? (
+        <>
+          {/* <Form /> */}
+          <SignOut />
+        </>
+      ) : (
+        <SignIn />
+      )}
+      {/* {entries.map((entry) => (
+        <div key={entry.id} className="flex flex-col space-y-1 mb-4">
+          <div className="w-full text-sm break-words">
+            <span className="text-neutral-600 dark:text-neutral-400 mr-1">
+              {entry.created_by}:
+            </span>
+            {entry.body}
+          </div>
+        </div>
+      ))} */}
     </Shell>
   );
 }

@@ -6,15 +6,9 @@ import Link from "next/link";
 export default function BlogPage() {
   return (
     <Shell className="gap-12" variant="markdown">
-      <section
-        id="hero"
-        aria-labelledby="hero-heading"
-        className="mx-auto flex w-full max-w-[64rem] flex-col items-center justify-center gap-4 pb-8 pt-6 text-center md:pb-12 md:pt-10 lg:py-28"
-      >
-        <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]">
-          Read my blog posts
-        </h1>
-      </section>
+      <h1 className="text-3xl font-semibold leading-tight tracking-tighter lg:leading-[1.1]">
+        read my blog posts
+      </h1>
       <div className="flex flex-col space-y-8">
         {allPosts
           .sort((a, b) => {
@@ -24,11 +18,11 @@ export default function BlogPage() {
             return 1;
           })
           .map((post) => (
-            <Link key={post.slug} href={`.${ post.slug }`}>
+            <Link key={post.slug} href={`.${post.slug}`}>
               <div className="flex w-full flex-row justify-between">
-                <h1 className="font-bold text-neutral-900 dark:text-neutral-100">
+                <h2 className="font-bold text-neutral-900 dark:text-neutral-100">
                   {post.title}
-                </h1>
+                </h2>
                 <p className="font-semibold tracking-tighter text-neutral-600 dark:text-neutral-400">
                   {formatDate(post.publishedAt)}
                 </p>
