@@ -43,4 +43,5 @@ export const authOptions: AuthOptions = {
         //     }
         // })
     ],
+    secret: env.NEXTAUTH_SECRET,
 };
