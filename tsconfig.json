@@ -38,5 +38,5 @@
     "./contentlayer.config.js",
     ".contentlayer/generated"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }

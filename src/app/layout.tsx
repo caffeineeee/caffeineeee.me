@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
   title: {
     default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
+    template: `%s - ${ siteConfig.name }`,
   },
   description: siteConfig.description,
   keywords: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [`${siteConfig.url}/og.jpg`],
+    images: [`${ siteConfig.url }/og.jpg`],
     creator: "@caffeeeeine",
   },
   icons: {
