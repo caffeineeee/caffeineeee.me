@@ -1,11 +1,11 @@
-import { type AuthOptions } from "next-auth";
+import { type NextAuthOptions } from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
 import TwitterProvider from "next-auth/providers/twitter";
 // import CredentialsProvider from "next-auth/providers/credentials";
 
 import { env } from "@/env.mjs";
 
-export const authOptions: AuthOptions = {
+export const authOptions: NextAuthOptions = {
     providers: [
         GitHubProvider({
             clientId: env.GITHUB_ID ?? "",
