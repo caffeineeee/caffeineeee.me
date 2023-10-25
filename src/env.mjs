@@ -33,15 +33,17 @@ export const env = createEnv({
    * You can't destruct `process.env` as a regular object in the Next.js edge runtimes (e.g.
    * middlewares) or client-side so we need to destruct manually.
    */
-  runtimeEnv: {
+  // For Next.js >= 13.4.4, you only need to destructure client variables:
+  experimental__runtimeEnv: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
-    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
-    NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
-    NODE_ENV: process.env.NODE_ENV,
-    GITHUB_ID: process.env.GITHUB_ID,
-    GITHUB_SECRET: process.env.GITHUB_SECRET,
-    TWITTER_CLIENT_ID: process.env.TWITTER_CLIENT_ID,
-    TWITTER_CLIENT_SECRET: process.env.TWITTER_CLIENT_SECRET,
+    // NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+    // NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
+    // NODE_ENV: process.env.NODE_ENV,
+    // GITHUB_ID: process.env.GITHUB_ID,
+    // GITHUB_SECRET: process.env.GITHUB_SECRET,
+    // TWITTER_CLIENT_ID: process.env.TWITTER_CLIENT_ID,
+    // TWITTER_CLIENT_SECRET: process.env.TWITTER_CLIENT_SECRET,
+
     // DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID,
     // DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET,
     // GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
