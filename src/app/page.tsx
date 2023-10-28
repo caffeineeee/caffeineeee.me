@@ -1,8 +1,15 @@
 import { Balancer } from "react-wrap-balancer";
 
 import { Shell } from "@/components/shells/shell";
+import { revalidatePath } from "next/cache";
 
 export default function IndexPage() {
+
+  const intervDuration = 1000 * 60 * 60 * 24; // 24 hours
+  setInterval(() => {
+    revalidatePath("/", "layout"); // revalidating all data. See: https://nextjs.org/docs/app/api-reference/functions/revalidatePath#revalidating-all-data
+  }, intervDuration);
+
   return (
     <Shell className="gap-12">
       <section

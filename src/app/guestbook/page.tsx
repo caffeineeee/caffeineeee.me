@@ -3,6 +3,7 @@
 import { SignIn, SignOut } from "@/app/guestbook/buttons";
 import { Shell } from "@/components/shells/shell";
 import { useSession } from "next-auth/react";
+import Form from "./form";
 
 export default function GuestbookPage() {
   const { data: session } = useSession();
