@@ -1,6 +1,3 @@
-import million from "million/compiler";
-import { withContentlayer } from "next-contentlayer";
-
 await import("./src/env.mjs");
 
 /** @type {import('next').NextConfig} */
@@ -10,15 +7,9 @@ const nextConfig = {
   images: {
     domains: ["avatars.githubusercontent.com"],
   },
-  experimental: {
-    serverActions: true,
-  },
+  // experimental: {
+  //   ppr: true,
+  // },
 };
 
-const millionConfig = {
-  // auto: true,
-  // if you're using RSC:
-  auto: { rsc: true },
-};
-
-export default million.next(withContentlayer(nextConfig, millionConfig));
+export default nextConfig;

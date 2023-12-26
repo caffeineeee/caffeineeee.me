@@ -1,5 +1,5 @@
 import { env } from "@/env.mjs";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import "@/styles/globals.css";
 
@@ -37,10 +37,6 @@ export const metadata: Metadata = {
     },
   ],
   creator: "caffeineeee",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -59,6 +55,13 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
 };
 
 interface RootLayoutProps {

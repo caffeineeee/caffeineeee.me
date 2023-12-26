@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { Icons } from "@/components/icons";
-import { Shell } from "@/components/shells/shell";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -9,7 +8,7 @@ import { cn } from "@/lib/utils";
 export function SiteFooter() {
   return (
     <footer className="w-full border-t bg-background">
-      <Shell as="div">
+      <div className="container grid items-center gap-8 pb-8 pt-6 md:py-8">
         <section
           id="footer-bottom"
           aria-labelledby="footer-bottom-heading"
@@ -77,7 +76,7 @@ export function SiteFooter() {
             </Link>
           </div>
         </section>
-      </Shell>
+      </div>
     </footer>
   );
 }

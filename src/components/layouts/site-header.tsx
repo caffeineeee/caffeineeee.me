@@ -5,10 +5,7 @@ import { usePathname } from "next/navigation";
 import { ThemeToggle } from "./theme-toggle";
 
 export function SiteHeader() {
-  let pathname = usePathname();
-  if (pathname.includes("/blog/")) {
-    pathname = "/blog";
-  }
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background">
@@ -19,7 +16,7 @@ export function SiteHeader() {
             className={cn(
               "text-primary/60 hover:text-primary",
               pathname === "/" &&
-                "font-bold text-primary underline decoration-dashed underline-offset-4"
+              "font-bold text-primary underline decoration-dashed underline-offset-4"
             )}
           >
             home
@@ -29,27 +26,17 @@ export function SiteHeader() {
             className={cn(
               "text-primary/60 hover:text-primary",
               pathname === "/projects" &&
-                "font-bold text-primary underline decoration-dashed underline-offset-4"
+              "font-bold text-primary underline decoration-dashed underline-offset-4"
             )}
           >
             projects
-          </a>
-          <a
-            href="/blog"
-            className={cn(
-              "text-primary/60 hover:text-primary",
-              pathname === "/blog" &&
-                "font-bold text-primary underline decoration-dashed underline-offset-4"
-            )}
-          >
-            blog
           </a>
           <a
             href="/guestbook"
             className={cn(
               "text-primary/60 hover:text-primary",
               pathname === "/guestbook" &&
-                "font-bold text-primary underline decoration-dashed underline-offset-4"
+              "font-bold text-primary underline decoration-dashed underline-offset-4"
             )}
           >
             guestbook

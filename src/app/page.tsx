@@ -1,6 +1,3 @@
-import { Balancer } from "react-wrap-balancer";
-
-import { Shell } from "@/components/shells/shell";
 import { revalidatePath } from "next/cache";
 
 export default function IndexPage() {
@@ -11,7 +8,7 @@ export default function IndexPage() {
   }, intervDuration);
 
   return (
-    <Shell className="gap-12">
+    <div className="container grid items-center  gap-12 pb-8 pt-6 md:py-8">
       <section
         id="hero"
         aria-labelledby="hero-heading"
@@ -20,14 +17,14 @@ export default function IndexPage() {
         <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1]">
           hey, I&apos;m caffeineeee👋
         </h1>
-        <Balancer className="max-w-[46rem] text-lg text-muted-foreground sm:text-xl">
+        <div className="max-w-[46rem] text-lg text-muted-foreground sm:text-xl">
           {new Date().getFullYear() - 2002} yo • he/him
-        </Balancer>
-        <Balancer className="max-w-[46rem] text-lg sm:text-xl">
+        </div>
+        <div className="max-w-[46rem] text-lg sm:text-xl">
           I&apos;m a full-stack web developer and a final-year Informatics
           undergrad student.
-        </Balancer>
+        </div>
       </section>
-    </Shell>
+    </div>
   );
 }

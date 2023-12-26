@@ -1,5 +1,6 @@
 import { signIn, signOut } from "next-auth/react";
 import { Icons } from "../../components/icons";
+import { getServerSession, type Session } from "next-auth";
 
 export function SignIn() {
   return (
@@ -37,10 +38,12 @@ export function SignIn() {
   );
 }
 
-export function SignOut() {
+export async function SignOut() {
+  const session = await getServerSession() as Session;
+  const name = session.user?.name as string;
   return (
     <>
-      {/* Signed in as {session?.user?.name} <br /> */}
+      <p className="-mt-4 text-sm">Signed in as {name}</p>
       <button onClick={() => signOut()}>Sign out</button>
     </>
   );
