@@ -1,7 +1,11 @@
 import { getGuestbookEntries } from "../db/queries";
 import { UserSession } from "./UserSession";
+import { type Session, getServerSession } from "next-auth";
+import { DeleteOwnGuestbookButton } from "./DeleteOwnGuestbookButton";
 
 export default async function GuestbookPage() {
+
+  const session = await getServerSession() as Session;
   const entries = await getGuestbookEntries();
 
   if (entries.length === 0) {
@@ -14,16 +18,21 @@ export default async function GuestbookPage() {
         sign my guestbook
       </h1>
       <UserSession />
-      {entries.map((entry) => (
-        <div key={entry.id} className="mb-4 flex flex-col space-y-1">
-          <div className="w-full break-words text-sm">
-            <span className="mr-1 text-neutral-600 dark:text-neutral-400">
-              {entry.created_by}:
-            </span>
-            {entry.body}
+      <div>
+        {entries.map((entry) => (
+          <div key={entry.id} className="mb-4 space-y-1">
+
+            <div className="mr-1 flex w-full flex-row items-center break-words text-neutral-600 dark:text-neutral-400">
+              {
+                session.user?.name === entry.created_by &&
+                <DeleteOwnGuestbookButton id={entry.id} />
+              }
+              <p className="mr-4 text-neutral-100">{entry.created_by}:</p>
+              {entry.body}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

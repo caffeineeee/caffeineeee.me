@@ -1,7 +1,7 @@
 'use server';
 
 import { getServerSession, type Session } from 'next-auth';
-import { sql } from '@vercel/postgres';
+import { type QueryResultRow, sql } from '@vercel/postgres';
 import { revalidatePath } from 'next/cache';
 import { authOptions } from '../api/auth/[...nextauth]/authOptions';
 
@@ -52,5 +52,14 @@ export async function deleteGuestbookEntries(selectedEntries: string[]) {
   `;
 
   revalidatePath('/admin');
+  revalidatePath('/guestbook');
+}
+
+export async function deleteOwnGuestbookEntries(id: number) {
+  await sql`
+    DELETE FROM guestbook
+    WHERE id = ${ id }
+  `;
+
   revalidatePath('/guestbook');
 }
