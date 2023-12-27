@@ -1,7 +1,8 @@
 import { ImageResponse } from "next/og";
 
 // Route segment config
-export const runtime = "edge";
+// export const runtime = "edge";
+// If use 'edge'. This error occurs: The Edge Function "icon" size is 1.15 MB and your plan size limit is 1 MB.
 
 // Image metadata
 export const size = {
