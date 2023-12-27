@@ -1,7 +1,7 @@
 'use server';
 
 import { getServerSession, type Session } from 'next-auth';
-import { type QueryResultRow, sql } from '@vercel/postgres';
+import { sql } from '@vercel/postgres';
 import { revalidatePath } from 'next/cache';
 import { authOptions } from '../api/auth/[...nextauth]/authOptions';
 
@@ -56,10 +56,15 @@ export async function deleteGuestbookEntries(selectedEntries: string[]) {
 }
 
 export async function deleteOwnGuestbookEntries(id: number) {
-  await sql`
+  try {
+    await sql`
     DELETE FROM guestbook
-    WHERE id = ${ id }
+    WHERE id = ${ id }::int
   `;
+  } catch (error) {
+    console.error("Error rendering Server components", error);
+  }
 
+  revalidatePath('/admin');
   revalidatePath('/guestbook');
 }

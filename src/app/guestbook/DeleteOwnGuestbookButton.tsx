@@ -5,6 +5,7 @@ import { deleteOwnGuestbookEntries } from "../db/actions";
 
 export function DeleteOwnGuestbookButton(id) {
     const userId = id as number;
+
     return (
         <>
             <form onSubmit={async (e) => {

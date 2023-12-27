@@ -140,7 +140,6 @@ const cx = (...classes) => classes.filter(Boolean).join(' ');
 
 function DeleteButton({ isActive }) {
   const { pending } = useFormStatus();
-
   return (
     <button
       className={cx(
