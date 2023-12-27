@@ -59,10 +59,10 @@ export async function deleteOwnGuestbookEntries(id: number) {
   try {
     await sql`
     DELETE FROM guestbook
-    WHERE id = ${ id }::int
+    WHERE id = ${ id }::INTEGER
   `;
   } catch (error) {
-    console.error("Error rendering Server components", error);
+    console.error("Error in deleteOwnGuestbookEntries: ", error);
   }
 
   revalidatePath('/admin');

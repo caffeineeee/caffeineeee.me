@@ -2,6 +2,7 @@ import { getGuestbookEntries } from "../db/queries";
 import { UserSession } from "./UserSession";
 import { type Session, getServerSession } from "next-auth";
 import { DeleteOwnGuestbookButton } from "./DeleteOwnGuestbookButton";
+import { deleteOwnGuestbookEntries } from "../db/actions";
 
 export default async function GuestbookPage() {
 
@@ -19,18 +20,26 @@ export default async function GuestbookPage() {
       </h1>
       <UserSession />
       <div>
-        {entries.map((entry) => (
-          <div key={entry.id} className="mb-4 space-y-1">
 
+        {entries.map((entry) => (
+          <form
+            action={
+              async () => {
+                "use server";
+                await deleteOwnGuestbookEntries(entry.id);
+              }}
+            key={entry.id}
+            className="mb-4 space-y-1"
+          >
             <div className="mr-1 flex w-full flex-row items-center break-words text-neutral-600 dark:text-neutral-400">
               {
                 session.user?.name === entry.created_by &&
-                <DeleteOwnGuestbookButton id={entry.id} />
+                <DeleteOwnGuestbookButton />
               }
               <p className="mr-4 text-neutral-100">{entry.created_by}:</p>
               {entry.body}
             </div>
-          </div>
+          </form>
         ))}
       </div>
     </div>

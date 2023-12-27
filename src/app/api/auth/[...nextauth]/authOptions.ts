@@ -14,7 +14,7 @@ export const authOptions: NextAuthOptions = {
         TwitterProvider({
             clientId: env.TWITTER_CLIENT_ID ?? "",
             clientSecret: env.TWITTER_CLIENT_SECRET ?? "",
-            version: "2.0", // opt-in to Twitter OAuth 2.0
+            // version: "2.0", // opt-in to Twitter OAuth 2.0
         }),
         // CredentialsProvider({
         //     // The name to display on the sign in form (e.g. "Sign in with...")
