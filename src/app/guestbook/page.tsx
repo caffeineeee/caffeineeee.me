@@ -18,12 +18,14 @@ export default async function GuestbookPage() {
           {session?.user ? (
             <div className="py-4">
               <Form />
-              <div className="flex w-fit flex-row items-center px-2 py-4">
-                Signed in as
-                <div className="rounded-lg bg-slate-600 px-2">
-                  {session?.user?.name}
+              <div className="flex w-fit flex-col items-center px-2 py-4 md:flex-row">
+                <div className="pl-0">
+                  Signed in as
+                  <span className="rounded-lg bg-slate-600 px-2">
+                    {session?.user?.name}
+                  </span>
                 </div>
-                <div className="ml-8">
+                <div className="pl-0 md:ml-8">
                   <SignOut />
                 </div>
               </div>

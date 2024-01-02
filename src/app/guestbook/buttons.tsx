@@ -33,8 +33,8 @@ export function SignOut() {
         onClick={() => signOut()}
         className="h-8 border border-neutral-500 bg-neutral-200 text-neutral-900 dark:bg-neutral-700 dark:text-neutral-100"
       >
-        <div className="mr-3 text-neutral-300">Sign out</div>
-        <Icons.logout className="h-4 w-4" aria-hidden="true" />
+        <div className="text-neutral-300">Sign out</div>
+        <Icons.logout className="ml-4 h-4 w-4" aria-hidden="true" />
       </Button>
     </>
   );
