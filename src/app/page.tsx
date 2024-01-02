@@ -1,3 +1,4 @@
+import { differenceInYears } from "date-fns";
 import { revalidatePath } from "next/cache";
 
 export default function IndexPage() {
@@ -6,6 +7,8 @@ export default function IndexPage() {
   setInterval(() => {
     revalidatePath("/", "layout"); // revalidating all data. See: https://nextjs.org/docs/app/api-reference/functions/revalidatePath#revalidating-all-data
   }, intervDuration);
+
+  const myYearsOfAge = differenceInYears(new Date(), new Date(2002, 2, 11)); // Note: Months are 0-indexed in JavaScript, so March is 2.
 
   return (
     <div className="container grid items-center  gap-12 pb-8 pt-6 md:py-8">
@@ -18,7 +21,7 @@ export default function IndexPage() {
           hey, I&apos;m caffeineeee👋
         </h1>
         <div className="max-w-[46rem] text-lg text-muted-foreground sm:text-xl">
-          {new Date().getFullYear() - 2002} yo • he/him
+          {myYearsOfAge} yo • he/him
         </div>
         <div className="max-w-[46rem] text-lg sm:text-xl">
           I&apos;m a full-stack web developer and a final-year Informatics
