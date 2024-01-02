@@ -30,7 +30,7 @@ export function DeleteOwnGuestbookForm({ entries, session }) {
                                 <Icons.trash className="h-4 w-4" aria-hidden="true" />
                             </Button>
                         }
-                        <p className="mr-4 text-neutral-100">{entry.created_by}:</p>
+                        <p className="mr-4 text-neutral-800 dark:text-neutral-100">{entry.created_by}:</p>
                         {entry.body}
                     </div>
                 </form>

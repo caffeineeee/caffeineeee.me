@@ -1,6 +1,6 @@
 import { type NextAuthOptions } from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
-import TwitterProvider from "next-auth/providers/twitter";
+import DiscordProvider from "next-auth/providers/discord";
 // import CredentialsProvider from "next-auth/providers/credentials";
 
 import { env } from "@/env.mjs";
@@ -11,10 +11,14 @@ export const authOptions: NextAuthOptions = {
             clientId: env.GITHUB_ID ?? "",
             clientSecret: env.GITHUB_SECRET ?? "",
         }),
-        TwitterProvider({
-            clientId: env.TWITTER_CLIENT_ID ?? "",
-            clientSecret: env.TWITTER_CLIENT_SECRET ?? "",
-            // version: "2.0", // opt-in to Twitter OAuth 2.0
+        // TwitterProvider({
+        //     clientId: env.TWITTER_CLIENT_ID ?? "",
+        //     clientSecret: env.TWITTER_CLIENT_SECRET ?? "",
+        //     version: "2.0", // opt-in to Twitter OAuth 2.0
+        // }),
+        DiscordProvider({
+            clientId: process.env.DISCORD_CLIENT_ID ?? "",
+            clientSecret: process.env.DISCORD_CLIENT_SECRET ?? "",
         }),
         // CredentialsProvider({
         //     // The name to display on the sign in form (e.g. "Sign in with...")
