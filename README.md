@@ -29,3 +29,17 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Database Schema
+
+```sql
+
+CREATE TABLE guestbook (
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(255) NOT NULL,
+  body TEXT NOT NULL,
+  created_by VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP NOT NULL
+);
+
+```

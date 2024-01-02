@@ -1,46 +1,40 @@
-import { getGuestbookEntries } from "../db/queries";
-import { UserSession } from "./UserSession";
 import { type Session, getServerSession } from "next-auth";
-import { DeleteOwnGuestbookButton } from "./DeleteOwnGuestbookButton";
-import { deleteOwnGuestbookEntries } from "../db/actions";
+import { getGuestbookEntries } from "../db/queries";
+import { SignIn, SignOut } from "@/app/guestbook/buttons";
+import Form from "./form";
+import { DeleteOwnGuestbookForm } from './DeleteOwnGuestbookForm';
 
 export default async function GuestbookPage() {
-
   const session = await getServerSession() as Session;
   const entries = await getGuestbookEntries();
 
-  if (entries.length === 0) {
-    return null;
-  }
-
   return (
     <div className="container grid max-w-3xl items-center gap-12 py-8 pt-6 md:py-10 lg:py-10">
-      <h1 className="text-3xl font-semibold leading-tight tracking-tighter lg:leading-[1.1]">
-        sign my guestbook
-      </h1>
-      <UserSession />
       <div>
-
-        {entries.map((entry) => (
-          <form
-            action={
-              async () => {
-                "use server";
-                await deleteOwnGuestbookEntries(entry.id);
-              }}
-            key={entry.id}
-            className="mb-4 space-y-1"
-          >
-            <div className="mr-1 flex w-full flex-row items-center break-words text-neutral-600 dark:text-neutral-400">
-              {
-                session.user?.name === entry.created_by &&
-                <DeleteOwnGuestbookButton />
-              }
-              <p className="mr-4 text-neutral-100">{entry.created_by}:</p>
-              {entry.body}
+        <h1 className="text-3xl font-semibold leading-tight tracking-tighter lg:leading-[1.1]">
+          sign my guestbook
+        </h1>
+        <div>
+          {session?.user ? (
+            <div className="py-4">
+              <Form />
+              <div className="flex w-fit flex-row items-center px-2 py-4">
+                Signed in as
+                <div className="rounded-lg bg-slate-600 px-2">
+                  {session?.user?.name}
+                </div>
+                <div className="ml-8">
+                  <SignOut />
+                </div>
+              </div>
             </div>
-          </form>
-        ))}
+          ) : (
+            <SignIn />
+          )}
+        </div>
+        <div>
+          <DeleteOwnGuestbookForm entries={entries} session={session} />
+        </div>
       </div>
     </div>
   );

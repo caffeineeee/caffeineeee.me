@@ -35,26 +35,6 @@ export async function saveGuestbookEntry(formData: FormData) {
   revalidatePath('/guestbook');
 }
 
-export async function deleteGuestbookEntries(selectedEntries: string[]) {
-  const session = await getSession();
-  const email = session.user?.email as string;
-
-  if (email !== 'cevinsam11@gmail.com') {
-    throw new Error('Unauthorized');
-  }
-
-  const selectedEntriesAsNumbers = selectedEntries.map(Number);
-  const arrayLiteral = `{${ selectedEntriesAsNumbers.join(',') }}`;
-
-  await sql`
-    DELETE FROM guestbook
-    WHERE id = ANY(${ arrayLiteral }::int[])
-  `;
-
-  revalidatePath('/admin');
-  revalidatePath('/guestbook');
-}
-
 export async function deleteOwnGuestbookEntries(id: number) {
   try {
     await sql`
@@ -65,6 +45,5 @@ export async function deleteOwnGuestbookEntries(id: number) {
     console.error("Error in deleteOwnGuestbookEntries: ", error);
   }
 
-  revalidatePath('/admin');
   revalidatePath('/guestbook');
 }
