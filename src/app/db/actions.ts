@@ -32,6 +32,23 @@ export async function saveGuestbookEntry(formData: FormData) {
   `;
 
 	revalidatePath("/guestbook");
+
+	const data = await fetch("https://api.resend.com/emails", {
+		method: "POST",
+		headers: {
+			Authorization: `Bearer ${process.env.RESEND_SECRET}`,
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			from: "cevin.samuel@yahoo.com",
+			to: "cevinsam11@gmail.com",
+			subject: "New Guestbook Entry",
+			html: `<p>Email: ${email}</p><p>Message: ${body}</p>`,
+		}),
+	});
+
+	const response = await data.json();
+	console.log("Email sent", response);
 }
 
 export async function deleteOwnGuestbookEntries(id: number) {
