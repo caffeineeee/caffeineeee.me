@@ -34,28 +34,11 @@ export async function saveGuestbookEntry(formData: FormData) {
 
 	revalidatePath("/guestbook");
 
-	// const data = await fetch("https://api.emaillabs.net.pl/api/new_sendmail", {
-	// 	method: "POST",
-	// 	headers: {
-	// 		Authorization: `Bearer ${process.env.RESEND_SECRET}`,
-	// 		"Content-Type": "application/json",
-	// 	},
-	// 	body: JSON.stringify({
-	// 		from: "cevin.samuel@yahoo.com",
-	// 		to: "cevinsam11@gmail.com",
-	// 		subject: "New Guestbook Entry",
-	// 		html: `<p>Email: ${email}</p><p>Message: ${body}</p>`,
-	// 	}),
-	// });
-
-	// const response = await data.json();
-	// console.log("Email sent", response);
-
 	const transporter = nodemailer.createTransport({
 		service: "gmail",
 		auth: {
 			user: "cevinsam11@gmail.com",
-			pass: process.env.GMAIL_PASSWORD,
+			pass: process.env.GOOGLE_APP_PASSWORD,
 		},
 	});
 
@@ -71,7 +54,6 @@ export async function saveGuestbookEntry(formData: FormData) {
 			throw new Error(error.message);
 		}
 		console.log("Email sent", info.response);
-		return true;
 	});
 }
 
