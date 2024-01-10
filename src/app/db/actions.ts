@@ -3,6 +3,7 @@
 import { getServerSession, type Session } from "next-auth";
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
+import nodemailer from "nodemailer";
 import { authOptions } from "../api/auth/[...nextauth]/authOptions";
 
 async function getSession(): Promise<Session> {
@@ -33,22 +34,45 @@ export async function saveGuestbookEntry(formData: FormData) {
 
 	revalidatePath("/guestbook");
 
-	const data = await fetch("https://api.resend.com/emails", {
-		method: "POST",
-		headers: {
-			Authorization: `Bearer ${process.env.RESEND_SECRET}`,
-			"Content-Type": "application/json",
+	// const data = await fetch("https://api.emaillabs.net.pl/api/new_sendmail", {
+	// 	method: "POST",
+	// 	headers: {
+	// 		Authorization: `Bearer ${process.env.RESEND_SECRET}`,
+	// 		"Content-Type": "application/json",
+	// 	},
+	// 	body: JSON.stringify({
+	// 		from: "cevin.samuel@yahoo.com",
+	// 		to: "cevinsam11@gmail.com",
+	// 		subject: "New Guestbook Entry",
+	// 		html: `<p>Email: ${email}</p><p>Message: ${body}</p>`,
+	// 	}),
+	// });
+
+	// const response = await data.json();
+	// console.log("Email sent", response);
+
+	const transporter = nodemailer.createTransport({
+		service: "gmail",
+		auth: {
+			user: "cevinsam11@gmail.com",
+			pass: process.env.GMAIL_PASSWORD,
 		},
-		body: JSON.stringify({
-			from: "cevin.samuel@yahoo.com",
-			to: "cevinsam11@gmail.com",
-			subject: "New Guestbook Entry",
-			html: `<p>Email: ${email}</p><p>Message: ${body}</p>`,
-		}),
 	});
 
-	const response = await data.json();
-	console.log("Email sent", response);
+	const mailOptions = {
+		from: "cevinsam11@gmail.com",
+		to: "cevin.samuel@yahoo.com",
+		subject: "New Guestbook Entry",
+		html: `<p>Email: ${email}</p><p>Message: ${body}</p>`,
+	};
+
+	transporter.sendMail(mailOptions, (error, info) => {
+		if (error) {
+			throw new Error(error.message);
+		}
+		console.log("Email sent", info.response);
+		return true;
+	});
 }
 
 export async function deleteOwnGuestbookEntries(id: number) {
