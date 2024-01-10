@@ -8,15 +8,18 @@
   },
   "scripts": {
     "dev": "next dev",
+    "dev:turbo": "next dev --turbo",
     "build": "next build",
-    "turbo": "next dev --turbo",
     "start": "next start",
-    "lint": "next lint",
+    "lint:next": "next lint",
     "lint:fix": "next lint --fix",
-    "format": "prettier --write .",
+    "format": "pnpm dlx @biomejs/biome format src --write",
+    "lint": "pnpm dlx @biomejs/biome lint --apply src",
+    "check": "pnpm dlx @biomejs/biome check --apply src",
     "shadcn:add": "pnpm dlx shadcn-ui@latest add"
   },
   "dependencies": {
+    "@biomejs/biome": "^1.5.1",
     "@loglib/tracker": "^0.6.2",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-avatar": "^1.0.4",

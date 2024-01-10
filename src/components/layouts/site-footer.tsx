@@ -6,77 +6,77 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 export function SiteFooter() {
-  return (
-    <footer className="w-full border-t bg-background">
-      <div className="container grid items-center gap-8 pb-8 pt-6 md:py-8">
-        <section
-          id="footer-bottom"
-          aria-labelledby="footer-bottom-heading"
-          className="flex items-center space-x-4"
-        >
-          <div className="flex-1 text-left text-sm leading-loose text-muted-foreground">
-            Cevin Samuel
-          </div>
-          <div className="flex items-center space-x-1">
-            <Link
-              href={siteConfig.links.email}
-              target="_blank"
-              rel="noreferrer"
-              className={cn(
-                buttonVariants({
-                  size: "icon",
-                  variant: "ghost",
-                })
-              )}
-            >
-              <Icons.mail className="h-4 w-4" aria-hidden="true" />
-              <span className="sr-only">Email</span>
-            </Link>
-            <Link
-              href={siteConfig.links.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className={cn(
-                buttonVariants({
-                  size: "icon",
-                  variant: "ghost",
-                })
-              )}
-            >
-              <Icons.linkedin className="h-4 w-4" aria-hidden="true" />
-              <span className="sr-only">LinkedIn</span>
-            </Link>
-            <Link
-              href={siteConfig.links.twitter}
-              target="_blank"
-              rel="noreferrer"
-              className={cn(
-                buttonVariants({
-                  size: "icon",
-                  variant: "ghost",
-                })
-              )}
-            >
-              <Icons.twitter className="h-4 w-4" aria-hidden="true" />
-              <span className="sr-only">Twitter</span>
-            </Link>
-            <Link
-              href={siteConfig.links.githubAccount}
-              target="_blank"
-              rel="noreferrer"
-              className={cn(
-                buttonVariants({
-                  size: "icon",
-                  variant: "ghost",
-                })
-              )}
-            >
-              <Icons.gitHub className="h-4 w-4" aria-hidden="true" />
-              <span className="sr-only">GitHub</span>
-            </Link>
-          </div>
-        </section>
-      </div>
-    </footer>
-  );
+	return (
+		<footer className="w-full border-t bg-background">
+			<div className="container grid items-center gap-8 pb-8 pt-6 md:py-8">
+				<section
+					id="footer-bottom"
+					aria-labelledby="footer-bottom-heading"
+					className="flex items-center space-x-4"
+				>
+					<div className="flex-1 text-left text-sm leading-loose text-muted-foreground">
+						Cevin Samuel
+					</div>
+					<div className="flex items-center space-x-1">
+						<Link
+							href={siteConfig.links.email}
+							target="_blank"
+							rel="noreferrer"
+							className={cn(
+								buttonVariants({
+									size: "icon",
+									variant: "ghost",
+								}),
+							)}
+						>
+							<Icons.mail className="h-4 w-4" aria-hidden="true" />
+							<span className="sr-only">Email</span>
+						</Link>
+						<Link
+							href={siteConfig.links.linkedin}
+							target="_blank"
+							rel="noreferrer"
+							className={cn(
+								buttonVariants({
+									size: "icon",
+									variant: "ghost",
+								}),
+							)}
+						>
+							<Icons.linkedin className="h-4 w-4" aria-hidden="true" />
+							<span className="sr-only">LinkedIn</span>
+						</Link>
+						<Link
+							href={siteConfig.links.twitter}
+							target="_blank"
+							rel="noreferrer"
+							className={cn(
+								buttonVariants({
+									size: "icon",
+									variant: "ghost",
+								}),
+							)}
+						>
+							<Icons.twitter className="h-4 w-4" aria-hidden="true" />
+							<span className="sr-only">Twitter</span>
+						</Link>
+						<Link
+							href={siteConfig.links.githubAccount}
+							target="_blank"
+							rel="noreferrer"
+							className={cn(
+								buttonVariants({
+									size: "icon",
+									variant: "ghost",
+								}),
+							)}
+						>
+							<Icons.gitHub className="h-4 w-4" aria-hidden="true" />
+							<span className="sr-only">GitHub</span>
+						</Link>
+					</div>
+				</section>
+			</div>
+		</footer>
+	);
 }
