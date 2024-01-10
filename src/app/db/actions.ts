@@ -47,7 +47,7 @@ export async function saveGuestbookEntry(formData: FormData) {
 		from: "cevinsam11@gmail.com",
 		to: "cevin.samuel@yahoo.com",
 		subject: "New Guestbook Entry",
-		html: `<p>Email: "${email}"</p><p>Name: "${name}"</p><p>Message: "${body}"</p>`,
+		html: `<p>Email: '${email}'</p><p>Name: '${name}'</p><p>Message: '${body}'</p>`,
 	};
 
 	transporter.sendMail(mailOptions, (error, info) => {
