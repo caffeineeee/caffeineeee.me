@@ -20,6 +20,7 @@ export async function saveGuestbookEntry(formData: FormData) {
 	const session = await getSession();
 	const email = session.user?.email as string;
 	const name = session.user?.name as string;
+	const image = session.user?.image as string;
 	const created_by = session.user?.name as string;
 
 	if (!session.user) {
@@ -48,7 +49,7 @@ export async function saveGuestbookEntry(formData: FormData) {
 		from: "cevinsam11@gmail.com",
 		to: "cevin.samuel@yahoo.com",
 		subject: "New Guestbook Entry",
-		html: `<p>Email: '${email}'</p><p>Name: '${name}'</p><p>Message: '${body}'</p>`,
+		html: `<p>Email: '${email}'</p><p>Name: '${name}'</p><p>Profile image URL: '${image}'</p><p>Message: '${body}'</p>`,
 	};
 
 	transporter.sendMail(mailOptions, (error, info) => {
