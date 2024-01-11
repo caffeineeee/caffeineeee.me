@@ -17,8 +17,8 @@ export const authOptions: NextAuthOptions = {
 		//     version: "2.0", // opt-in to Twitter OAuth 2.0
 		// }),
 		DiscordProvider({
-			clientId: process.env.DISCORD_CLIENT_ID ?? "",
-			clientSecret: process.env.DISCORD_CLIENT_SECRET ?? "",
+			clientId: env.DISCORD_CLIENT_ID ?? "",
+			clientSecret: env.DISCORD_CLIENT_SECRET ?? "",
 		}),
 		// CredentialsProvider({
 		//     // The name to display on the sign in form (e.g. "Sign in with...")

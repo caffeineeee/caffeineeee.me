@@ -5,6 +5,7 @@ import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import nodemailer from "nodemailer";
 import { authOptions } from "../api/auth/[...nextauth]/authOptions";
+import { env } from "@/env.mjs";
 
 async function getSession(): Promise<Session> {
 	const session = (await getServerSession(authOptions)) as Session;
@@ -39,7 +40,7 @@ export async function saveGuestbookEntry(formData: FormData) {
 		service: "gmail",
 		auth: {
 			user: "cevinsam11@gmail.com",
-			pass: process.env.GOOGLE_APP_PASSWORD,
+			pass: env.GOOGLE_APP_PASSWORD,
 		},
 	});
 

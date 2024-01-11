@@ -1,10 +1,11 @@
 "use server";
 
+import { env } from "@/env.mjs";
 import { sql } from "@vercel/postgres";
 import { unstable_noStore as noStore } from "next/cache";
 
 export async function getGuestbookEntries() {
-	if (!process.env.POSTGRES_URL) {
+	if (!env.POSTGRES_URL) {
 		return [];
 	}
 
