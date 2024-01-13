@@ -6,8 +6,8 @@ import { DeleteOwnGuestbookForm } from "./DeleteOwnGuestbookForm";
 import { Suspense } from "react";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 
-export const session = (await getServerSession()) as Session;
-export const entries = await getGuestbookEntries();
+const session = (await getServerSession()) as Session;
+const entries = await getGuestbookEntries();
 
 export default function GuestbookPage() {
 	return (
