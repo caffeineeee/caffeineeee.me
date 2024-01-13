@@ -6,9 +6,6 @@ import { DeleteOwnGuestbookForm } from "./DeleteOwnGuestbookForm";
 import { Suspense } from "react";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 
-const session = (await getServerSession()) as Session;
-const entries = await getGuestbookEntries();
-
 export default function GuestbookPage() {
 	return (
 		<div className="container grid max-w-3xl items-center gap-12 py-8 pt-6 md:py-10 lg:py-10">
@@ -27,7 +24,9 @@ export default function GuestbookPage() {
 	);
 }
 
-function DeleteOwnGuestbook() {
+async function DeleteOwnGuestbook() {
+	const session = (await getServerSession()) as Session;
+	const entries = await getGuestbookEntries();
 	return (
 		<>
 			<DeleteOwnGuestbookForm entries={entries} session={session} />
@@ -35,7 +34,8 @@ function DeleteOwnGuestbook() {
 	);
 }
 
-function FormSection() {
+async function FormSection() {
+	const session = (await getServerSession()) as Session;
 	return (
 		<>
 			{session?.user ? (
