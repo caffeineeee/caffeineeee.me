@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { useFormStatus } from "react-dom";
-import { saveGuestbookEntry } from "../db/actions";
+import { saveGuestbookEntry } from "../../db/actions";
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 

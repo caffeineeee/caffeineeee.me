@@ -1,18 +1,19 @@
 "use server";
 
 import { getServerSession, type Session } from "next-auth";
-import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import nodemailer from "nodemailer";
-import { authOptions } from "../api/auth/[...nextauth]/authOptions";
+import { authOptions } from "../app/api/auth/[...nextauth]/authOptions";
 import { env } from "@/env.mjs";
+import { db } from "@/db";
+import { guestbook } from "@/db/schema/guestbook";
+import { eq, sql } from "drizzle-orm";
 
 async function getSession(): Promise<Session> {
 	const session = (await getServerSession(authOptions)) as Session;
 	if (!session || !session.user) {
 		throw new Error("Unauthorized");
 	}
-
 	return session;
 }
 
@@ -30,10 +31,12 @@ export async function saveGuestbookEntry(formData: FormData) {
 	const entry = formData.get("entry")?.toString() || "";
 	const body = entry.slice(0, 500);
 
-	await sql`
-    INSERT INTO guestbook (email, body, created_by, created_at)
-    VALUES (${email}, ${body}, ${created_by}, NOW())
-  `;
+	await db.insert(guestbook).values({
+		email: email,
+		body: body,
+		created_by: created_by,
+		created_at: sql`CURRENT_TIMESTAMP`,
+	});
 
 	revalidatePath("/guestbook");
 
@@ -62,13 +65,9 @@ export async function saveGuestbookEntry(formData: FormData) {
 
 export async function deleteOwnGuestbookEntries(id: number) {
 	try {
-		await sql`
-    DELETE FROM guestbook
-    WHERE id = ${id}::INTEGER
-  `;
+		await db.delete(guestbook).where(eq(guestbook.id, id));
 	} catch (error) {
 		console.error("Error in deleteOwnGuestbookEntries: ", error);
 	}
-
 	revalidatePath("/guestbook");
 }

@@ -2,7 +2,7 @@
 
 import { Icons } from "@/components/icons";
 import { useFormStatus } from "react-dom";
-import { deleteOwnGuestbookEntries } from "../db/actions";
+import { deleteOwnGuestbookEntries } from "@/db/actions";
 import { Button } from "@/components/ui/button";
 
 export function DeleteOwnGuestbookForm({ entries, session }) {

@@ -1,5 +1,5 @@
 import { type Session, getServerSession } from "next-auth";
-import { getGuestbookEntries } from "../db/queries";
+import { getGuestbookEntries } from "../../db/queries";
 import { SignIn, SignOut } from "@/app/guestbook/buttons";
 import Form from "./form";
 import { DeleteOwnGuestbookForm } from "./DeleteOwnGuestbookForm";
