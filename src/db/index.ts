@@ -8,5 +8,3 @@ const client = createClient({
 });
 
 export const db = drizzle(client);
-
-console.log(process.env.NODE_ENV);

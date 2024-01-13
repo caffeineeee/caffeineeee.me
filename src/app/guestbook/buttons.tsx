@@ -1,7 +1,7 @@
 "use client";
 
 import { signIn, signOut } from "next-auth/react";
-import { Icons } from "../../components/icons";
+import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 
 export function SignIn() {
