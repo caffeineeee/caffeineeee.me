@@ -1,7 +1,7 @@
 "use client";
 
-import GridLoader from "react-spinners/GridLoader";
+import BarLoader from "react-spinners/GridLoader";
 
 export function LoadingSpinner() {
-	return <GridLoader color="#212E81" />;
+	return <BarLoader className="w-40 bg-neutral-300" />;
 }
