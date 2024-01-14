@@ -1,25 +1,22 @@
 import { type Session, getServerSession } from "next-auth";
 import { getGuestbookEntries } from "@/db/queries";
 import { SignIn, SignOut } from "@/app/guestbook/buttons";
-import Form from "./form";
-import { DeleteOwnGuestbookForm } from "./DeleteOwnGuestbookForm";
+import { Form, DeleteOwnGuestbookForm } from "./forms";
 import { Suspense } from "react";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 
 export default function GuestbookPage() {
 	return (
-		<div className="container grid max-w-3xl items-center gap-12 py-8 pt-6 md:py-10 lg:py-10">
-			<div>
-				<h1 className="text-3xl font-semibold leading-tight tracking-tighter lg:leading-[1.1]">
-					sign my guestbook
-				</h1>
-				<Suspense fallback={<LoadingSpinner />}>
-					<FormSection />
-				</Suspense>
-				<Suspense fallback={<LoadingSpinner />}>
-					<DeleteOwnGuestbook />
-				</Suspense>
-			</div>
+		<div>
+			<h1 className="text-3xl font-semibold leading-tight tracking-tighter lg:leading-[1.1]">
+				sign my guestbook
+			</h1>
+			<Suspense fallback={<LoadingSpinner />}>
+				<FormSection />
+			</Suspense>
+			<Suspense fallback={<LoadingSpinner />}>
+				<DeleteOwnGuestbook />
+			</Suspense>
 		</div>
 	);
 }
@@ -27,11 +24,7 @@ export default function GuestbookPage() {
 async function DeleteOwnGuestbook() {
 	const session = (await getServerSession()) as Session;
 	const entries = await getGuestbookEntries();
-	return (
-		<>
-			<DeleteOwnGuestbookForm entries={entries} session={session} />
-		</>
-	);
+	return <DeleteOwnGuestbookForm entries={entries} session={session} />;
 }
 
 async function FormSection() {
