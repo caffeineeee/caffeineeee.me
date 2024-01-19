@@ -12,7 +12,7 @@ export default function NotFound() {
 	const pathname = usePathname();
 	return (
 		<div className="flex flex-col items-center">
-			<Card className="m-8 flex max-w-md flex-col items-center justify-center bg-stone-950 text-center">
+			<Card className="m-8 flex max-w-md flex-col items-center justify-center text-center">
 				<CardHeader>
 					<CardTitle className="text-2xl font-bold">
 						404 Page not found
@@ -27,8 +27,8 @@ export default function NotFound() {
 						width={375}
 						height={300}
 					/>
-					<p>There is no &ldquo;{pathname}&rdquo; page.</p>
-					<Button type="button" className="">
+					<p className="pb-2">There is no &ldquo;{pathname}&rdquo; page.</p>
+					<Button type="button" variant="secondary">
 						<Link href="/">Return home</Link>
 					</Button>
 				</CardContent>
