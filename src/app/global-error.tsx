@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { revalidatePath } from "next/cache";
 
 export default function GlobalError({
-	error,
+	// error,
 	reset,
 }: {
 	error: Error & { digest?: string };

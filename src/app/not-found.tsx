@@ -1,21 +1,11 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card";
-import { usePathname } from "next/navigation";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import notFound from "public/notFound.jpg";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 export default function NotFound() {
-	const pathname = usePathname();
 	return (
 		<div className="flex flex-col items-center">
 			<Card className="m-8 flex max-w-md flex-col items-center justify-center bg-stone-950 text-center">
@@ -24,9 +14,6 @@ export default function NotFound() {
 						404 Page not found
 						<Separator className="mt-2 w-full" />
 					</CardTitle>
-					<CardDescription>
-						<p>There is no &ldquo;{pathname}&rdquo; page.</p>
-					</CardDescription>
 				</CardHeader>
 				<CardContent>
 					<Image
