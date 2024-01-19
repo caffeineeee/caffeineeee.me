@@ -1,10 +1,6 @@
 await import("./src/env.mjs");
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    ppr: true,
-  },
-};
+const nextConfig = {};
 
 export default nextConfig;

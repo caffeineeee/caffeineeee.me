@@ -2,13 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { usePathname } from "next/navigation";
 import notFound from "public/notFound.jpg";
 import { Button } from "@/components/ui/button";
@@ -24,9 +18,6 @@ export default function NotFound() {
 						404 Page not found
 						<Separator className="mt-2 w-full" />
 					</CardTitle>
-					<CardDescription>
-						<p>There is no &ldquo;{pathname}&rdquo; page.</p>
-					</CardDescription>
 				</CardHeader>
 				<CardContent>
 					<Image
@@ -36,6 +27,7 @@ export default function NotFound() {
 						width={375}
 						height={300}
 					/>
+					<p>There is no &ldquo;{pathname}&rdquo; page.</p>
 					<Button type="button" className="">
 						<Link href="/">Return home</Link>
 					</Button>
