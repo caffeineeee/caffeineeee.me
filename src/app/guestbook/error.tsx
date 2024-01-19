@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { revalidatePath } from "next/cache";
 import { useEffect } from "react";
 
 export default function GuestbookError({
@@ -18,7 +19,14 @@ export default function GuestbookError({
 	return (
 		<div>
 			<h2>Something went wrong!</h2>
-			<Button onClick={() => reset()}>Try again</Button>
+			<Button
+				onClick={() => {
+					reset();
+					revalidatePath("/guestbook");
+				}}
+			>
+				Try again
+			</Button>
 		</div>
 	);
 }

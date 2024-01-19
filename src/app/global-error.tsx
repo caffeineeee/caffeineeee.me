@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { revalidatePath } from "next/cache";
 
 export default function GlobalError({
 	error,
@@ -13,7 +14,14 @@ export default function GlobalError({
 		<html lang="en">
 			<body>
 				<h2>Something went wrong!</h2>
-				<Button onClick={() => reset()}>Try again</Button>
+				<Button
+					onClick={() => {
+						reset();
+						revalidatePath("/");
+					}}
+				>
+					Try again
+				</Button>
 			</body>
 		</html>
 	);
