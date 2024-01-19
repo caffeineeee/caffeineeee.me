@@ -3,14 +3,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import notFound from "public/notFound.jpg";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { revalidatePath } from "next/cache";
 
 export default function NotFound() {
 	const pathname = usePathname();
+	const router = useRouter();
+
 	return (
 		<div className="flex flex-col items-center">
 			<Card className="m-8 flex max-w-md flex-col items-center justify-center text-center">
@@ -32,7 +33,9 @@ export default function NotFound() {
 					<Button
 						type="button"
 						variant="secondary"
-						onClick={() => revalidatePath("/")}
+						onClick={() => {
+							router.refresh();
+						}}
 					>
 						<Link href="/">Return home</Link>
 					</Button>
