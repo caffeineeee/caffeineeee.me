@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import notFound from "public/notFound.jpg";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { revalidatePath } from "next/cache";
 
 export default function NotFound() {
 	const pathname = usePathname();
@@ -28,7 +29,11 @@ export default function NotFound() {
 						height={300}
 					/>
 					<p className="pb-2">There is no &ldquo;{pathname}&rdquo; page.</p>
-					<Button type="button" variant="secondary">
+					<Button
+						type="button"
+						variant="secondary"
+						onClick={() => revalidatePath("/")}
+					>
 						<Link href="/">Return home</Link>
 					</Button>
 				</CardContent>
