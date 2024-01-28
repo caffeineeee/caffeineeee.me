@@ -10,7 +10,7 @@ export default function IndexPage() {
 	const myYearsOfAge = differenceInYears(new Date(), new Date(2002, 2, 11)); // Note: Months are 0-indexed in JavaScript, so March is 2.
 
 	return (
-		<div className="container grid items-center  gap-12 pb-8 pt-6 md:py-8">
+		<div className="container grid items-center gap-12 pb-8 pt-6 md:py-8">
 			<section
 				id="hero"
 				aria-labelledby="hero-heading"
