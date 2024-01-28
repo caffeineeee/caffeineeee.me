@@ -3,7 +3,8 @@ import { getGuestbookEntries } from "@/db/queries";
 import { SignIn, SignOut } from "@/app/guestbook/buttons";
 import { Form, DeleteOwnGuestbookForm } from "./forms";
 import { Suspense } from "react";
-import { LoadingSpinner } from "@/components/loading-spinner";
+// import { LoadingSpinner } from "@/components/loading-spinner";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function GuestbookPage() {
 	return (
@@ -11,10 +12,12 @@ export default function GuestbookPage() {
 			<h1 className="text-3xl font-semibold leading-tight tracking-tighter lg:leading-[1.1]">
 				sign my guestbook
 			</h1>
-			<Suspense fallback={<LoadingSpinner />}>
+			<Suspense fallback={<Skeleton className="w-28 h-5 rounded-full" />}>
+				{/* <Suspense fallback={<LoadingSpinner />}> */}
 				<FormSection />
 			</Suspense>
-			<Suspense fallback={<LoadingSpinner />}>
+			{/* <Suspense fallback={<LoadingSpinner />}> */}
+			<Suspense fallback={<Skeleton className="w-28 h-5 rounded-full" />}>
 				<DeleteOwnGuestbook />
 			</Suspense>
 		</div>
