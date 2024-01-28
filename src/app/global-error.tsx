@@ -1,15 +1,21 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { revalidatePath } from "next/cache";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function GlobalError({
-	// error,
+	error,
 	reset,
 }: {
 	error: Error & { digest?: string };
 	reset: () => void;
 }) {
+	useEffect(() => {
+		// Log the error to an error reporting service
+		console.error(error);
+	}, [error]);
+	const router = useRouter();
 	return (
 		<html lang="en">
 			<body>
@@ -17,7 +23,7 @@ export default function GlobalError({
 				<Button
 					onClick={() => {
 						reset();
-						revalidatePath("/");
+						router.refresh();
 					}}
 				>
 					Try again
