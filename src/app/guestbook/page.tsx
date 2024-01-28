@@ -12,12 +12,27 @@ export default function GuestbookPage() {
 			<h1 className="text-3xl font-semibold leading-tight tracking-tighter lg:leading-[1.1]">
 				sign my guestbook
 			</h1>
-			<Suspense fallback={<Skeleton className="w-28 h-5 rounded-full" />}>
-				{/* <Suspense fallback={<LoadingSpinner />}> */}
+			<Suspense
+				fallback={
+					<div className="flex space-y-2 items-center">
+						<Skeleton className="h-4 w-64" />
+						<Skeleton className="h-4 w-64" />
+					</div>
+				}
+			>
 				<FormSection />
 			</Suspense>
-			{/* <Suspense fallback={<LoadingSpinner />}> */}
-			<Suspense fallback={<Skeleton className="w-28 h-5 rounded-full" />}>
+			<Suspense
+				fallback={
+					<div className="flex items-center space-x-4">
+						<Skeleton className="h-12 w-12 rounded-full" />
+						<div className="space-y-2">
+							<Skeleton className="h-4 w-[250px]" />
+							<Skeleton className="h-4 w-[200px]" />
+						</div>
+					</div>
+				}
+			>
 				<DeleteOwnGuestbook />
 			</Suspense>
 		</div>
