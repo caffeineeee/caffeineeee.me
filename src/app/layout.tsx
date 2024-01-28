@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 
 import "@/styles/globals.css";
 
-import SessionProvider from "@/components/SessionProvider";
+import SessionProvider from "@/components/session-provider";
 import { Analytics } from "@/components/analytics";
 import { Providers } from "@/components/providers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";

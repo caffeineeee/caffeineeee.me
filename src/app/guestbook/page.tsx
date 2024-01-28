@@ -3,7 +3,7 @@ import { getGuestbookEntries } from "@/db/queries";
 import { SignIn, SignOut } from "@/app/guestbook/buttons";
 import { Form, DeleteOwnGuestbookForm } from "./forms";
 import { Suspense } from "react";
-import { LoadingSpinner } from "@/components/LoadingSpinner";
+import { LoadingSpinner } from "@/components/loading-spinner";
 
 export default function GuestbookPage() {
 	return (
