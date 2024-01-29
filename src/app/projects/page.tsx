@@ -23,6 +23,7 @@ export default function ProjectsPage() {
 						<Link
 							href="https://github.com/caffeineeee/hacker-news-clone"
 							target="_blank"
+							rel="noopener noreferrer nofollow"
 							className={cn(urlStyle)}
 						>
 							github
@@ -30,6 +31,7 @@ export default function ProjectsPage() {
 						<Link
 							href="https://hn.caffeineeee.me"
 							target="_blank"
+							rel="noopener noreferrer nofollow"
 							className={cn(urlStyle)}
 						>
 							site
@@ -48,6 +50,7 @@ export default function ProjectsPage() {
 							href="https://huggingface.co/kepinsam/batak_toba_to_indonesian_translation_model"
 							className={cn(urlStyle)}
 							target="_blank"
+							rel="noopener noreferrer nofollow"
 						>
 							bbc→ind
 						</Link>
@@ -55,6 +58,7 @@ export default function ProjectsPage() {
 							href="https://huggingface.co/kepinsam/indonesian_to_batak_toba_translation_model"
 							className={cn(urlStyle)}
 							target="_blank"
+							rel="noopener noreferrer nofollow"
 						>
 							ind→bbc
 						</Link>
@@ -72,6 +76,7 @@ export default function ProjectsPage() {
 							href="https://github.com/caffeineeee/caffeineeee.me"
 							className={cn(urlStyle)}
 							target="_blank"
+							rel="noopener noreferrer nofollow"
 						>
 							github
 						</Link>

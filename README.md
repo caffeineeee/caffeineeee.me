@@ -1,5 +1,5 @@
 <div align="center">
-<a target="_blank" href="https://caffeineeee.me">
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://caffeineeee.me">
     <img alt='Personal Site' src="./src/app/opengraph-image.png" />
 </a>
 </div>

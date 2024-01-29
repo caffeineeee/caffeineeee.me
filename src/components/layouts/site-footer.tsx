@@ -21,7 +21,7 @@ export function SiteFooter() {
 						<Link
 							href={siteConfig.links.email}
 							target="_blank"
-							rel="noreferrer"
+							rel="noopener noreferrer nofollow"
 							className={cn(
 								buttonVariants({
 									size: "icon",
@@ -35,7 +35,7 @@ export function SiteFooter() {
 						<Link
 							href={siteConfig.links.linkedin}
 							target="_blank"
-							rel="noreferrer"
+							rel="noopener noreferrer nofollow"
 							className={cn(
 								buttonVariants({
 									size: "icon",
@@ -49,7 +49,7 @@ export function SiteFooter() {
 						<Link
 							href={siteConfig.links.twitter}
 							target="_blank"
-							rel="noreferrer"
+							rel="noopener noreferrer nofollow"
 							className={cn(
 								buttonVariants({
 									size: "icon",
@@ -63,7 +63,7 @@ export function SiteFooter() {
 						<Link
 							href={siteConfig.links.githubAccount}
 							target="_blank"
-							rel="noreferrer"
+							rel="noopener noreferrer nofollow"
 							className={cn(
 								buttonVariants({
 									size: "icon",
