@@ -19,7 +19,7 @@ export default function ProjectsPage() {
 			<div className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 tracking-tight text-neutral-300">
 				<div className="p-4 flex flex-col text-center">
 					<p className="font-medium">hacker-news-clone</p>
-					<span className="flex flex-row justify-center space-x-4 pb-4">
+					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
 							href="https://github.com/caffeineeee/hacker-news-clone"
 							target="_blank"
@@ -43,7 +43,7 @@ export default function ProjectsPage() {
 					<p className="font-medium">
 						Batak Toba language-Indonesian machine translation
 					</p>
-					<span className="flex flex-row justify-center space-x-4 pb-4">
+					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
 							href="https://huggingface.co/kepinsam/batak_toba_to_indonesian_translation_model"
 							className={cn(urlStyle)}
@@ -67,7 +67,7 @@ export default function ProjectsPage() {
 				</div>
 				<div className="p-4 flex flex-col text-center">
 					<p className="font-medium">caffeineeee.me</p>
-					<span className="flex flex-row justify-center space-x-4 pb-4">
+					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
 							href="https://github.com/caffeineeee/caffeineeee.me"
 							className={cn(urlStyle)}
