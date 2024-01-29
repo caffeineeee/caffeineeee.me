@@ -1,7 +1,7 @@
 import { env } from "@/env.mjs";
 import type { Metadata, Viewport } from "next";
 
-import "@/styles/globals.css";
+import "@/app/globals.css";
 
 import SessionProvider from "@/components/session-provider";
 import { Analytics } from "@/components/analytics";

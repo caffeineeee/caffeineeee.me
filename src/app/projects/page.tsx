@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ProjectsPage() {
 	const urlStyle =
-		"text-neutral-200/80 hover:text-neutral-50 underline underline-offset-2 hover:underline-offset-4 decoration-2 decoration-dashed decoration-rose-500 cursor-pointer";
+		"font-mono text-neutral-200/80 hover:text-neutral-50 underline underline-offset-2 hover:underline-offset-4 decoration-1 decoration-dashed decoration-rose-500 cursor-pointer";
 
 	return (
 		<div className="container grid items-center gap-12 pb-8 pt-6 md:py-8">
@@ -17,7 +17,7 @@ export default function ProjectsPage() {
 				</h1>
 			</section>
 			<div className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 tracking-tight text-neutral-300">
-				<div className="border border-white rounded-md p-4 flex flex-col text-center">
+				<div className="p-4 flex flex-col text-center">
 					<p className="font-medium">hacker-news-clone</p>
 					<span className="flex flex-row justify-center space-x-4 pb-4">
 						<Link
@@ -39,7 +39,7 @@ export default function ProjectsPage() {
 						Hacker News clone made with Next14, Tailwind
 					</p>
 				</div>
-				<div className="border border-white rounded-md p-4 flex flex-col text-center">
+				<div className="p-4 flex flex-col text-center">
 					<p className="font-medium">
 						Batak Toba language-Indonesian machine translation
 					</p>
@@ -65,7 +65,7 @@ export default function ProjectsPage() {
 						Translate.
 					</p>
 				</div>
-				<div className="border border-white rounded-md p-4 flex flex-col text-center">
+				<div className="p-4 flex flex-col text-center">
 					<p className="font-medium">caffeineeee.me</p>
 					<span className="flex flex-row justify-center space-x-4 pb-4">
 						<Link
@@ -81,11 +81,6 @@ export default function ProjectsPage() {
 						ShadcnUI, NextAuth, DrizzleORM, Turso SQLite
 					</p>
 				</div>
-				<div className="border border-white rounded-md p-4">4</div>
-				<div className="border border-white rounded-md p-4">5</div>
-				<div className="border border-white rounded-md p-4">6</div>
-				<div className="border border-white rounded-md p-4">7</div>
-				<div className="border border-white rounded-md p-4">8</div>
 			</div>
 		</div>
 	);
