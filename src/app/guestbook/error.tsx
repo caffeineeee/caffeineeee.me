@@ -21,8 +21,8 @@ export default function GuestbookError({
 			<h2>Something went wrong!</h2>
 			<Button
 				onClick={() => {
-					reset();
 					router.refresh();
+					reset();
 				}}
 			>
 				Try again

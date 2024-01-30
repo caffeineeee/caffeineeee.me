@@ -22,8 +22,8 @@ export default function GlobalError({
 				<h2>Something went wrong!</h2>
 				<Button
 					onClick={() => {
-						reset();
 						router.refresh();
+						reset();
 					}}
 				>
 					Try again
