@@ -14,7 +14,7 @@ export function SiteFooter() {
 					aria-labelledby="footer-bottom-heading"
 					className="flex items-center space-x-4"
 				>
-					<div className="flex-1 text-left text-sm leading-loose text-muted-foreground">
+					<div className="flex-1 text-left text-sm leading-loose text-neutral-900 dark:text-neutral-200">
 						Cevin Samuel
 					</div>
 					<div className="flex items-center space-x-1">

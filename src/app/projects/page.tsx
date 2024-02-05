@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ProjectsPage() {
 	const urlStyle =
-		"font-mono text-neutral-200/80 hover:text-neutral-50 underline underline-offset-2 hover:underline-offset-4 decoration-1 decoration-dashed decoration-rose-500 cursor-pointer";
+		"font-mono dark:text-neutral-300 text-neutral-600/90 dark:hover:text-neutral-50 hover:text-neutral-900 underline underline-offset-2 hover:underline-offset-4 decoration-1 decoration-dashed decoration-rose-500 cursor-pointer";
 
 	return (
 		<div className="container grid items-center gap-12 pb-8 pt-6 md:py-8">
@@ -16,7 +16,7 @@ export default function ProjectsPage() {
 					projects
 				</h1>
 			</section>
-			<div className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 tracking-tight text-neutral-300">
+			<div className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 tracking-tight dark:text-neutral-300 text-neutral-900">
 				<div className="p-4 flex flex-col text-center">
 					<p className="font-medium">hacker-news-clone</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
@@ -38,7 +38,7 @@ export default function ProjectsPage() {
 						</Link>
 					</span>
 					<p className="leading-5">
-						Hacker News clone made with Next14, Tailwind
+						Hacker News clone made with Next14, Tailwind.
 					</p>
 				</div>
 				<div className="p-4 flex flex-col text-center">
@@ -83,7 +83,7 @@ export default function ProjectsPage() {
 					</span>
 					<p className="leading-5">
 						Yet another personal site of mine made with Next14, Tailwind,
-						ShadcnUI, NextAuth, DrizzleORM, Turso SQLite
+						ShadcnUI, NextAuth, DrizzleORM, Turso SQLite.
 					</p>
 				</div>
 			</div>

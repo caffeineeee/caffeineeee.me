@@ -24,8 +24,8 @@ export default function GuestbookPage() {
 			<Suspense
 				fallback={
 					<div className="flex flex-row space-x-4">
-						<Skeleton className="h-4 w-20" />
-						<Skeleton className="h-4 w-24" />
+						<Skeleton className="h-3 w-20" />
+						<Skeleton className="h-3 w-24" />
 					</div>
 				}
 			>
