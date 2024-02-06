@@ -23,7 +23,7 @@ export default function GuestbookPage() {
 			</Suspense>
 			<Suspense
 				fallback={
-					<div className="flex flex-row space-x-4">
+					<div className="flex flex-row space-x-4 *:bg-muted-foreground">
 						<Skeleton className="h-3 w-20" />
 						<Skeleton className="h-3 w-24" />
 					</div>

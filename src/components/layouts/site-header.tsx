@@ -14,7 +14,7 @@ export function SiteHeader() {
 					<a
 						href="/"
 						className={cn(
-							"text-primary/60 hover:text-primary",
+							"text-primary/80 hover:text-primary",
 							pathname === "/" &&
 								"font-bold text-primary underline decoration-dashed underline-offset-4",
 						)}
@@ -24,7 +24,7 @@ export function SiteHeader() {
 					<a
 						href="/projects"
 						className={cn(
-							"text-primary/60 hover:text-primary",
+							"text-primary/80 hover:text-primary",
 							pathname === "/projects" &&
 								"font-bold text-primary underline decoration-dashed underline-offset-4",
 						)}
@@ -34,7 +34,7 @@ export function SiteHeader() {
 					<a
 						href="/guestbook"
 						className={cn(
-							"text-primary/60 hover:text-primary",
+							"text-primary/80 hover:text-primary",
 							pathname === "/guestbook" &&
 								"font-bold text-primary underline decoration-dashed underline-offset-4",
 						)}

@@ -1,4 +1,5 @@
 import { type NextAuthOptions } from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
 import DiscordProvider from "next-auth/providers/discord";
 // import CredentialsProvider from "next-auth/providers/credentials";
@@ -14,6 +15,13 @@ export const authOptions: NextAuthOptions = {
 		DiscordProvider({
 			clientId: env.DISCORD_CLIENT_ID ?? "",
 			clientSecret: env.DISCORD_CLIENT_SECRET ?? "",
+		}),
+		GoogleProvider({
+			clientId: env.GOOGLE_CLIENT_ID ?? "",
+			clientSecret: env.GOOGLE_CLIENT_SECRET ?? "",
+			httpOptions: {
+				timeout: 1000 * 30, // 30 seconds
+			},
 		}),
 		// CredentialsProvider({
 		//     // The name to display on the sign in form (e.g. "Sign in with...")
