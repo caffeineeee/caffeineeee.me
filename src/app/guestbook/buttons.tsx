@@ -13,7 +13,7 @@ export function SignIn() {
 				variant="outline"
 			>
 				<Icons.google className="h-4 w-4" aria-hidden="true" />
-				<div className="ml-3">Sign in with Google</div>
+				<p className="ml-3">Sign in with Google</p>
 			</Button>
 
 			<Button
@@ -22,7 +22,7 @@ export function SignIn() {
 				variant="outline"
 			>
 				<Icons.gitHub className="h-4 w-4" aria-hidden="true" />
-				<div className="ml-3">Sign in with GitHub</div>
+				<span className="ml-3">Sign in with GitHub</span>
 			</Button>
 
 			<Button
@@ -31,7 +31,7 @@ export function SignIn() {
 				variant="outline"
 			>
 				<Icons.discord className="h-4 w-4" aria-hidden="true" />
-				<div className="ml-3">Sign in with Discord</div>
+				<p className="ml-3">Sign in with Discord</p>
 			</Button>
 		</div>
 	);
@@ -42,10 +42,11 @@ export function SignOut() {
 		<>
 			<Button
 				onClick={() => signOut()}
-				className="h-8 w-full border border-neutral-500 bg-neutral-200 text-neutral-900 dark:bg-neutral-700 dark:text-neutral-100"
+				className="h-8 w-fit border border-neutral-500 bg-neutral-200 text-neutral-900 dark:bg-neutral-700 dark:text-neutral-100"
+				variant="outline"
 			>
-				<div className="text-neutral-700 dark:text-neutral-300">Sign out</div>
-				<Icons.logout className="ml-2 h-4 w-4" aria-hidden="true" />
+				<Icons.logout className="mr-2 h-4 w-4" aria-hidden="true" />
+				<span className="text-neutral-700 dark:text-neutral-300">Sign out</span>
 			</Button>
 		</>
 	);
