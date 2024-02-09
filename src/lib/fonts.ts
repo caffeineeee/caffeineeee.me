@@ -1,14 +1,13 @@
-import {
-	JetBrains_Mono as FontMono,
-	Inter as FontSans,
-} from "next/font/google";
+import { DM_Sans, Bricolage_Grotesque } from "next/font/google";
 
-export const fontSans = FontSans({
+export const bricolageGrotesque = Bricolage_Grotesque({
 	subsets: ["latin"],
-	variable: "--font-sans",
+	display: "swap",
+	variable: "--font-bricolage-grotesque",
 });
 
-export const fontMono = FontMono({
+export const dmSans = DM_Sans({
 	subsets: ["latin"],
-	variable: "--font-mono",
+	display: "swap",
+	variable: "--font-dm-sans",
 });

@@ -9,12 +9,12 @@ import { Providers } from "@/components/providers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from "@/config/site";
-import { fontMono, fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { getServerSession } from "next-auth";
 
 import { SiteFooter } from "@/components/layouts/site-footer";
 import { SiteHeader } from "@/components/layouts/site-header";
+import { bricolageGrotesque, dmSans } from "@/lib/fonts";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
@@ -76,9 +76,9 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 				<head />
 				<body
 					className={cn(
-						"min-h-screen bg-background font-sans antialiased",
-						fontSans.variable,
-						fontMono.variable,
+						"min-h-screen bg-background font-sans",
+						dmSans.variable,
+						bricolageGrotesque.variable,
 					)}
 				>
 					<Providers attribute="class" defaultTheme="system" enableSystem>
