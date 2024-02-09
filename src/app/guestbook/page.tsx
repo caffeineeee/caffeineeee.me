@@ -8,9 +8,15 @@ import { Skeleton } from "@/components/ui/skeleton";
 export default function GuestbookPage() {
 	return (
 		<div>
-			<h1 className="text-3xl font-semibold leading-tight tracking-tighter lg:leading-[1.1]">
-				sign my guestbook
-			</h1>
+			<section
+				id="hero"
+				aria-labelledby="hero-heading"
+				className="mx-auto flex w-full max-w-[64rem] flex-col items-center justify-center gap-4 text-center"
+			>
+				<h1 className="text-3xl font-semibold leading-tight tracking-tighter lg:leading-[1.1] font-display">
+					sign my guestbook
+				</h1>
+			</section>
 			<Suspense
 				fallback={
 					<div className="flex space-y-2 items-center">
@@ -47,7 +53,7 @@ async function FormSection() {
 		<>
 			{session?.user ? (
 				<div className="py-4">
-					<Form />
+					<Form session={session} />
 				</div>
 			) : (
 				<SignIn />

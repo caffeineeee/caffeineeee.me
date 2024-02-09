@@ -14,7 +14,7 @@ export default function ProjectsPage() {
 				aria-labelledby="hero-heading"
 				className="mx-auto flex w-full max-w-[64rem] flex-col items-center justify-center gap-4 text-center"
 			>
-				<h1 className="text-3xl font-semibold leading-tight tracking-tighter lg:leading-[1.1]">
+				<h1 className="text-3xl font-semibold leading-tight tracking-tighter lg:leading-[1.1] font-display">
 					projects
 				</h1>
 			</section>
