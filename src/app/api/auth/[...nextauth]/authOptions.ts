@@ -2,23 +2,20 @@ import { type NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
 import DiscordProvider from "next-auth/providers/discord";
-// import CredentialsProvider from "next-auth/providers/credentials";
-
-import { env } from "@/env.mjs";
 
 export const authOptions: NextAuthOptions = {
 	providers: [
 		GitHubProvider({
-			clientId: env.GITHUB_ID ?? "",
-			clientSecret: env.GITHUB_SECRET ?? "",
+			clientId: process.env.GITHUB_ID ?? "",
+			clientSecret: process.env.GITHUB_SECRET ?? "",
 		}),
 		DiscordProvider({
-			clientId: env.DISCORD_CLIENT_ID ?? "",
-			clientSecret: env.DISCORD_CLIENT_SECRET ?? "",
+			clientId: process.env.DISCORD_CLIENT_ID ?? "",
+			clientSecret: process.env.DISCORD_CLIENT_SECRET ?? "",
 		}),
 		GoogleProvider({
-			clientId: env.GOOGLE_CLIENT_ID ?? "",
-			clientSecret: env.GOOGLE_CLIENT_SECRET ?? "",
+			clientId: process.env.GOOGLE_CLIENT_ID ?? "",
+			clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
 			httpOptions: {
 				timeout: 1000 * 30, // 30 seconds
 			},
@@ -50,5 +47,5 @@ export const authOptions: NextAuthOptions = {
 		//     }
 		// })
 	],
-	secret: env.NEXTAUTH_SECRET ?? "",
+	secret: process.env.NEXTAUTH_SECRET ?? "",
 };

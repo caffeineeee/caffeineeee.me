@@ -2,15 +2,15 @@
 
 import { useRef } from "react";
 import { useFormStatus } from "react-dom";
-import { saveGuestbookEntry } from "@/db/actions";
+import { insertGuestbookEntry, deleteOwnGuestbookEntries } from "@/db/actions";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import { Icons } from "@/components/icons";
 import { ErrorBoundary } from "react-error-boundary";
-import { deleteOwnGuestbookEntries } from "@/db/actions";
 import { SignOut } from "@/app/guestbook/buttons";
 import { type Session } from "next-auth";
 import { cn } from "@/lib/utils";
-import { Separator } from "@/components/ui/separator";
+import { type Guestbook } from "@/db/schema";
 
 export function Form({ session }: { session: Session }) {
 	const formRef = useRef<HTMLFormElement>(null);
@@ -41,7 +41,7 @@ export function Form({ session }: { session: Session }) {
 					className="flex max-w-full flex-col"
 					ref={formRef}
 					action={async (formData) => {
-						await saveGuestbookEntry(formData);
+						await insertGuestbookEntry(formData);
 						formRef.current?.reset();
 					}}
 				>
@@ -52,7 +52,7 @@ export function Form({ session }: { session: Session }) {
 						name="entry"
 						type="text"
 						required
-						className="block h-16 w-full rounded-md border-neutral-300 bg-gray-100 py-2 pl-4 text-neutral-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-800 dark:text-neutral-100 truncate text-lg"
+						className="block h-16 w-full rounded-md border border-neutral-500 dark:border-neutral-400 bg-gray-100 py-2 pl-4 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100 truncate text-lg"
 					/>
 					<div className="place-self-end">
 						<Button
@@ -71,12 +71,16 @@ export function Form({ session }: { session: Session }) {
 	);
 }
 
-export function DeleteOwnGuestbookForm({ entries, session }) {
+export function EntriesFeed({
+	entries,
+	session,
+}: { entries: Guestbook[]; session: Session }) {
 	const { pending } = useFormStatus();
 	return (
 		<>
-			<div className="shadow-lg dark:shadow-2xl shadow-neutral-800 dark:shadow-neutral-600 rounded-lg p-4">
-				{entries.map((entry) => (
+			<Separator className="mt-8 mb-4 w-full bg-neutral-700 dark:bg-neutral-500" />
+			{entries.map((entry) => (
+				<div>
 					<form
 						action={async () => {
 							await deleteOwnGuestbookEntries(entry.id);
@@ -104,8 +108,8 @@ export function DeleteOwnGuestbookForm({ entries, session }) {
 							)}
 						</div>
 					</form>
-				))}
-			</div>
+				</div>
+			))}
 		</>
 	);
 }

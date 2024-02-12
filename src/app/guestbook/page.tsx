@@ -1,11 +1,14 @@
 import { type Session, getServerSession } from "next-auth";
 import { getGuestbookEntries } from "@/db/queries";
-import { SignIn, SignOut } from "@/app/guestbook/buttons";
-import { Form, DeleteOwnGuestbookForm } from "./forms";
+import { SignIn } from "@/app/guestbook/buttons";
+import { Form, EntriesFeed } from "./forms";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 
-export default function GuestbookPage() {
+export default async function GuestbookPage() {
+	const session = (await getServerSession()) as Session;
+	const entries = await getGuestbookEntries();
+
 	return (
 		<div>
 			<section
@@ -35,16 +38,10 @@ export default function GuestbookPage() {
 					</div>
 				}
 			>
-				<DeleteOwnGuestbook />
+				<EntriesFeed entries={entries} session={session} />
 			</Suspense>
 		</div>
 	);
-}
-
-async function DeleteOwnGuestbook() {
-	const session = (await getServerSession()) as Session;
-	const entries = await getGuestbookEntries();
-	return <DeleteOwnGuestbookForm entries={entries} session={session} />;
 }
 
 async function FormSection() {

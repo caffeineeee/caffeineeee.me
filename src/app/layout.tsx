@@ -1,4 +1,3 @@
-import { env } from "@/env.mjs";
 import type { Metadata, Viewport } from "next";
 
 import "@/app/globals.css";
@@ -17,7 +16,7 @@ import { SiteHeader } from "@/components/layouts/site-header";
 import { bricolageGrotesque, dmSans } from "@/lib/fonts";
 
 export const metadata: Metadata = {
-	metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
+	metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? ""),
 	title: {
 		default: siteConfig.name,
 		template: `%s - ${siteConfig.name}`,

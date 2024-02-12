@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Separator } from "@/components/ui/separator";
 
 export default function ProjectsPage() {
 	const urlStyle =
@@ -36,6 +37,32 @@ export default function ProjectsPage() {
 			>
 				<div className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 tracking-tight dark:text-neutral-300 text-neutral-900">
 					<div className="p-4 flex flex-col text-center">
+						<p className="font-medium">url-shortener</p>
+						<span className="flex flex-row justify-center space-x-4 pb-2">
+							<Link
+								href="https://github.com/caffeineeee/url-shortener"
+								target="_blank"
+								rel="noopener noreferrer nofollow"
+								className={cn(urlStyle)}
+							>
+								github
+							</Link>
+							<Link
+								href="https://url.caffeineeee.me"
+								target="_blank"
+								rel="noopener noreferrer nofollow"
+								className={cn(urlStyle)}
+							>
+								site
+							</Link>
+						</span>
+						<p className="leading-5">
+							URL shortener made with Next14, Tailwind, ShadcnUI, NextAuth,
+							DrizzleORM, Turso SQLite.
+						</p>
+					</div>
+					<Separator className="my-1 w-4/5 bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
+					<div className="p-4 flex flex-col text-center">
 						<p className="font-medium">hacker-news-clone</p>
 						<span className="flex flex-row justify-center space-x-4 pb-2">
 							<Link
@@ -59,6 +86,7 @@ export default function ProjectsPage() {
 							Hacker News clone made with Next14, Tailwind.
 						</p>
 					</div>
+					<Separator className="my-1 w-4/5 bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 					<div className="p-4 flex flex-col text-center">
 						<p className="font-medium">
 							Batak Toba language-Indonesian machine translation
@@ -87,6 +115,7 @@ export default function ProjectsPage() {
 							Translate.
 						</p>
 					</div>
+					<Separator className="my-1 w-4/5 bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 					<div className="p-4 flex flex-col text-center">
 						<p className="font-medium">caffeineeee.me</p>
 						<span className="flex flex-row justify-center space-x-4 pb-2">

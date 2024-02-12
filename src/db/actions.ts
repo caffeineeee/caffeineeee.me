@@ -1,12 +1,13 @@
 "use server";
+import "@/lib/server-only";
 
 import { getServerSession, type Session } from "next-auth";
 import { revalidatePath } from "next/cache";
 import nodemailer from "nodemailer";
 import { authOptions } from "../app/api/auth/[...nextauth]/authOptions";
-import { env } from "@/env.mjs";
 import { db } from "@/db";
-import { guestbook } from "@/db/schema/guestbook";
+import { createId } from "@paralleldrive/cuid2";
+import { guestbook } from "@/db/schema";
 import { eq, sql } from "drizzle-orm";
 
 async function getSession(): Promise<Session> {
@@ -17,7 +18,7 @@ async function getSession(): Promise<Session> {
 	return session;
 }
 
-export async function saveGuestbookEntry(formData: FormData) {
+export async function insertGuestbookEntry(formData: FormData) {
 	const session = await getSession();
 	const email = session.user?.email as string;
 	const name = session.user?.name as string;
@@ -28,10 +29,12 @@ export async function saveGuestbookEntry(formData: FormData) {
 		throw new Error("Unauthorized");
 	}
 
-	const entry = formData.get("entry")?.toString() || "";
+	const urlId = createId();
+	const entry = formData.get("entry")?.toString() ?? "";
 	const body = entry.slice(0, 500);
 
 	await db.insert(guestbook).values({
+		id: urlId,
 		email: email,
 		body: body,
 		created_by: created_by,
@@ -44,7 +47,7 @@ export async function saveGuestbookEntry(formData: FormData) {
 		service: "gmail",
 		auth: {
 			user: "cevinsam11@gmail.com",
-			pass: env.GOOGLE_APP_PASSWORD,
+			pass: process.env.GOOGLE_APP_PASSWORD,
 		},
 	});
 
@@ -63,7 +66,7 @@ export async function saveGuestbookEntry(formData: FormData) {
 	});
 }
 
-export async function deleteOwnGuestbookEntries(id: number) {
+export async function deleteOwnGuestbookEntries(id: string) {
 	try {
 		await db.delete(guestbook).where(eq(guestbook.id, id));
 	} catch (error) {
