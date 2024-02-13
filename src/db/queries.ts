@@ -9,11 +9,16 @@ export async function getGuestbookEntries() {
 	if (!process.env.DATABASE_URL) {
 		return [];
 	}
-	const result = db
-		.select()
-		.from(guestbook)
-		.orderBy(desc(guestbook.created_at))
-		.limit(100);
 
-	return result;
+	try {
+		const result = await db
+			.select()
+			.from(guestbook)
+			.orderBy(desc(guestbook.created_at))
+			.limit(100);
+		return result;
+	} catch (error) {
+		console.error("Error from getGuestbookEntries: ", error);
+		return [];
+	}
 }

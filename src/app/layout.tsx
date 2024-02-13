@@ -4,6 +4,7 @@ import "@/app/globals.css";
 
 import SessionProvider from "@/components/session-provider";
 import { Analytics } from "@/components/analytics";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Providers } from "@/components/providers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { Toaster } from "@/components/ui/toaster";
@@ -83,7 +84,10 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 					<Providers attribute="class" defaultTheme="system" enableSystem>
 						<SiteHeader />
 						<SessionProvider session={session}>
-							<main className="flex-1">{children}</main>
+							<main className="flex-1">
+								{children}
+								<SpeedInsights />
+							</main>
 						</SessionProvider>
 						<SiteFooter />
 						<TailwindIndicator />

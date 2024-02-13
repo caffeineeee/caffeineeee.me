@@ -33,13 +33,17 @@ export async function insertGuestbookEntry(formData: FormData) {
 	const entry = formData.get("entry")?.toString() ?? "";
 	const body = entry.slice(0, 500);
 
-	await db.insert(guestbook).values({
-		id: urlId,
-		email: email,
-		body: body,
-		created_by: created_by,
-		created_at: sql`CURRENT_TIMESTAMP`,
-	});
+	try {
+		await db.insert(guestbook).values({
+			id: urlId,
+			email: email,
+			body: body,
+			created_by: created_by,
+			created_at: sql`CURRENT_TIMESTAMP`,
+		});
+	} catch (error) {
+		console.error("Error from insertGuestbookEntry: ", error);
+	}
 
 	revalidatePath("/guestbook");
 
@@ -70,7 +74,8 @@ export async function deleteOwnGuestbookEntries(id: string) {
 	try {
 		await db.delete(guestbook).where(eq(guestbook.id, id));
 	} catch (error) {
-		console.error("Error in deleteOwnGuestbookEntries: ", error);
+		console.error("Error from deleteOwnGuestbookEntries: ", error);
 	}
+
 	revalidatePath("/guestbook");
 }
