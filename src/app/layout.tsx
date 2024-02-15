@@ -1,20 +1,17 @@
 import type { Metadata, Viewport } from "next";
-
-import "@/app/globals.css";
-
+import { getServerSession } from "next-auth";
 import SessionProvider from "@/components/session-provider";
 import { Analytics } from "@/components/analytics";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Providers } from "@/components/providers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
-import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
-import { getServerSession } from "next-auth";
-
 import { SiteFooter } from "@/components/layouts/site-footer";
 import { SiteHeader } from "@/components/layouts/site-header";
+import { Toaster } from "@/components/ui/sonner";
 import { bricolageGrotesque, dmSans } from "@/lib/fonts";
+import "@/app/globals.css";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? ""),
@@ -93,7 +90,16 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 						<TailwindIndicator />
 						<Analytics />
 					</Providers>
-					<Toaster />
+					<Toaster
+						richColors
+						position="top-right"
+						toastOptions={{
+							classNames: {
+								title: "text-base",
+								description: "text-sm",
+							},
+						}}
+					/>
 				</body>
 			</html>
 		</>

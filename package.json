@@ -15,7 +15,7 @@
     "format": "pnpm dlx @biomejs/biome format src --write",
     "lint": "pnpm dlx @biomejs/biome lint --apply src",
     "check": "pnpm dlx @biomejs/biome check --apply src",
-    "shadcn:add": "pnpm dlx shadcn-ui@latest add",
+    "shadcn": "pnpm dlx shadcn-ui@latest add",
     "db:generate": "drizzle-kit generate:sqlite",
     "db:push": "drizzle-kit push:sqlite",
     "db:studio": "drizzle-kit studio",

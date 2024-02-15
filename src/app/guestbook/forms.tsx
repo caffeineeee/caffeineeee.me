@@ -11,6 +11,7 @@ import { SignOut } from "@/app/guestbook/buttons";
 import { type Session } from "next-auth";
 import { cn } from "@/lib/utils";
 import { type Guestbook } from "@/db/schema";
+import { toast } from "sonner";
 
 export function Form({ session }: { session: Session }) {
 	const formRef = useRef<HTMLFormElement>(null);
@@ -43,6 +44,7 @@ export function Form({ session }: { session: Session }) {
 					action={async (formData) => {
 						await insertGuestbookEntry(formData);
 						formRef.current?.reset();
+						toast.success("Your sign has successfully been added.");
 					}}
 				>
 					<input
@@ -84,6 +86,7 @@ export function EntriesFeed({
 					<form
 						action={async () => {
 							await deleteOwnGuestbookEntries(entry.id);
+							toast.success("Your sign has been deleted.");
 						}}
 						key={entry.id}
 						className="mb-4 space-y-1"
