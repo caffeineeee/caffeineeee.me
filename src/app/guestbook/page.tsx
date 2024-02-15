@@ -25,36 +25,46 @@ export default async function GuestbookPage() {
 					<div className="flex space-y-2 items-center">
 						<Skeleton className="h-8 w-36" />
 						<Skeleton className="h-8 w-36" />
+						<Skeleton className="h-8 w-36" />
 					</div>
 				}
 			>
-				<FormSection />
+				{session?.user ? (
+					<div className="py-4">
+						<Form session={session} />
+					</div>
+				) : (
+					<SignIn />
+				)}
 			</Suspense>
 			<Suspense
 				fallback={
-					<div className="flex flex-row space-x-4 *:bg-muted-foreground">
-						<Skeleton className="h-3 w-20" />
-						<Skeleton className="h-3 w-24" />
-					</div>
+					<>
+						<div className="flex flex-row space-x-4 *:bg-muted-foreground">
+							<Skeleton className="h-3 w-20" />
+							<Skeleton className="h-3 w-24" />
+						</div>
+						<div className="flex flex-row space-x-4 *:bg-muted-foreground">
+							<Skeleton className="h-3 w-20" />
+							<Skeleton className="h-3 w-24" />
+						</div>
+						<div className="flex flex-row space-x-4 *:bg-muted-foreground">
+							<Skeleton className="h-3 w-20" />
+							<Skeleton className="h-3 w-24" />
+						</div>
+						<div className="flex flex-row space-x-4 *:bg-muted-foreground">
+							<Skeleton className="h-3 w-20" />
+							<Skeleton className="h-3 w-24" />
+						</div>
+						<div className="flex flex-row space-x-4 *:bg-muted-foreground">
+							<Skeleton className="h-3 w-20" />
+							<Skeleton className="h-3 w-24" />
+						</div>
+					</>
 				}
 			>
 				<EntriesFeed entries={entries} session={session} />
 			</Suspense>
 		</div>
-	);
-}
-
-async function FormSection() {
-	const session = (await getServerSession()) as Session;
-	return (
-		<>
-			{session?.user ? (
-				<div className="py-4">
-					<Form session={session} />
-				</div>
-			) : (
-				<SignIn />
-			)}
-		</>
 	);
 }
