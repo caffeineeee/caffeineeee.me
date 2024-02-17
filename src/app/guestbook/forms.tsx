@@ -19,23 +19,6 @@ export function Form({ session }: { session: Session }) {
 
 	return (
 		<>
-			<div className="flex max-w-full flex-col">
-				<span
-					className={cn(
-						"flex flex-col sm:flex-row place-self-end items-center space-x-4",
-						session?.user ? "" : "invisible",
-					)}
-				>
-					<span className="relative flex flex-col sm:flex-row space-x-reverse sm:space-x-1">
-						<p>You are signed in as: </p>
-						<p className="border border-neutral-800 dark:border-neutral-100 p-px w-fit ml-auto right-0">
-							{session?.user?.name}
-						</p>
-					</span>
-					<SignOut />
-				</span>
-			</div>
-			<Separator className="my-4 w-full bg-neutral-700 dark:bg-neutral-500" />
 			<ErrorBoundary fallback={<div>Something went wrong</div>}>
 				<form
 					style={{ opacity: !pending ? 1 : 0.7 }}

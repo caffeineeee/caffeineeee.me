@@ -1,7 +1,7 @@
 import { type Session, getServerSession } from "next-auth";
 import { getGuestbookEntries } from "@/db/queries";
 import { SignIn } from "@/app/guestbook/buttons";
-import { Form, EntriesFeed } from "./forms";
+import { Form, EntriesFeed } from "@/app/guestbook/forms";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 

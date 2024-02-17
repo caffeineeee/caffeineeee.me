@@ -13,6 +13,7 @@ export function ThemeToggle() {
 			variant="ghost"
 			size="icon"
 			onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+			className="dark:bg-neutral-700 hover:dark:bg-inherit bg-neutral-300 hover:bg-inherit"
 		>
 			<SunIcon
 				className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"

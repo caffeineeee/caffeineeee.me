@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { getServerSession } from "next-auth";
+import { type Session, getServerSession } from "next-auth";
 import SessionProvider from "@/components/session-provider";
 import { Analytics } from "@/components/analytics";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -12,6 +12,7 @@ import { SiteHeader } from "@/components/layouts/site-header";
 import { Toaster } from "@/components/ui/sonner";
 import { bricolageGrotesque, dmSans } from "@/lib/fonts";
 import "@/app/globals.css";
+import { AccountMenu } from "@/components/layouts/account-menu";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? ""),
@@ -66,7 +67,7 @@ interface RootLayoutProps {
 }
 
 export default async function RootLayout({ children }: RootLayoutProps) {
-	const session = await getServerSession();
+	const session = (await getServerSession()) as Session;
 	return (
 		<>
 			<html lang="en" suppressHydrationWarning>
@@ -79,7 +80,9 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 					)}
 				>
 					<Providers attribute="class" defaultTheme="system" enableSystem>
-						<SiteHeader />
+						<SiteHeader>
+							<AccountMenu session={session} />
+						</SiteHeader>
 						<SessionProvider session={session}>
 							<main className="flex-1">
 								{children}

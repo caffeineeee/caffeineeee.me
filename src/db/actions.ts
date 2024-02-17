@@ -4,7 +4,7 @@ import "@/lib/server-only";
 import { getServerSession, type Session } from "next-auth";
 import { revalidatePath } from "next/cache";
 import nodemailer from "nodemailer";
-import { authOptions } from "../app/api/auth/[...nextauth]/authOptions";
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 import { db } from "@/db";
 import { createId } from "@paralleldrive/cuid2";
 import { guestbook } from "@/db/schema";
@@ -21,8 +21,6 @@ async function getSession(): Promise<Session> {
 export async function insertGuestbookEntry(formData: FormData) {
 	const session = await getSession();
 	const email = session.user?.email as string;
-	const name = session.user?.name as string;
-	const image = session.user?.image as string;
 	const created_by = session.user?.name as string;
 
 	if (!session.user) {
