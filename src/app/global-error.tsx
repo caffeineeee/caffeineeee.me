@@ -19,7 +19,7 @@ export default function GlobalError({
 	return (
 		<html lang="en">
 			<body>
-				<h2>Something went wrong!</h2>
+				<h2>Something went wrong.</h2>
 				<Button
 					onClick={() => {
 						router.refresh();

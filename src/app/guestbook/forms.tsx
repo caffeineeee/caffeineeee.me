@@ -19,7 +19,7 @@ export function Form({ session }: { session: Session }) {
 
 	return (
 		<>
-			<ErrorBoundary fallback={<div>Something went wrong</div>}>
+			<ErrorBoundary fallback={<div>Something went wrong.</div>}>
 				<form
 					style={{ opacity: !pending ? 1 : 0.7 }}
 					className="flex max-w-full flex-col"

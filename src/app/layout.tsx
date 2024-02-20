@@ -74,7 +74,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 				<head />
 				<body
 					className={cn(
-						"min-h-screen bg-background font-sans",
+						"min-h-screen bg-background font-sans flex flex-col",
 						dmSans.variable,
 						bricolageGrotesque.variable,
 					)}
