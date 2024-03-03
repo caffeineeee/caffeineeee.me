@@ -75,6 +75,21 @@ export default function ProjectsPage() {
 					</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
+							href="https://github.com/caffeineeee/batak_toba_indonesian_nmt"
+							className={cn(urlStyle)}
+							target="_blank"
+							rel="noopener noreferrer nofollow"
+						>
+							github
+						</Link>
+					</span>
+					<p className="leading-5">
+						Like Google Translate, but for Batak Toba and Indonesian
+						language-pair, cuz there is no option for Batak Toba in Google
+						Translate.
+						<br />
+						Try out the live models here:&nbsp;
+						<Link
 							href="https://huggingface.co/kepinsam/batak_toba_to_indonesian_translation_model"
 							className={cn(urlStyle)}
 							target="_blank"
@@ -82,6 +97,7 @@ export default function ProjectsPage() {
 						>
 							bbc→ind
 						</Link>
+						&nbsp;&nbsp;
 						<Link
 							href="https://huggingface.co/kepinsam/indonesian_to_batak_toba_translation_model"
 							className={cn(urlStyle)}
@@ -90,11 +106,6 @@ export default function ProjectsPage() {
 						>
 							ind→bbc
 						</Link>
-					</span>
-					<p className="leading-5">
-						Like Google Translate, but for Batak Toba and Indonesian
-						language-pair, cuz there is no option for Batak Toba in Google
-						Translate.
 					</p>
 				</div>
 				<Separator className="my-1 w-4/5 bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
