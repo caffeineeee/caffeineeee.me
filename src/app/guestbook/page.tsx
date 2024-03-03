@@ -31,7 +31,7 @@ export default async function GuestbookPage() {
 			>
 				{session?.user ? (
 					<div className="py-4">
-						<Form session={session} />
+						<Form />
 					</div>
 				) : (
 					<SignIn />

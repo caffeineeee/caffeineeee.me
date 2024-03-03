@@ -7,13 +7,11 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Icons } from "@/components/icons";
 import { ErrorBoundary } from "react-error-boundary";
-import { SignOut } from "@/app/guestbook/buttons";
 import { type Session } from "next-auth";
-import { cn } from "@/lib/utils";
 import { type Guestbook } from "@/db/schema";
 import { toast } from "sonner";
 
-export function Form({ session }: { session: Session }) {
+export function Form() {
 	const formRef = useRef<HTMLFormElement>(null);
 	const { pending } = useFormStatus();
 
