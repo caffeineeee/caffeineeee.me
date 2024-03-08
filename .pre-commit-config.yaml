@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: biome-check
+        name: biome check
+        entry: pnpm dlx @biomejs/biome check --apply --organize-imports-enabled=true --files-ignore-unknown=true --no-errors-on-unmatched
+        language: system
+        types: [text]
+        files: "\\.(jsx?|tsx?|c(js|ts)|m(js|ts)|d\\.(ts|cts|mts)|json?|jsonc?)$"

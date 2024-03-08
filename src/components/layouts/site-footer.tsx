@@ -57,8 +57,8 @@ export function SiteFooter() {
 								}),
 							)}
 						>
-							<Icons.twitter className="h-4 w-4" aria-hidden="true" />
-							<span className="sr-only">Twitter</span>
+							<Icons.xcom className="h-3.5 w-3.5" aria-hidden="true" />
+							<span className="sr-only">X.com (formerly Twitter)</span>
 						</Link>
 						<Link
 							href={siteConfig.links.githubAccount}
