@@ -1,13 +1,13 @@
+import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { Separator } from "@/components/ui/separator";
 
 export default function ProjectsPage() {
 	const urlStyle =
-		"font-mono dark:text-neutral-300 text-neutral-600/90 dark:hover:text-neutral-50 hover:text-neutral-900 underline underline-offset-2 hover:underline-offset-4 decoration-1 decoration-dashed decoration-rose-500 cursor-pointer";
+		"font-semibold w-fit px-4 border rounded-full bg-neutral-800 dark:bg-neutral-200 hover:bg-neutral-600 hover:dark:bg-neutral-400 text-background";
 
 	return (
-		<div className="container grid items-center gap-6 pb-8 pt-6 md:py-8">
+		<div className="container grid items-center gap-6 pb-8 pt-6 md:py-8 ">
 			<section
 				id="hero"
 				aria-labelledby="hero-heading"
@@ -18,8 +18,8 @@ export default function ProjectsPage() {
 				</h1>
 			</section>
 			<div className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 tracking-tight dark:text-neutral-300 text-neutral-900">
-				<div className="p-4 flex flex-col text-center">
-					<p className="font-medium">url-shortener</p>
+				<div className="p-4 flex flex-col items-center text-center">
+					<p className="font-semibold text-xl">url-shortener</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
 							href="https://github.com/caffeineeee/url-shortener"
@@ -44,8 +44,8 @@ export default function ProjectsPage() {
 					</p>
 				</div>
 				<Separator className="my-1 w-4/5 bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
-				<div className="p-4 flex flex-col text-center">
-					<p className="font-medium">hacker-news-clone</p>
+				<div className="p-4 flex flex-col items-center text-center">
+					<p className="font-semibold text-xl">hacker-news-clone</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
 							href="https://github.com/caffeineeee/hacker-news-clone"
@@ -69,8 +69,8 @@ export default function ProjectsPage() {
 					</p>
 				</div>
 				<Separator className="my-1 w-4/5 bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
-				<div className="p-4 flex flex-col text-center">
-					<p className="font-medium">
+				<div className="p-4 flex flex-col items-center text-center">
+					<p className="font-semibold text-xl">
 						Batak Toba language-Indonesian machine translation
 					</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
@@ -109,8 +109,8 @@ export default function ProjectsPage() {
 					</p>
 				</div>
 				<Separator className="my-1 w-4/5 bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
-				<div className="p-4 flex flex-col text-center">
-					<p className="font-medium">caffeineeee.me</p>
+				<div className="p-4 flex flex-col items-center text-center">
+					<p className="font-semibold text-xl">caffeineeee.me</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
 							href="https://github.com/caffeineeee/caffeineeee.me"

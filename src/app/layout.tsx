@@ -1,18 +1,18 @@
-import type { Metadata, Viewport } from "next";
-import { type Session, getServerSession } from "next-auth";
-import SessionProvider from "@/components/session-provider";
+import "@/app/globals.css";
 import { Analytics } from "@/components/analytics";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Providers } from "@/components/providers";
-import { TailwindIndicator } from "@/components/tailwind-indicator";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
+import { AccountMenu } from "@/components/layouts/account-menu";
 import { SiteFooter } from "@/components/layouts/site-footer";
 import { SiteHeader } from "@/components/layouts/site-header";
+import SessionProvider from "@/components/session-provider";
+import { TailwindIndicator } from "@/components/tailwind-indicator";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { siteConfig } from "@/config/site";
 import { bricolageGrotesque, dmSans } from "@/lib/fonts";
-import "@/app/globals.css";
-import { AccountMenu } from "@/components/layouts/account-menu";
+import { cn } from "@/lib/utils";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata, Viewport } from "next";
+import { type Session, getServerSession } from "next-auth";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? ""),
@@ -79,7 +79,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 						bricolageGrotesque.variable,
 					)}
 				>
-					<Providers attribute="class" defaultTheme="system" enableSystem>
+					<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 						<SiteHeader>
 							<AccountMenu session={session} />
 						</SiteHeader>
@@ -92,7 +92,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 						<SiteFooter />
 						<TailwindIndicator />
 						<Analytics />
-					</Providers>
+					</ThemeProvider>
 					<Toaster
 						richColors
 						position="top-right"

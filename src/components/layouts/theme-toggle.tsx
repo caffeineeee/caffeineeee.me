@@ -1,27 +1,42 @@
 "use client";
 
-import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
-import { useTheme } from "next-themes";
-
+import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
+	const [mounted, setMounted] = useState(false);
 	const { setTheme, theme } = useTheme();
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	if (!mounted) {
+		return null;
+	}
 
 	return (
 		<Button
 			variant="ghost"
 			size="icon"
-			onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+			onClick={() =>
+				setTheme(
+					theme === "light" ? "dark" : theme === "dark" ? "system" : "light",
+				)
+			}
 			className="dark:bg-neutral-700 hover:dark:bg-inherit bg-neutral-300 hover:bg-inherit"
 		>
-			<SunIcon
-				className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-				aria-hidden="true"
+			<Icons.sun
+				className={cn("absolute h-5 w-5", theme === "light" ? "" : "hidden")}
 			/>
-			<MoonIcon
-				className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-				aria-hidden="true"
+			<Icons.moon
+				className={cn("absolute h-5 w-5", theme === "dark" ? "" : "hidden")}
+			/>
+			<Icons.laptop
+				className={cn("absolute h-5 w-5", theme === "system" ? "" : "hidden")}
 			/>
 			<span className="sr-only">Toggle theme</span>
 		</Button>
