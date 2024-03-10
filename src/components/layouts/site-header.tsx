@@ -1,9 +1,13 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
-import { ThemeToggle } from "@/components/layouts/theme-toggle";
-import { type ReactNode } from "react";
+import type { ReactNode } from "react";
+
+const ThemeToggle = dynamic(() =>
+	import("@/components/layouts/theme-toggle").then((mod) => mod.ThemeToggle),
+);
 
 export function SiteHeader({ children }: { children: ReactNode }) {
 	const pathname = usePathname();

@@ -1,17 +1,35 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuLabel,
-	DropdownMenuSeparator,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Icons } from "@/components/icons";
+import { Button } from "@/components/ui/button";
+import type { Session } from "next-auth";
 import { signIn, signOut } from "next-auth/react";
-import { Session } from "next-auth";
+import dynamic from "next/dynamic";
+
+const DropdownMenu = dynamic(() =>
+	import("@/components/ui/dropdown-menu").then((mod) => mod.DropdownMenu),
+);
+const DropdownMenuContent = dynamic(() =>
+	import("@/components/ui/dropdown-menu").then(
+		(mod) => mod.DropdownMenuContent,
+	),
+);
+const DropdownMenuItem = dynamic(() =>
+	import("@/components/ui/dropdown-menu").then((mod) => mod.DropdownMenuItem),
+);
+const DropdownMenuLabel = dynamic(() =>
+	import("@/components/ui/dropdown-menu").then((mod) => mod.DropdownMenuLabel),
+);
+const DropdownMenuSeparator = dynamic(() =>
+	import("@/components/ui/dropdown-menu").then(
+		(mod) => mod.DropdownMenuSeparator,
+	),
+);
+const DropdownMenuTrigger = dynamic(() =>
+	import("@/components/ui/dropdown-menu").then(
+		(mod) => mod.DropdownMenuTrigger,
+	),
+);
 
 export function AccountMenu({ session }: { session: Session }) {
 	return (

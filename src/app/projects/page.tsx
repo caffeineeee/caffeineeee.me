@@ -1,10 +1,14 @@
-import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
+import dynamic from "next/dynamic";
 import Link from "next/link";
+
+const Separator = dynamic(() =>
+	import("@/components/ui/separator").then((mod) => mod.Separator),
+);
 
 export default function ProjectsPage() {
 	const urlStyle =
-		"font-semibold w-fit px-4 border rounded-full bg-neutral-800 dark:bg-neutral-200 hover:bg-neutral-600 hover:dark:bg-neutral-400 text-background";
+		"font-semibold w-fit px-4 border rounded-full bg-secondary-foreground hover:bg-muted-foreground text-background";
 
 	return (
 		<div className="container grid items-center gap-6 pb-8 pt-6 md:py-8 ">
@@ -19,7 +23,7 @@ export default function ProjectsPage() {
 			</section>
 			<div className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 tracking-tight dark:text-neutral-300 text-neutral-900">
 				<div className="p-4 flex flex-col items-center text-center">
-					<p className="font-semibold text-xl">url-shortener</p>
+					<p className="font-semibold text-xl text-primary">url-shortener</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
 							href="https://github.com/caffeineeee/url-shortener"
@@ -45,7 +49,9 @@ export default function ProjectsPage() {
 				</div>
 				<Separator className="my-1 w-4/5 bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="p-4 flex flex-col items-center text-center">
-					<p className="font-semibold text-xl">hacker-news-clone</p>
+					<p className="font-semibold text-xl text-foreground">
+						hacker-news-clone
+					</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
 							href="https://github.com/caffeineeee/hacker-news-clone"
@@ -70,7 +76,7 @@ export default function ProjectsPage() {
 				</div>
 				<Separator className="my-1 w-4/5 bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="p-4 flex flex-col items-center text-center">
-					<p className="font-semibold text-xl">
+					<p className="font-semibold text-xl text-foreground">
 						Batak Toba language-Indonesian machine translation
 					</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
@@ -110,7 +116,9 @@ export default function ProjectsPage() {
 				</div>
 				<Separator className="my-1 w-4/5 bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="p-4 flex flex-col items-center text-center">
-					<p className="font-semibold text-xl">caffeineeee.me</p>
+					<p className="font-semibold text-xl text-foreground">
+						caffeineeee.me
+					</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
 							href="https://github.com/caffeineeee/caffeineeee.me"

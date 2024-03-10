@@ -1,18 +1,17 @@
 import "@/app/globals.css";
 import { Analytics } from "@/components/analytics";
-import { AccountMenu } from "@/components/layouts/account-menu";
 import { SiteFooter } from "@/components/layouts/site-footer";
 import { SiteHeader } from "@/components/layouts/site-header";
 import SessionProvider from "@/components/session-provider";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config/site";
 import { bricolageGrotesque, dmSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import { type Session, getServerSession } from "next-auth";
+import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? ""),
@@ -65,6 +64,14 @@ export const viewport: Viewport = {
 interface RootLayoutProps {
 	children: React.ReactNode;
 }
+
+const AccountMenu = dynamic(() =>
+	import("@/components/layouts/account-menu").then((mod) => mod.AccountMenu),
+);
+
+const Toaster = dynamic(() =>
+	import("@/components/ui/sonner").then((mod) => mod.Toaster),
+);
 
 export default async function RootLayout({ children }: RootLayoutProps) {
 	const session = (await getServerSession()) as Session;

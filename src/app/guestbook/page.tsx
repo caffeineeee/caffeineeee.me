@@ -1,16 +1,23 @@
-import { type Session, getServerSession } from "next-auth";
 import { getGuestbookEntries } from "@/db/queries";
-import { SignIn } from "@/app/guestbook/buttons";
-import { Form, EntriesFeed } from "@/app/guestbook/forms";
-import { Suspense } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
+import { type Session, getServerSession } from "next-auth";
+import dynamic from "next/dynamic";
+
+const Form = dynamic(() =>
+	import("@/app/guestbook/forms").then((mod) => mod.Form),
+);
+const EntriesFeed = dynamic(() =>
+	import("@/app/guestbook/forms").then((mod) => mod.EntriesFeed),
+);
+const SignIn = dynamic(() =>
+	import("@/app/guestbook/buttons").then((mod) => mod.SignIn),
+);
 
 export default async function GuestbookPage() {
 	const session = (await getServerSession()) as Session;
 	const entries = await getGuestbookEntries();
 
 	return (
-		<div>
+		<>
 			<section
 				id="hero"
 				aria-labelledby="hero-heading"
@@ -20,51 +27,14 @@ export default async function GuestbookPage() {
 					sign my guestbook
 				</h1>
 			</section>
-			<Suspense
-				fallback={
-					<div className="flex space-y-2 items-center">
-						<Skeleton className="h-8 w-36" />
-						<Skeleton className="h-8 w-36" />
-						<Skeleton className="h-8 w-36" />
-					</div>
-				}
-			>
-				{session?.user ? (
-					<div className="py-4">
-						<Form />
-					</div>
-				) : (
-					<SignIn />
-				)}
-			</Suspense>
-			<Suspense
-				fallback={
-					<>
-						<div className="flex flex-row space-x-4 *:bg-muted-foreground">
-							<Skeleton className="h-3 w-20" />
-							<Skeleton className="h-3 w-24" />
-						</div>
-						<div className="flex flex-row space-x-4 *:bg-muted-foreground">
-							<Skeleton className="h-3 w-20" />
-							<Skeleton className="h-3 w-24" />
-						</div>
-						<div className="flex flex-row space-x-4 *:bg-muted-foreground">
-							<Skeleton className="h-3 w-20" />
-							<Skeleton className="h-3 w-24" />
-						</div>
-						<div className="flex flex-row space-x-4 *:bg-muted-foreground">
-							<Skeleton className="h-3 w-20" />
-							<Skeleton className="h-3 w-24" />
-						</div>
-						<div className="flex flex-row space-x-4 *:bg-muted-foreground">
-							<Skeleton className="h-3 w-20" />
-							<Skeleton className="h-3 w-24" />
-						</div>
-					</>
-				}
-			>
-				<EntriesFeed entries={entries} session={session} />
-			</Suspense>
-		</div>
+			{session?.user ? (
+				<div className="py-4">
+					<Form />
+				</div>
+			) : (
+				<SignIn />
+			)}
+			<EntriesFeed entries={entries} session={session} />
+		</>
 	);
 }

@@ -1,16 +1,16 @@
 "use client";
 
-import { signIn, signOut } from "next-auth/react";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import * as React from "react";
 import { cn } from "@/lib/utils";
+import { signIn, signOut } from "next-auth/react";
+import * as React from "react";
 
 export function SignIn() {
 	return (
 		<div className="flex flex-col gap-2 p-8 items-center">
 			<Button
-				className="inline-flex w-48 items-center rounded border bg-gradient-to-r from-[#d62d20] to-[#ffa700] p-1 px-3 py-2 text-sm font-medium leading-4 text-neutral-900 hover:text-neutral-200 border-neutral-200 dark:border-neutral-700 dark:bg-neutral-800"
+				className="inline-flex w-48 items-center rounded border bg-gradient-to-r from-[#d62d20] to-[#ffa700] p-1 px-3 py-2 text-sm font-medium leading-4 text-neutral-900 hover:text-muted-foreground border-neutral-200 dark:border-neutral-700 dark:bg-neutral-800"
 				onClick={() => signIn("google")}
 				variant="outline"
 			>

@@ -17,7 +17,7 @@ export default function GuestbookError({
 	}, [error]);
 	const router = useRouter();
 	return (
-		<div>
+		<>
 			<h2>Something went wrong.</h2>
 			<Button
 				onClick={() => {
@@ -27,6 +27,6 @@ export default function GuestbookError({
 			>
 				Try again
 			</Button>
-		</div>
+		</>
 	);
 }

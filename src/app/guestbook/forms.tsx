@@ -1,15 +1,19 @@
 "use client";
 
+import { Icons } from "@/components/icons";
+import { Button } from "@/components/ui/button";
+import { deleteOwnGuestbookEntries, insertGuestbookEntry } from "@/db/actions";
+import type { Guestbook } from "@/db/schema";
+import type { Session } from "next-auth";
+import dynamic from "next/dynamic";
 import { useRef } from "react";
 import { useFormStatus } from "react-dom";
-import { insertGuestbookEntry, deleteOwnGuestbookEntries } from "@/db/actions";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { Icons } from "@/components/icons";
 import { ErrorBoundary } from "react-error-boundary";
-import { type Session } from "next-auth";
-import { type Guestbook } from "@/db/schema";
 import { toast } from "sonner";
+
+const Separator = dynamic(() =>
+	import("@/components/ui/separator").then((mod) => mod.Separator),
+);
 
 export function Form() {
 	const formRef = useRef<HTMLFormElement>(null);
@@ -17,7 +21,7 @@ export function Form() {
 
 	return (
 		<>
-			<ErrorBoundary fallback={<div>Something went wrong.</div>}>
+			<ErrorBoundary fallback={<h2>Something went wrong.</h2>}>
 				<form
 					style={{ opacity: !pending ? 1 : 0.7 }}
 					className="flex max-w-full flex-col"
@@ -63,7 +67,7 @@ export function EntriesFeed({
 		<>
 			<Separator className="mt-8 mb-4 w-full bg-neutral-700 dark:bg-neutral-500" />
 			{entries.map((entry) => (
-				<div>
+				<>
 					<form
 						action={async () => {
 							await deleteOwnGuestbookEntries(entry.id);
@@ -72,11 +76,9 @@ export function EntriesFeed({
 						key={entry.id}
 						className="mb-4 space-y-1"
 					>
-						<div className="relative mr-1 flex w-full flex-row items-start break-words text-neutral-600 dark:text-neutral-400">
-							<p className="mr-4 text-neutral-800 dark:text-neutral-100">
-								{entry.created_by}:
-							</p>
-							<p className="w-[60%] sm:w-96 md:w-[32rem] text-justify">
+						<div className="relative mr-1 flex w-full flex-row items-start break-words">
+							<p className="mr-4 text-primary/80">{entry.created_by}:</p>
+							<p className="w-[60%] sm:w-96 md:w-[32rem] text-justify text-primary">
 								{entry.body}
 							</p>
 							{session?.user?.name === entry.created_by && (
@@ -92,7 +94,7 @@ export function EntriesFeed({
 							)}
 						</div>
 					</form>
-				</div>
+				</>
 			))}
 		</>
 	);
