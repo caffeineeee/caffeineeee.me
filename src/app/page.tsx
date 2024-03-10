@@ -1,11 +1,4 @@
-import { revalidatePath } from "next/cache";
-
-export default function IndexPage() {
-	const intervDuration = 1000 * 60 * 60 * 24; // 24 hours
-	setInterval(() => {
-		revalidatePath("/", "layout"); // revalidating all data. See: https://nextjs.org/docs/app/api-reference/functions/revalidatePath#revalidating-all-data
-	}, intervDuration);
-
+export default function HomePage() {
 	return (
 		<div className="container grid items-center gap-12 pb-8 pt-6 md:py-8">
 			<section
