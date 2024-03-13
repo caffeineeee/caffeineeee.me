@@ -11,7 +11,7 @@ export default function ProjectsPage() {
 		"font-semibold w-fit px-4 border rounded-full bg-secondary-foreground hover:bg-muted-foreground text-background";
 
 	return (
-		<div className="container grid items-center gap-6 pb-8 pt-6 md:py-8 ">
+		<div className="container grid items-center pb-8 pt-6 md:py-8">
 			<section
 				id="hero"
 				aria-labelledby="hero-heading"

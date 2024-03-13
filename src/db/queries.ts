@@ -4,8 +4,9 @@ import "@/lib/server-only";
 import { db } from "@/db";
 import { guestbook } from "@/db/schema";
 import { desc } from "drizzle-orm";
+import { cache } from "react";
 
-export async function getGuestbookEntries() {
+export const getGuestbookEntries = cache(async () => {
 	if (!process.env.DATABASE_URL) {
 		return [];
 	}
@@ -21,4 +22,4 @@ export async function getGuestbookEntries() {
 		console.error("Error from getGuestbookEntries: ", error);
 		return [];
 	}
-}
+});

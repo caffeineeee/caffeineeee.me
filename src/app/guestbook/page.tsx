@@ -17,7 +17,7 @@ export default async function GuestbookPage() {
 	const entries = await getGuestbookEntries();
 
 	return (
-		<>
+		<div className="container grid items-center pb-8 pt-6 md:py-8">
 			<section
 				id="hero"
 				aria-labelledby="hero-heading"
@@ -35,6 +35,6 @@ export default async function GuestbookPage() {
 				<SignIn />
 			)}
 			<EntriesFeed entries={entries} session={session} />
-		</>
+		</div>
 	);
 }
