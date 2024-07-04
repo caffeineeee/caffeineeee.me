@@ -27,6 +27,16 @@ export function SiteHeader({ children }: { children: ReactNode }) {
 						home
 					</a>
 					<a
+						href="/blog"
+						className={cn(
+							"text-primary/80 hover:text-primary",
+							pathname === "/blog" &&
+								"font-bold text-primary underline decoration-dashed underline-offset-4",
+						)}
+					>
+						blog
+					</a>
+					<a
 						href="/projects"
 						className={cn(
 							"text-primary/80 hover:text-primary",
