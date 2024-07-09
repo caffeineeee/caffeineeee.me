@@ -96,7 +96,7 @@ export default function ProjectsPage() {
 						<br />
 						Try out the live models here:&nbsp;
 						<Link
-							href="https://huggingface.co/kepinsam/batak_toba_to_indonesian_translation_model"
+							href="https://huggingface.co/kepinsam/bbc-to-ind-nmt-v1"
 							className={cn(urlStyle)}
 							target="_blank"
 							rel="noopener noreferrer nofollow"
@@ -105,7 +105,7 @@ export default function ProjectsPage() {
 						</Link>
 						&nbsp;&nbsp;
 						<Link
-							href="https://huggingface.co/kepinsam/indonesian_to_batak_toba_translation_model"
+							href="https://huggingface.co/kepinsam/ind-to-bbc-nmt-v1"
 							className={cn(urlStyle)}
 							target="_blank"
 							rel="noopener noreferrer nofollow"
