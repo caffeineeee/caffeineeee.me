@@ -26,7 +26,7 @@ export function SiteHeader({ children }: { children: ReactNode }) {
 					>
 						home
 					</a>
-					<a
+					{/* <a
 						href="/blog"
 						className={cn(
 							"text-primary/80 hover:text-primary",
@@ -35,7 +35,7 @@ export function SiteHeader({ children }: { children: ReactNode }) {
 						)}
 					>
 						blog
-					</a>
+					</a> */}
 					<a
 						href="/projects"
 						className={cn(
