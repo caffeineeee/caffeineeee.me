@@ -6,10 +6,10 @@ import { useEffect } from "react";
 
 export default function GlobalError({
 	error,
-	reset,
+	resetAction,
 }: {
 	error: Error & { digest?: string };
-	reset: () => void;
+	resetAction: () => void;
 }) {
 	useEffect(() => {
 		// Log the error to an error reporting service
@@ -23,7 +23,7 @@ export default function GlobalError({
 				<Button
 					onClick={() => {
 						router.refresh();
-						reset();
+						resetAction();
 					}}
 				>
 					Try again

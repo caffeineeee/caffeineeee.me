@@ -6,10 +6,10 @@ import { useEffect } from "react";
 
 export default function GuestbookError({
 	error,
-	reset,
+	resetAction,
 }: {
 	error: Error & { digest?: string };
-	reset: () => void;
+	resetAction: () => void;
 }) {
 	useEffect(() => {
 		// Log the error to an error reporting service
@@ -22,7 +22,7 @@ export default function GuestbookError({
 			<Button
 				onClick={() => {
 					router.refresh();
-					reset();
+					resetAction();
 				}}
 			>
 				Try again
