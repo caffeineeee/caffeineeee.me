@@ -22,8 +22,8 @@ export default function ProjectsPage() {
 				</h1>
 			</section>
 			<div className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 tracking-tight dark:text-neutral-300 text-neutral-900">
-				<div className="p-4 flex flex-col items-center text-center">
-					<p className="font-semibold text-xl text-primary">url-shortener</p>
+				<div className="pt-8 pb-4 sm:p-4 flex flex-col items-center text-center">
+					<p className="font-semibold text-xl text-foreground">url-shortener</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
 							href="https://github.com/caffeineeee/url-shortener"
@@ -31,7 +31,7 @@ export default function ProjectsPage() {
 							rel="noopener noreferrer nofollow"
 							className={cn(urlStyle)}
 						>
-							github
+							repo
 						</Link>
 						<Link
 							href="https://url.caffeineeee.me"
@@ -39,16 +39,16 @@ export default function ProjectsPage() {
 							rel="noopener noreferrer nofollow"
 							className={cn(urlStyle)}
 						>
-							site
+							live view
 						</Link>
 					</span>
 					<p className="leading-5">
-						URL shortener made with Next14, Tailwind, ShadcnUI, NextAuth,
-						DrizzleORM, Turso SQLite.
+						URL shortener made with TypeScript, React, NextJS, Tailwind,
+						NextAuth, DrizzleORM, Turso SQLite.
 					</p>
 				</div>
-				<Separator className="my-1 w-4/5 bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
-				<div className="p-4 flex flex-col items-center text-center">
+				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
+				<div className="pt-8 pb-4 sm:p-4 flex flex-col items-center text-center">
 					<p className="font-semibold text-xl text-foreground">
 						hacker-news-clone
 					</p>
@@ -59,7 +59,7 @@ export default function ProjectsPage() {
 							rel="noopener noreferrer nofollow"
 							className={cn(urlStyle)}
 						>
-							github
+							repo
 						</Link>
 						<Link
 							href="https://hn.caffeineeee.me"
@@ -67,15 +67,15 @@ export default function ProjectsPage() {
 							rel="noopener noreferrer nofollow"
 							className={cn(urlStyle)}
 						>
-							site
+							live view
 						</Link>
 					</span>
 					<p className="leading-5">
-						Hacker News clone made with Next14, Tailwind.
+						Hacker News clone made with TypeScript, React, NextJS, Tailwind.
 					</p>
 				</div>
-				<Separator className="my-1 w-4/5 bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
-				<div className="p-4 flex flex-col items-center text-center">
+				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
+				<div className="pt-8 pb-4 sm:p-4 flex flex-col items-center text-center">
 					<p className="font-semibold text-xl text-foreground">
 						Batak Toba language-Indonesian machine translation
 					</p>
@@ -86,36 +86,41 @@ export default function ProjectsPage() {
 							target="_blank"
 							rel="noopener noreferrer nofollow"
 						>
-							github
+							repo
 						</Link>
 					</span>
 					<p className="leading-5">
-						Like Google Translate, but for Batak Toba and Indonesian
-						language-pair, cuz there is no option for Batak Toba in Google
+						Like Google Translate, but for Batak Toba (BBC) and Indonesian
+						(IND), because there is no option for Batak Toba in Google
 						Translate.
+						<br />
+						<br />
+						Enough for translating short sentences (&lt;30 words), but not for
+						translating long paragraphs or essays.
+						<br />
 						<br />
 						Try out the live models here:&nbsp;
 						<Link
-							href="https://huggingface.co/kepinsam/bbc-to-ind-nmt-v1"
+							href="https://huggingface.co/kepinsam/bbc-to-ind-nmt-v5"
 							className={cn(urlStyle)}
 							target="_blank"
 							rel="noopener noreferrer nofollow"
 						>
-							bbc→ind
+							BBC→IND
 						</Link>
 						&nbsp;&nbsp;
 						<Link
-							href="https://huggingface.co/kepinsam/ind-to-bbc-nmt-v1"
+							href="https://huggingface.co/kepinsam/ind-to-bbc-nmt-v5"
 							className={cn(urlStyle)}
 							target="_blank"
 							rel="noopener noreferrer nofollow"
 						>
-							ind→bbc
+							IND→BBC
 						</Link>
 					</p>
 				</div>
-				<Separator className="my-1 w-4/5 bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
-				<div className="p-4 flex flex-col items-center text-center">
+				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
+				<div className="pt-8 pb-4 sm:p-4 flex flex-col items-center text-center">
 					<p className="font-semibold text-xl text-foreground">
 						caffeineeee.me
 					</p>
@@ -126,12 +131,12 @@ export default function ProjectsPage() {
 							target="_blank"
 							rel="noopener noreferrer nofollow"
 						>
-							github
+							repo
 						</Link>
 					</span>
 					<p className="leading-5">
-						Yet another personal site of mine made with Next14, Tailwind,
-						ShadcnUI, NextAuth, DrizzleORM, Turso SQLite.
+						Yet another personal site of mine made with TypeScript, React,
+						NextJS, Tailwind, NextAuth, DrizzleORM, Turso SQLite.
 					</p>
 				</div>
 			</div>

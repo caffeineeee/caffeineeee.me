@@ -24,7 +24,9 @@ export function ThemeToggle() {
 			size="icon"
 			onClick={() =>
 				setTheme(
-					theme === "light" ? "dark" : theme === "dark" ? "system" : "light",
+					theme === "light" ? "dark" : "light",
+					// Include "system" theme
+					// theme === "light" ? "dark" : theme === "dark" ? "system" : "light",
 				)
 			}
 			className="dark:bg-neutral-700 hover:dark:bg-inherit bg-neutral-300 hover:bg-inherit"
@@ -35,9 +37,10 @@ export function ThemeToggle() {
 			<Icons.moon
 				className={cn("absolute h-5 w-5", theme === "dark" ? "" : "hidden")}
 			/>
-			<Icons.laptop
+			{/* Include "system" theme */}
+			{/* <Icons.laptop
 				className={cn("absolute h-5 w-5", theme === "system" ? "" : "hidden")}
-			/>
+			/> */}
 			<span className="sr-only">Toggle theme</span>
 		</Button>
 	);
