@@ -77,7 +77,7 @@ export default function ProjectsPage() {
 				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="pt-8 pb-4 sm:p-4 flex flex-col items-center text-center">
 					<p className="font-semibold text-xl text-foreground">
-						Batak Toba language-Indonesian machine translation
+						Batak Toba-Indonesian machine translation
 					</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
@@ -99,7 +99,7 @@ export default function ProjectsPage() {
 						translating long paragraphs or essays.
 						<br />
 						<br />
-						Try out the live models here:&nbsp;
+						Try out the live models on HuggingFace here:&nbsp;
 						<Link
 							href="https://huggingface.co/kepinsam/bbc-to-ind-nmt-v5"
 							className={cn(urlStyle)}
