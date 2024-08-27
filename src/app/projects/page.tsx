@@ -8,7 +8,7 @@ const Separator = dynamic(() =>
 
 export default function ProjectsPage() {
 	const urlStyle =
-		"font-semibold w-fit px-4 border rounded-full bg-secondary-foreground hover:bg-muted-foreground text-background";
+		"font-bold underline underline-offset-2 w-fit px-4 text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300";
 
 	return (
 		<div className="container grid items-center pb-8 pt-6 md:py-8">
