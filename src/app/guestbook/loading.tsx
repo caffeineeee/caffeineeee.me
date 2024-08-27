@@ -15,15 +15,15 @@ export default function Loading() {
 					</h1>
 				</section>
 				<div className="flex flex-col gap-2 p-8">
-					<Skeleton className="w-48 h-9 rounded-md" />
-					<Skeleton className="w-48 h-9 rounded-md" />
-					<Skeleton className="w-48 h-9 rounded-md" />
+					<Skeleton className="w-48 h-9 rounded-md bg-neutral-400/50 dark:bg-neutral-600/40" />
+					<Skeleton className="w-48 h-9 rounded-md bg-neutral-400/50 dark:bg-neutral-600/40" />
+					<Skeleton className="w-48 h-9 rounded-md bg-neutral-400/50 dark:bg-neutral-600/40" />
 				</div>
 				<Separator className="mt-8 mb-4 w-full bg-neutral-700 dark:bg-neutral-500" />
-				<div className="flex flex-col gap-1 p-1">
-					<Skeleton className="w-[36rem] h-9 rounded-md" />
-					<Skeleton className="w-[36rem] h-9 rounded-md" />
-					<Skeleton className="w-[36rem] h-9 rounded-md" />
+				<div className="flex flex-col gap-4 sm:gap-5 md:gap-6 p-1">
+					<Skeleton className="w-64 sm:w-[32rem] md:w-[39rem] h-6 rounded-md bg-neutral-400/50 dark:bg-neutral-600/40" />
+					<Skeleton className="w-64 sm:w-[32rem] md:w-[39rem] h-6 rounded-md bg-neutral-400/50 dark:bg-neutral-600/40" />
+					<Skeleton className="w-64 sm:w-[32rem] md:w-[39rem] h-6 rounded-md bg-neutral-400/50 dark:bg-neutral-600/40" />
 				</div>
 			</div>
 		</div>
