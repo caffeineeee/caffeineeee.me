@@ -14,7 +14,7 @@ const SignIn = dynamic(() =>
 
 export default async function GuestbookPage() {
 	// test loading state
-	await new Promise((resolve) => setTimeout(resolve, 1000));
+	await new Promise((resolve) => setTimeout(resolve, 100));
 
 	const session = (await getServerSession()) as Session;
 	const entries = await getGuestbookEntries();
