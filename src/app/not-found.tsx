@@ -41,7 +41,9 @@ export default function NotFound() {
 							router.refresh();
 						}}
 					>
-						<Link href="/">Return home</Link>
+						<Link href="/" as="/">
+							Return home
+						</Link>
 					</Button>
 				</CardContent>
 			</Card>

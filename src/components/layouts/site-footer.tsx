@@ -20,6 +20,7 @@ export function SiteFooter() {
 					<div className="flex items-center space-x-1">
 						<Link
 							href={siteConfig.links.email}
+							as={siteConfig.links.email}
 							target="_blank"
 							rel="noopener noreferrer nofollow"
 							className={cn(
@@ -34,6 +35,7 @@ export function SiteFooter() {
 						</Link>
 						<Link
 							href={siteConfig.links.linkedin}
+							as={siteConfig.links.linkedin}
 							target="_blank"
 							rel="noopener noreferrer nofollow"
 							className={cn(
@@ -48,6 +50,7 @@ export function SiteFooter() {
 						</Link>
 						<Link
 							href={siteConfig.links.twitter}
+							as={siteConfig.links.twitter}
 							target="_blank"
 							rel="noopener noreferrer nofollow"
 							className={cn(
@@ -62,6 +65,7 @@ export function SiteFooter() {
 						</Link>
 						<Link
 							href={siteConfig.links.githubAccount}
+							as={siteConfig.links.githubAccount}
 							target="_blank"
 							rel="noopener noreferrer nofollow"
 							className={cn(

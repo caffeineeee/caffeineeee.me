@@ -27,7 +27,11 @@ export const Posts = ({ allBlogs }: Props) => (
 					return 1;
 				})
 				.map((post) => (
-					<Link key={post.slug} href={`/blog/${post.slug}`}>
+					<Link
+						key={post.slug}
+						href={`/blog/${post.slug}`}
+						as={`/blog/${post.slug}`}
+					>
 						<div className="w-full rounded-sm border-2 border-neutral-600 p-4">
 							<h2 className="text-2xl">{post.metadata.title}</h2>
 							<p className="text-neutral-500">

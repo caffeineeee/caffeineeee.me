@@ -8,7 +8,7 @@ export const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const dmSans = DM_Sans({
-	subsets: ["latin"],
+	subsets: ["latin-ext"],
 	display: "swap",
 	variable: "--font-dm-sans",
 	fallback: ["system-ui", "arial"],
