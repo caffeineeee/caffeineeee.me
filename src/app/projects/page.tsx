@@ -43,6 +43,10 @@ export default function ProjectsPage() {
 						<br />
 						<ul className="space-y-2">
 							<li>
+								• Implemented OAuth (third-party providers) auth system using
+								NextAuth, enabling more secure and easier login.
+							</li>
+							<li>
 								• Tools: TypeScript, Node, React, NextJS, Tailwind, NextAuth,
 								Drizzle ORM, Turso SQLite.
 							</li>
@@ -79,14 +83,23 @@ export default function ProjectsPage() {
 						<br />
 						<br />
 						<ul className="space-y-2">
-							<li>• Applied BASE62 conversion for getting a shortened URL.</li>
 							<li>
-								• Implemented NextJS middleware for redirection if a short URL
-								maps to a long URL.
+								• Implemented OAuth (third-party providers) auth system using
+								NextAuth, enabling more secure and easier login.
+							</li>
+							<li>• Applied BASE62 encoding to generate shortened URLs.</li>
+							<li>
+								• Used NextJS middleware for redirection if a short URL maps to
+								a long URL.
+							</li>
+							<li>
+								• Adopted Test-Driven Development (TDD) to develop the core
+								functionalities by creating unit test cases with Jest,
+								increasing reliability.
 							</li>
 							<li>
 								• Tools: TypeScript, Node, React, NextJS, Tailwind, NextAuth,
-								Drizzle ORM, Turso SQLite.
+								Drizzle ORM, Turso SQLite, Jest.
 							</li>
 						</ul>
 					</div>
