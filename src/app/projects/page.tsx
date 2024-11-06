@@ -47,8 +47,13 @@ export default function ProjectsPage() {
 								NextAuth, enabling more secure and easier login.
 							</li>
 							<li>
+								• Enhanced code quality by implementing CI/CD pipelines with
+								pre-commit hooks and Biome.js for automated linting, fixing, and
+								formatting.
+							</li>
+							<li>
 								• Tools: TypeScript, Node, React, NextJS, Tailwind, NextAuth,
-								Drizzle ORM, Turso SQLite.
+								Drizzle ORM, Turso SQLite, Git.
 							</li>
 						</ul>
 					</div>
@@ -99,7 +104,7 @@ export default function ProjectsPage() {
 							</li>
 							<li>
 								• Tools: TypeScript, Node, React, NextJS, Tailwind, NextAuth,
-								Drizzle ORM, Turso SQLite, Jest.
+								Drizzle ORM, Turso SQLite, Jest, Git.
 							</li>
 						</ul>
 					</div>
@@ -135,10 +140,15 @@ export default function ProjectsPage() {
 						<br />
 						<ul className="space-y-2">
 							<li>
+								• Delivered a fully-functional backend, aligned with the
+								technical requirements/specifications as per client's request,
+								in 7 days.
+							</li>
+							<li>
 								• Used Falso to generate mock data to streamline testing
 								processes.
 							</li>
-							<li>• Tools: TypeScript, Node, NextJS, Turso SQLite.</li>
+							<li>• Tools: TypeScript, Node, NextJS, Turso SQLite, Git.</li>
 						</ul>
 					</div>
 				</div>
@@ -164,10 +174,25 @@ export default function ProjectsPage() {
 						<br />
 						<br />
 						<ul className="space-y-2">
+							<li>
+								• Learned Apollo GraphQL from scratch and delivered a fully
+								functional auth backend, aligned with the technical
+								requirements/specifications as per client's request, in 10 days.
+							</li>
+							<li>
+								• Automated the generation of JS from TS scripts using TS
+								Compiler, enabling the backend to run by consuming the generated
+								JS scripts.
+							</li>
+							<li>
+								• Built a Credentials-based (email & password) auth backend
+								using Apollo GraphQL.
+							</li>
 							<li>• Utilized Turso SQLite for secure user data storage.</li>
 							<li>• Applied user-specific access control using JWT token.</li>
 							<li>
-								• Tools: TypeScript, Node, Apollo GraphQL, Turso SQLite, JWT.
+								• Tools: TypeScript, Node, Apollo GraphQL, Turso SQLite, JWT,
+								Git.
 							</li>
 						</ul>
 					</div>
@@ -203,7 +228,7 @@ export default function ProjectsPage() {
 						<br />
 						<br />
 						<ul className="space-y-2">
-							<li>• Tools: TypeScript, Node, React, NextJS, Tailwind.</li>
+							<li>• Tools: TypeScript, Node, React, NextJS, Tailwind, Git.</li>
 						</ul>
 					</div>
 				</div>
@@ -261,7 +286,9 @@ export default function ProjectsPage() {
 								</span>
 							</li>
 							<li>
-								• Published a paper (DOI):&nbsp;
+								• Published a peer-reviewed paper in the “International Journal
+								of Advances in Applied Sciences (IJAAS)”, an academic journal
+								indexed in Q4 and SINTA 1 (as of June 2024):
 								<span className="flex flex-row">
 									<span>
 										<Link
@@ -277,7 +304,7 @@ export default function ProjectsPage() {
 									</span>
 								</span>
 							</li>
-							<li>• Tools: Python, PyTorch, Transformers.</li>
+							<li>• Tools: Python, PyTorch, Transformers, Git.</li>
 						</ul>
 					</div>
 				</div>
