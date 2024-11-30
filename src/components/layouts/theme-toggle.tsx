@@ -25,8 +25,9 @@ export function ThemeToggle() {
 			onClick={() =>
 				setTheme(
 					theme === "light" ? "dark" : "light",
-					// Include "system" theme
+					// Enable "system" theme
 					// theme === "light" ? "dark" : theme === "dark" ? "system" : "light",
+					// Change the property of `<ThemeProvider>` too to enable system theme.
 				)
 			}
 			className="dark:bg-neutral-700 hover:dark:bg-inherit bg-neutral-300 hover:bg-inherit"

@@ -86,7 +86,11 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 						bricolageGrotesque.variable,
 					)}
 				>
-					<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="dark" // "light", "dark", "system"
+						enableSystem={false} // Enable "system" theme
+					>
 						<SiteHeader>
 							<AccountMenu session={session} />
 						</SiteHeader>
