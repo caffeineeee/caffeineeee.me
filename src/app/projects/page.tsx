@@ -186,14 +186,11 @@ export default function ProjectsPage() {
 							</li>
 							<li>
 								• Built a Credentials-based (email & password) auth backend
-								using Apollo GraphQL and JWT.
-							</li>
-							<li>
-								• Utilized Turso libSQL (SQLite) for secure user data storage.
+								using Apollo GraphQL and JSON Web Token.
 							</li>
 							<li>
 								• Tools: TS/JS, Node.js, Apollo GraphQL, Turso libSQL (SQLite),
-								JWT, Git.
+								JSON Web Token, Git.
 							</li>
 						</ul>
 					</div>
@@ -225,8 +222,8 @@ export default function ProjectsPage() {
 							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 					</span>
-					<div className="leading-5 text-justify">
-						A 1-to-1 clone of the Hacker News website{" ("}
+					<div className="leading-5 text-justify break-words">
+						A 1-to-1 clone of the Hacker News website{", "}
 						<Link
 							href="https://news.ycombinator.com"
 							as="https://news.ycombinator.com"
@@ -237,7 +234,7 @@ export default function ProjectsPage() {
 							news.ycombinator.com
 							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
-						{") "}
+						{", "}
 						to practice styling skills using Tailwind.
 						<br />
 						<br />
