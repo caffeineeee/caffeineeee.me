@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { Icons } from "@/components/icons";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
@@ -7,9 +7,6 @@ const Separator = dynamic(() =>
 );
 
 export default function ProjectsPage() {
-	const urlStyle =
-		"font-bold underline underline-offset-2 w-fit px-4 text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300";
-
 	return (
 		<div className="container grid items-center pb-8 pt-6 md:py-8">
 			<section
@@ -24,17 +21,18 @@ export default function ProjectsPage() {
 			<div className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 tracking-tight dark:text-neutral-300 text-neutral-900">
 				<div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
 					<p className="font-semibold text-xl text-foreground text-center">
-						(Fullstack) caffeineeee.me
+						(JS, Fullstack) caffeineeee.me
 					</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
 							href="https://github.com/caffeineeee/caffeineeee.me"
 							as="https://github.com/caffeineeee/caffeineeee.me"
-							className={cn(urlStyle)}
 							target="_blank"
 							rel="noopener noreferrer nofollow"
+							className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
 						>
 							repo
+							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 					</span>
 					<div className="leading-5 text-justify">
@@ -43,8 +41,8 @@ export default function ProjectsPage() {
 						<br />
 						<ul className="space-y-2">
 							<li>
-								• Implemented OAuth (third-party providers) auth system using
-								NextAuth, enabling more secure and easier login.
+								• Implemented OAuth auth backend using Auth.js (NextAuth.js),
+								enabling a more secure and easier login.
 							</li>
 							<li>
 								• Enhanced code quality by implementing CI/CD pipelines with
@@ -52,8 +50,8 @@ export default function ProjectsPage() {
 								formatting.
 							</li>
 							<li>
-								• Tools: TypeScript, Node, React, NextJS, Tailwind, NextAuth,
-								Drizzle ORM, Turso SQLite, Git.
+								• Tools: TS/JS, Node.js, React, Next.js, Tailwind, Auth.js
+								(NextAuth.js), Drizzle ORM, Turso libSQL (SQLite), Git.
 							</li>
 						</ul>
 					</div>
@@ -61,7 +59,7 @@ export default function ProjectsPage() {
 				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
 					<p className="font-semibold text-xl text-foreground text-center">
-						(Fullstack) url-shortener
+						(JS, Fullstack) url-shortener
 					</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
@@ -69,18 +67,20 @@ export default function ProjectsPage() {
 							as="https://github.com/caffeineeee/url-shortener"
 							target="_blank"
 							rel="noopener noreferrer nofollow"
-							className={cn(urlStyle)}
+							className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
 						>
 							repo
+							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 						<Link
 							href="https://url.caffeineeee.me"
 							as="https://url.caffeineeee.me"
 							target="_blank"
 							rel="noopener noreferrer nofollow"
-							className={cn(urlStyle)}
+							className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
 						>
 							live view
+							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 					</span>
 					<div className="leading-5 text-justify">
@@ -88,13 +88,9 @@ export default function ProjectsPage() {
 						<br />
 						<br />
 						<ul className="space-y-2">
+							<li>• Applied BASE62 encoding to generate the shortened URL.</li>
 							<li>
-								• Implemented OAuth (third-party providers) auth system using
-								NextAuth, enabling more secure and easier login.
-							</li>
-							<li>• Applied BASE62 encoding to generate shortened URLs.</li>
-							<li>
-								• Used NextJS middleware for redirection if a short URL maps to
+								• Used Next.js middleware for redirection if a short URL maps to
 								a long URL.
 							</li>
 							<li>
@@ -103,8 +99,8 @@ export default function ProjectsPage() {
 								increasing reliability.
 							</li>
 							<li>
-								• Tools: TypeScript, Node, React, NextJS, Tailwind, NextAuth,
-								Drizzle ORM, Turso SQLite, Jest, Git.
+								• Tools: TS/JS, Node.js, React, Next.js, Tailwind, Auth.js
+								(NextAuth.js), Drizzle ORM, Turso libSQL (SQLite), Jest, Git.
 							</li>
 						</ul>
 					</div>
@@ -112,7 +108,7 @@ export default function ProjectsPage() {
 				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
 					<p className="font-semibold text-xl text-foreground text-center">
-						(Backend) rest-api-ts-sqlite
+						(JS, Backend) rest-api-ts-sqlite
 					</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
@@ -120,18 +116,20 @@ export default function ProjectsPage() {
 							as="https://github.com/caffeineeee/rest-api-ts-sqlite"
 							target="_blank"
 							rel="noopener noreferrer nofollow"
-							className={cn(urlStyle)}
+							className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
 						>
 							repo
+							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 						<Link
 							href="https://rest-api-ts-sqlite.vercel.app"
 							as="https://rest-api-ts-sqlite.vercel.app"
 							target="_blank"
 							rel="noopener noreferrer nofollow"
-							className={cn(urlStyle)}
+							className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
 						>
 							live view
+							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 					</span>
 					<div className="leading-5 text-justify">
@@ -145,17 +143,18 @@ export default function ProjectsPage() {
 								in 7 days.
 							</li>
 							<li>
-								• Used Falso to generate mock data to streamline testing
-								processes.
+								• Streamlined testing processes using Falso “@ngneat/falso” (a
+								tree-shakeable alternative to Faker.js) for mock data
+								generation.
 							</li>
-							<li>• Tools: TypeScript, Node, NextJS, Turso SQLite, Git.</li>
+							<li>• Tools: TS/JS, Node.js, Turso libSQL (SQLite), Git.</li>
 						</ul>
 					</div>
 				</div>
 				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
 					<p className="font-semibold text-xl text-foreground text-center">
-						(Backend) apollo-server-graphql-jwt-ts-simple-auth-backend
+						(JS, Backend) apollo-server-graphql-jwt-ts-simple-auth-backend
 					</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
@@ -163,9 +162,10 @@ export default function ProjectsPage() {
 							as="https://github.com/caffeineeee/apollo-server-graphql-jwt-ts-simple-auth-backend"
 							target="_blank"
 							rel="noopener noreferrer nofollow"
-							className={cn(urlStyle)}
+							className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
 						>
 							repo
+							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 					</span>
 					<div className="leading-5 text-justify">
@@ -180,19 +180,20 @@ export default function ProjectsPage() {
 								requirements/specifications as per client's request, in 10 days.
 							</li>
 							<li>
-								• Automated the generation of JS from TS scripts using TS
-								Compiler, enabling the backend to run by consuming the generated
+								• Automated the generation of JS scripts from TS using TS
+								Compiler, allowing the backend to run by consuming the generated
 								JS scripts.
 							</li>
 							<li>
 								• Built a Credentials-based (email & password) auth backend
-								using Apollo GraphQL.
+								using Apollo GraphQL and JWT.
 							</li>
-							<li>• Utilized Turso SQLite for secure user data storage.</li>
-							<li>• Applied user-specific access control using JWT token.</li>
 							<li>
-								• Tools: TypeScript, Node, Apollo GraphQL, Turso SQLite, JWT,
-								Git.
+								• Utilized Turso libSQL (SQLite) for secure user data storage.
+							</li>
+							<li>
+								• Tools: TS/JS, Node.js, Apollo GraphQL, Turso libSQL (SQLite),
+								JWT, Git.
 							</li>
 						</ul>
 					</div>
@@ -200,7 +201,7 @@ export default function ProjectsPage() {
 				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
 					<p className="font-semibold text-xl text-foreground text-center">
-						(Frontend) hacker-news-clone
+						(JS, Frontend) hacker-news-clone
 					</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
@@ -208,44 +209,58 @@ export default function ProjectsPage() {
 							as="https://github.com/caffeineeee/hacker-news-clone"
 							target="_blank"
 							rel="noopener noreferrer nofollow"
-							className={cn(urlStyle)}
+							className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
 						>
 							repo
+							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 						<Link
 							href="https://hn.caffeineeee.me"
 							as="https://hn.caffeineeee.me"
 							target="_blank"
 							rel="noopener noreferrer nofollow"
-							className={cn(urlStyle)}
+							className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
 						>
 							live view
+							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 					</span>
 					<div className="leading-5 text-justify">
-						A 1-to-1 clone of the Hacker News website to practice styling skills
-						using Tailwind.
+						A 1-to-1 clone of the Hacker News website{" ("}
+						<Link
+							href="https://news.ycombinator.com"
+							as="https://news.ycombinator.com"
+							target="_blank"
+							rel="noopener noreferrer nofollow"
+							className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+						>
+							news.ycombinator.com
+							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
+						</Link>
+						{") "}
+						to practice styling skills using Tailwind.
 						<br />
 						<br />
 						<ul className="space-y-2">
-							<li>• Tools: TypeScript, Node, React, NextJS, Tailwind, Git.</li>
+							<li>• Tools: TS/JS, Node.js, React, Next.js, Tailwind, Git.</li>
 						</ul>
 					</div>
 				</div>
 				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
 					<p className="font-semibold text-xl text-foreground text-center">
-						(Machine learning) batak_toba_indonesian_nmt
+						(Python, Machine learning) batak_toba_indonesian_nmt
 					</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
 							href="https://github.com/caffeineeee/batak_toba_indonesian_nmt"
 							as="https://github.com/caffeineeee/batak_toba_indonesian_nmt"
-							className={cn(urlStyle)}
 							target="_blank"
 							rel="noopener noreferrer nofollow"
+							className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
 						>
 							repo
+							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 					</span>
 					<div className="leading-5 text-justify">
@@ -260,49 +275,54 @@ export default function ProjectsPage() {
 								for translating long paragraphs or essays.
 							</li>
 							<li>
-								• Try out the live models on HuggingFace here:
-								<span className="flex flex-row">
-									<span className="space-x-10">
-										<Link
-											href="https://huggingface.co/kepinsam/bbc-to-ind-nmt-v5"
-											as="https://huggingface.co/kepinsam/bbc-to-ind-nmt-v5"
-											className={cn(urlStyle, "px-0")}
-											target="_blank"
-											rel="noopener noreferrer nofollow"
-										>
-											BBC ➡ IND
-										</Link>
-										<Link
-											href="https://huggingface.co/kepinsam/ind-to-bbc-nmt-v5"
-											as="https://huggingface.co/kepinsam/ind-to-bbc-nmt-v5"
-											className={cn(urlStyle, "px-0")}
-											target="_blank"
-											rel="noopener noreferrer nofollow"
-										>
-											IND ➡ BBC
-										</Link>
-										.
-									</span>
-								</span>
+								• Try out the live models on HuggingFace, here:{" "}
+								<Link
+									href="https://huggingface.co/kepinsam/bbc-to-ind-nmt-v5"
+									as="https://huggingface.co/kepinsam/bbc-to-ind-nmt-v5"
+									target="_blank"
+									rel="noopener noreferrer nofollow"
+									className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+								>
+									BBC {"->"} IND
+									<Icons.externalLink
+										className="h-4 w-4 mb-2"
+										aria-hidden="true"
+									/>
+								</Link>
+								{", "}
+								<Link
+									href="https://huggingface.co/kepinsam/ind-to-bbc-nmt-v5"
+									as="https://huggingface.co/kepinsam/ind-to-bbc-nmt-v5"
+									target="_blank"
+									rel="noopener noreferrer nofollow"
+									className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+								>
+									IND {"->"} BBC
+									<Icons.externalLink
+										className="h-4 w-4 mb-2"
+										aria-hidden="true"
+									/>
+								</Link>
+								{"."}
 							</li>
 							<li>
-								• Published a peer-reviewed paper in the “International Journal
-								of Advances in Applied Sciences (IJAAS)”, an academic journal
-								indexed in Q4 and SINTA 1 (as of June 2024):
-								<span className="flex flex-row">
-									<span>
-										<Link
-											href="https://doi.org/10.11591/ijaas.v13.i4.pp830-839"
-											as="https://doi.org/10.11591/ijaas.v13.i4.pp830-839"
-											className={cn(urlStyle, "px-0")}
-											target="_blank"
-											rel="noopener noreferrer nofollow"
-										>
-											https://doi.org/10.11591/ijaas.v13.i4.pp830-839
-										</Link>
-										.
-									</span>
-								</span>
+								• Published a paper in the academic journal “International
+								Journal of Advances in Applied Sciences (IJAAS)” indexed in
+								Scopus Q4 and SINTA 1 (as of June 2024):{" "}
+								<Link
+									href="https://doi.org/10.11591/ijaas.v13.i4.pp830-839"
+									as="https://doi.org/10.11591/ijaas.v13.i4.pp830-839"
+									target="_blank"
+									rel="noopener noreferrer nofollow"
+									className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+								>
+									doi.org/10.11591/ijaas.v13.i4.pp830-839
+									<Icons.externalLink
+										className="h-4 w-4 mb-2"
+										aria-hidden="true"
+									/>
+								</Link>
+								{"."}
 							</li>
 							<li>• Tools: Python, PyTorch, Transformers, Git.</li>
 						</ul>
