@@ -74,3 +74,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Console log of CSS */
+/* *,
+*::after,
+*::before {
+  outline: 1px solid red;
+} */
