@@ -21,7 +21,7 @@ export default function ProjectsPage() {
 			<div className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 tracking-tight dark:text-neutral-300 text-neutral-900">
 				<div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
 					<p className="font-semibold text-xl text-foreground text-center">
-						(JS, Fullstack) caffeineeee.me
+						(TS, Fullstack) caffeineeee.me
 					</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
@@ -59,7 +59,7 @@ export default function ProjectsPage() {
 				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
 					<p className="font-semibold text-xl text-foreground text-center">
-						(JS, Fullstack) url-shortener
+						(TS, Fullstack) url-shortener
 					</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
@@ -108,7 +108,7 @@ export default function ProjectsPage() {
 				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
 					<p className="font-semibold text-xl text-foreground text-center">
-						(JS, Backend) rest-api-ts-sqlite
+						(TS, Backend) rest-api-ts-sqlite
 					</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
@@ -154,7 +154,7 @@ export default function ProjectsPage() {
 				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
 					<p className="font-semibold text-xl text-foreground text-center">
-						(JS, Backend) apollo-server-graphql-jwt-ts-simple-auth-backend
+						(TS, Backend) apollo-server-graphql-jwt-ts-simple-auth-backend
 					</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
@@ -198,7 +198,7 @@ export default function ProjectsPage() {
 				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
 					<p className="font-semibold text-xl text-foreground text-center">
-						(JS, Frontend) hacker-news-clone
+						(TS, Frontend) hacker-news-clone
 					</p>
 					<span className="flex flex-row justify-center space-x-4 pb-2">
 						<Link
