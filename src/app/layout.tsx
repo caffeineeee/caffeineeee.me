@@ -6,11 +6,12 @@ import SessionProvider from "@/components/session-provider";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
+import { auth } from "@/server/auth";
 import { bricolageGrotesque, dmSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
-import { type Session, getServerSession } from "next-auth";
+// import { type Session, getServerSession } from "next-auth";
 import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
@@ -74,48 +75,47 @@ const Toaster = dynamic(() =>
 );
 
 export default async function RootLayout({ children }: RootLayoutProps) {
-	const session = (await getServerSession()) as Session;
+	// const session = (await getServerSession()) as Session;
+	const session = await auth();
 	return (
-		<>
-			<html lang="en" suppressHydrationWarning>
-				<head />
-				<body
-					className={cn(
-						"min-h-screen bg-background font-sans flex flex-col",
-						dmSans.variable,
-						bricolageGrotesque.variable,
-					)}
+		<html lang="en" suppressHydrationWarning>
+			<head />
+			<body
+				className={cn(
+					"min-h-screen bg-background font-sans flex flex-col",
+					dmSans.variable,
+					bricolageGrotesque.variable,
+				)}
+			>
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="dark" // "light", "dark", "system"
+					enableSystem={false} // Enable "system" theme
 				>
-					<ThemeProvider
-						attribute="class"
-						defaultTheme="dark" // "light", "dark", "system"
-						enableSystem={false} // Enable "system" theme
-					>
-						<SiteHeader>
-							<AccountMenu session={session} />
-						</SiteHeader>
-						<SessionProvider session={session}>
-							<main className="flex-1">
-								{children}
-								<SpeedInsights />
-							</main>
-						</SessionProvider>
-						<SiteFooter />
-						<TailwindIndicator />
-						<Analytics />
-					</ThemeProvider>
-					<Toaster
-						richColors
-						position="top-right"
-						toastOptions={{
-							classNames: {
-								title: "text-base",
-								description: "text-sm",
-							},
-						}}
-					/>
-				</body>
-			</html>
-		</>
+					<SiteHeader>
+						{session ? <AccountMenu session={session} /> : undefined}
+					</SiteHeader>
+					<SessionProvider session={session}>
+						<main className="flex-1">
+							{children}
+							<SpeedInsights />
+						</main>
+					</SessionProvider>
+					<SiteFooter />
+					<TailwindIndicator />
+					<Analytics />
+				</ThemeProvider>
+				<Toaster
+					richColors
+					position="top-right"
+					toastOptions={{
+						classNames: {
+							title: "text-base",
+							description: "text-sm",
+						},
+					}}
+				/>
+			</body>
+		</html>
 	);
 }

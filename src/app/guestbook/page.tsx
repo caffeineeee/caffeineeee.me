@@ -1,9 +1,11 @@
 import { getGuestbookEntries } from "@/db/queries";
-import { type Session, getServerSession } from "next-auth";
+// import { type Session, getServerSession } from "next-auth";
+import { auth } from "@/server/auth";
+import type { Session } from "next-auth";
 import dynamic from "next/dynamic";
 
-const Form = dynamic(() =>
-	import("@/app/guestbook/forms").then((mod) => mod.Form),
+const GuestbookForm = dynamic(() =>
+	import("@/app/guestbook/forms").then((mod) => mod.GuestbookForm),
 );
 const EntriesFeed = dynamic(() =>
 	import("@/app/guestbook/forms").then((mod) => mod.EntriesFeed),
@@ -16,7 +18,11 @@ export default async function GuestbookPage() {
 	// test loading state
 	await new Promise((resolve) => setTimeout(resolve, 100));
 
-	const session = (await getServerSession()) as Session;
+	// const session = (await getServerSession()) as Session;
+	const session = (await auth()) as Session;
+	// if (!session || !session.user) {
+	// 	return undefined;
+	// }
 	const entries = await getGuestbookEntries();
 
 	return (
@@ -32,7 +38,7 @@ export default async function GuestbookPage() {
 			</section>
 			{session?.user ? (
 				<div className="py-4">
-					<Form />
+					<GuestbookForm />
 				</div>
 			) : (
 				<SignIn />

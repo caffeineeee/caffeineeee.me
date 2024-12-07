@@ -1,5 +1,5 @@
 "use server";
-import "@/lib/server-only";
+// import "server-only";
 
 import { db } from "@/db";
 import { guestbook } from "@/db/schema";

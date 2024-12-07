@@ -1,33 +1,35 @@
 "use server";
-import "@/lib/server-only";
-
-import { getServerSession, type Session } from "next-auth";
+// import "server-only";
+// import { getServerSession, type Session } from "next-auth";
 import { revalidatePath } from "next/cache";
-import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
+// import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 import { db } from "@/db";
 import { createId } from "@paralleldrive/cuid2";
 import { guestbook } from "@/db/schema";
 import { eq, sql } from "drizzle-orm";
-import nodemailer from "nodemailer";
+import { createTransport, type Transporter } from "nodemailer";
+import { auth } from "@/server/auth";
 
-async function getSession(): Promise<Session> {
-	const session = (await getServerSession(authOptions)) as Session;
-	if (!session || !session.user) {
-		throw new Error("Unauthorized");
-	}
-	return session;
-}
+// async function getSession(): Promise<Session> {
+// 	// const session = (await getServerSession(authOptions)) as Session;
+// 	const session = await auth();
+// 	if (!session || !session.user) {
+// 		throw new Error("Unauthorized");
+// 	}
+// 	return session;
+// }
 
 export async function insertGuestbookEntry(formData: FormData) {
-	const session = await getSession();
-	const email = session.user?.email as string;
-	const name = session.user?.name as string;
-	const created_by = session.user?.name as string;
-	const image = session.user?.image as string;
-
-	if (!session.user) {
+	// const session = await getSession();
+	const session = await auth();
+	const user = session?.user;
+	if (!session || !user) {
 		throw new Error("Unauthorized");
 	}
+	const email = user.email as string;
+	const name = user.name as string;
+	const created_by = user.name as string;
+	const image = user.image as string;
 
 	const urlId = createId();
 	const entry = formData.get("entry")?.toString() ?? "";
@@ -62,8 +64,9 @@ export async function sendEmail(
 	/*
 	 * send email containing the insertedEntry
 	 */
-	const transporter = nodemailer.createTransport({
+	const transporter: Transporter = createTransport({
 		service: "gmail",
+		version: "1.0.0",
 		auth: {
 			user: "cevinsam11@gmail.com",
 			pass: process.env.GOOGLE_APP_PASSWORD,

@@ -8,10 +8,11 @@ import { notFound } from "next/navigation";
 export async function generateMetadata({
 	params,
 }: {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 }): Promise<Metadata | undefined> {
+	const { slug } = await params;
 	const post = getBlogPosts().find(
-		(post) => post.slug === params.slug && post.metadata.publishedAt,
+		(post) => post.slug === slug && post.metadata.publishedAt,
 	);
 	if (!post) {
 		return;
@@ -53,9 +54,10 @@ export async function generateMetadata({
 
 export default async function ContentPage({
 	params,
-}: { params: { slug: string } }) {
+}: { params: Promise<{ slug: string }> }) {
+	const { slug } = await params;
 	const posts = getBlogPosts().find(
-		(post) => post.slug === params.slug && post.metadata.publishedAt,
+		(post) => post.slug === slug && post.metadata.publishedAt,
 	);
 
 	if (!posts) {
