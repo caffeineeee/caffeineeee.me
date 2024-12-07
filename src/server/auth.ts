@@ -22,4 +22,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 		}),
 	],
 	secret: process.env.NEXTAUTH_SECRET ?? "",
+	trustHost: true,
 });
+
+export { auth as middleware } from "@/server/auth";
