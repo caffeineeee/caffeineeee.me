@@ -14,6 +14,7 @@
 	},
 	"scripts": {
 		"dev": "next dev --turbo",
+		"preview": "pnpm build && pnpm start",
 		"build": "next build",
 		"start": "next start",
 		"lint:next": "next lint",

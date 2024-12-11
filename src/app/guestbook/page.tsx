@@ -1,9 +1,10 @@
 import { getGuestbookEntries } from "@/db/queries";
-// import { type Session, getServerSession } from "next-auth";
 import { auth } from "@/server/auth";
 import type { Session } from "next-auth";
 import dynamic from "next/dynamic";
 
+// React.lazy() and Suspense implementation in Next.js
+// Docs: https://nextjs.org/docs/app/building-your-application/optimizing/lazy-loading#nextdynamic
 const GuestbookForm = dynamic(() =>
 	import("@/app/guestbook/forms").then((mod) => mod.GuestbookForm),
 );
@@ -15,14 +16,10 @@ const SignIn = dynamic(() =>
 );
 
 export default async function GuestbookPage() {
-	// test loading state
-	await new Promise((resolve) => setTimeout(resolve, 100));
+	// test loading UI (in dev only)
+	// await new Promise((resolve) => setTimeout(resolve, 50));
 
-	// const session = (await getServerSession()) as Session;
 	const session = (await auth()) as Session;
-	// if (!session || !session.user) {
-	// 	return undefined;
-	// }
 	const entries = await getGuestbookEntries();
 
 	return (
@@ -36,7 +33,7 @@ export default async function GuestbookPage() {
 					sign my guestbook
 				</h1>
 			</section>
-			{session?.user ? (
+			{session ? (
 				<div className="py-4">
 					<GuestbookForm />
 				</div>

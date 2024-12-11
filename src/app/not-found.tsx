@@ -1,16 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import notFound from "../../public/notFound.jpg";
-
-const Separator = dynamic(() =>
-	import("@/components/ui/separator").then((mod) => mod.Separator),
-);
 
 export default function NotFound() {
 	const pathname = usePathname();

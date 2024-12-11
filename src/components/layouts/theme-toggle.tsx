@@ -15,7 +15,7 @@ export function ThemeToggle() {
 	}, []);
 
 	if (!mounted) {
-		return null;
+		return <div className="min-w-10 min-h-10" />; // Prevent rendering until mounted
 	}
 
 	return (

@@ -23,6 +23,18 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 	],
 	secret: process.env.NEXTAUTH_SECRET ?? "",
 	trustHost: true,
+	// events: {signIn}
+	// callbacks: {
+	// 	redirect({ url, baseUrl }) {
+	// 		// Allows relative callback URLs
+	// 		if (url.startsWith("/")) return `${baseUrl}${url}`;
+
+	// 		// Allows callback URLs on the same origin
+	// 		if (new URL(url).origin === baseUrl) return url;
+
+	// 		return baseUrl;
+	// 	},
+	// },
 });
 
 export { auth as middleware } from "@/server/auth";

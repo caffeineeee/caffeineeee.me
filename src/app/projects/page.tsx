@@ -1,10 +1,6 @@
 import { Icons } from "@/components/icons";
-import dynamic from "next/dynamic";
+import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-
-const Separator = dynamic(() =>
-	import("@/components/ui/separator").then((mod) => mod.Separator),
-);
 
 export default function ProjectsPage() {
 	return (

@@ -2,18 +2,14 @@
 
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import { deleteOwnGuestbookEntries, insertGuestbookEntry } from "@/db/actions";
 import type { Guestbook } from "@/db/schema";
 import type { Session } from "next-auth";
-import dynamic from "next/dynamic";
 import { useRef } from "react";
 import { useFormStatus } from "react-dom";
 import { ErrorBoundary } from "react-error-boundary";
 import { toast } from "sonner";
-
-const Separator = dynamic(() =>
-	import("@/components/ui/separator").then((mod) => mod.Separator),
-);
 
 export function GuestbookForm() {
 	const formRef = useRef<HTMLFormElement>(null);

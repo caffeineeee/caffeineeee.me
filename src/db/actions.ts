@@ -1,27 +1,15 @@
 "use server";
-// import "server-only";
-// import { getServerSession, type Session } from "next-auth";
 import { revalidatePath } from "next/cache";
-// import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 import { db } from "@/db";
 import { createId } from "@paralleldrive/cuid2";
 import { guestbook } from "@/db/schema";
 import { eq, sql } from "drizzle-orm";
 import { createTransport, type Transporter } from "nodemailer";
 import { auth } from "@/server/auth";
-
-// async function getSession(): Promise<Session> {
-// 	// const session = (await getServerSession(authOptions)) as Session;
-// 	const session = await auth();
-// 	if (!session || !session.user) {
-// 		throw new Error("Unauthorized");
-// 	}
-// 	return session;
-// }
+import type { Session } from "next-auth";
 
 export async function insertGuestbookEntry(formData: FormData) {
-	// const session = await getSession();
-	const session = await auth();
+	const session = (await auth()) as Session;
 	const user = session?.user;
 	if (!session || !user) {
 		throw new Error("Unauthorized");
