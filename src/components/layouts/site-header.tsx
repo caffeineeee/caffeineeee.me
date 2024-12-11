@@ -2,12 +2,16 @@
 
 import { cn } from "@/lib/utils";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, type ReactNode, type TouchEvent } from "react";
+import { useEffect, useState, type ReactNode, type TouchEvent } from "react";
 import { ThemeToggle } from "@/components/layouts/theme-toggle";
 
 export function SiteHeader({ children }: { children: ReactNode }) {
 	const pathname = usePathname();
 	const router = useRouter(); // Initialize router
+	const [isAnimating, setIsAnimating] = useState(false); // State for animation
+	const [animationDirection, setAnimationDirection] = useState<
+		"left" | "right" | ""
+	>(""); // State for animation direction
 
 	useEffect(() => {
 		// Function to handle swipe direction
@@ -23,6 +27,9 @@ export function SiteHeader({ children }: { children: ReactNode }) {
 			const swipeThreshold = 50; // Minimum swipe distance to trigger navigation
 
 			if (Math.abs(distance) > swipeThreshold) {
+				setIsAnimating(true); // Start animation
+				setAnimationDirection(distance > 0 ? "right" : "left"); // Set animation direction
+
 				if (distance > 0) {
 					// Swiped right
 					if (pathname === "/projects") {
@@ -66,10 +73,29 @@ export function SiteHeader({ children }: { children: ReactNode }) {
 				handleTouchEnd as unknown as EventListener,
 			);
 		};
-	}, [pathname, router]);
+	}, [pathname, router]); // Dependencies to re-run effect when pathname or router changes
+
+	useEffect(() => {
+		if (isAnimating) {
+			const timer = setTimeout(() => {
+				setIsAnimating(false);
+				setAnimationDirection(""); // Reset animation direction
+			}, 100); // Duration of the animation
+			return () => clearTimeout(timer);
+		}
+	}, [isAnimating]);
 
 	return (
-		<header className="sticky top-0 z-50 w-full border-b bg-background">
+		<header
+			className={cn(
+				"sticky top-0 z-50 w-full border-b bg-background transition-transform duration-100",
+				isAnimating
+					? animationDirection === "right"
+						? "translate-x-2"
+						: "-translate-x-2"
+					: "translate-x-0",
+			)}
+		>
 			<div className="container flex h-16 items-center">
 				<span className="space-x-4">
 					<a
