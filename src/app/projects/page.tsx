@@ -37,13 +37,17 @@ export default function ProjectsPage() {
 						<br />
 						<ul className="space-y-2">
 							<li>
-								• Implemented OAuth auth backend using Auth.js (NextAuth.js),
-								enabling a more secure and easier login.
+								• Built OAuth auth backend using Auth.js (NextAuth.js), enabling
+								a more secure and easier login.
 							</li>
 							<li>
 								• Enhanced code quality by implementing CI/CD pipelines with
-								pre-commit hooks and Biome.js for automated linting, fixing, and
-								formatting.
+								`pre-commit` hooks and Biome.js for automated linting, fixing,
+								and formatting.
+							</li>
+							<li>
+								• Improved the UX by adding swipe gesture-based navigation with
+								animation, mimicking native behavior using TouchEvent.
 							</li>
 							<li>
 								• Tools: TS/JS, Node.js, React, Next.js, Tailwind, Auth.js
@@ -75,7 +79,7 @@ export default function ProjectsPage() {
 							rel="noopener noreferrer nofollow"
 							className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
 						>
-							live view
+							website
 							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 					</span>
@@ -124,7 +128,7 @@ export default function ProjectsPage() {
 							rel="noopener noreferrer nofollow"
 							className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
 						>
-							live view
+							website
 							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 					</span>
@@ -134,12 +138,12 @@ export default function ProjectsPage() {
 						<br />
 						<ul className="space-y-2">
 							<li>
-								• Delivered a fully-functional backend, aligned with the
-								technical requirements/specifications as per client's request,
+								• Delivered a fully functional backend, aligned with the
+								technical requirements/specifications per the client's request,
 								in 7 days.
 							</li>
 							<li>
-								• Streamlined testing processes using Falso “@ngneat/falso” (a
+								• Streamlined testing processes using Falso `@ngneat/falso` (a
 								tree-shakeable alternative to Faker.js) for mock data
 								generation.
 							</li>
@@ -173,7 +177,8 @@ export default function ProjectsPage() {
 							<li>
 								• Learned Apollo GraphQL from scratch and delivered a fully
 								functional auth backend, aligned with the technical
-								requirements/specifications as per client's request, in 10 days.
+								requirements/specifications per the client's request, in 10
+								days.
 							</li>
 							<li>
 								• Automated the generation of JS scripts from TS using TS
@@ -181,12 +186,8 @@ export default function ProjectsPage() {
 								JS scripts.
 							</li>
 							<li>
-								• Built a Credentials-based (email & password) auth backend
-								using Apollo GraphQL and JSON Web Token.
-							</li>
-							<li>
 								• Tools: TS/JS, Node.js, Apollo GraphQL, Turso libSQL (SQLite),
-								JSON Web Token, Git.
+								JSON Web Token (JWT), Git.
 							</li>
 						</ul>
 					</div>
@@ -214,7 +215,7 @@ export default function ProjectsPage() {
 							rel="noopener noreferrer nofollow"
 							className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
 						>
-							live view
+							website
 							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 					</span>
@@ -227,7 +228,7 @@ export default function ProjectsPage() {
 							rel="noopener noreferrer nofollow"
 							className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
 						>
-							news.ycombinator.com
+							https://news.ycombinator.com
 							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 						{", "}
@@ -265,7 +266,7 @@ export default function ProjectsPage() {
 						<ul className="space-y-2">
 							<li>
 								• Enough for translating short sentences (&lt;30 words), but not
-								for translating long paragraphs or essays.
+								for translating long paragraphs.
 							</li>
 							<li>
 								• Try out the live models on HuggingFace, here:{" "}
@@ -299,8 +300,8 @@ export default function ProjectsPage() {
 								{"."}
 							</li>
 							<li>
-								• Published a paper in the academic journal “International
-								Journal of Advances in Applied Sciences (IJAAS)” indexed in
+								• Published a paper in the academic journal International
+								Journal of Advances in Applied Sciences (IJAAS) indexed in
 								Scopus Q4 and SINTA 1 (as of June 2024):{" "}
 								<Link
 									href="https://doi.org/10.11591/ijaas.v13.i4.pp830-839"
@@ -309,7 +310,7 @@ export default function ProjectsPage() {
 									rel="noopener noreferrer nofollow"
 									className="inline-flex align-middle break-words gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
 								>
-									doi.org/10.11591/ijaas.v13.i4.pp830-839
+									https://doi.org/10.11591/ijaas.v13.i4.pp830-839
 									<Icons.externalLink
 										className="h-4 w-4 mb-2"
 										aria-hidden="true"
