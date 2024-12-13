@@ -1,8 +1,6 @@
 import "@/app/globals.css";
 import { Analytics } from "@/components/analytics";
-import { AccountMenu } from "@/components/layouts/account-menu";
-import { SiteFooter } from "@/components/layouts/site-footer";
-import { SiteHeader } from "@/components/layouts/site-header";
+import { Site } from "@/components/layouts/site";
 import SessionProvider from "@/components/session-provider";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -84,16 +82,12 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 					defaultTheme="dark" // "light", "dark", "system"
 					enableSystem={false} // Enable "system" theme
 				>
-					<SiteHeader>
-						<AccountMenu session={session} />
-					</SiteHeader>
 					<SessionProvider session={session}>
-						<main className="flex-1">
+						<Site session={session}>
 							{children}
 							<SpeedInsights />
-						</main>
+						</Site>
 					</SessionProvider>
-					<SiteFooter />
 					<TailwindIndicator />
 					<Analytics />
 				</ThemeProvider>
