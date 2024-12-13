@@ -169,7 +169,7 @@ export default function ProjectsPage() {
 						</Link>
 					</span>
 					<div className="leading-5 text-justify">
-						A Credentials-based (email & password) auth backend using Apollo
+						A credentials-based (email & password) auth backend using Apollo
 						GraphQL.
 						<br />
 						<br />
