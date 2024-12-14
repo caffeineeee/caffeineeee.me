@@ -2,7 +2,13 @@
 
 import { cn } from "@/lib/utils";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState, type ReactNode, type TouchEvent } from "react";
+import {
+	useEffect,
+	useRef,
+	useState,
+	type ReactNode,
+	type TouchEvent,
+} from "react";
 import { ThemeToggle } from "@/components/layouts/theme-toggle";
 import { AccountMenu } from "@/components/layouts/account-menu";
 import { SiteFooter } from "@/components/layouts/site-footer";
@@ -20,9 +26,13 @@ export function Site({
 	const pathname = usePathname();
 	const router = useRouter(); // Initialize router
 	const [bodyTranslateX, setBodyTranslateX] = useState(0);
+	const lastTranslateXRef = useRef(0); // Use a ref to store the last translateX value
+	const MAX_TRANSLATE_X = 100; // Set the maximum translateX value (in pixels)
+	// "Reduce state updates" approach
+	const THRESHOLD = 10; // Set the distance threshold for updating the bodyTranslateX (in pixels)
 
+	// Handle swipe direction
 	useEffect(() => {
-		// Function to handle swipe direction
 		let startX: number;
 
 		function handleTouchStart(e: TouchEvent) {
@@ -32,16 +42,28 @@ export function Site({
 
 		function handleTouchMove(e: TouchEvent) {
 			const currentX = e.touches[0].clientX; // Get the current x-coordinate of the touch
-			const distance = currentX - startX; // Calculate the distance swiped
-			setBodyTranslateX(distance); // Set body transform based on swipe distance
+			const distance = currentX - startX; // Calculate the distance
+
+			// "Reduce state updates" approach
+			// Clamp the distance to the maximum translate value
+			const clampedDistance = Math.min(
+				Math.max(distance, -MAX_TRANSLATE_X),
+				MAX_TRANSLATE_X,
+			);
+
+			// Update only if the change exceeds the threshold
+			if (Math.abs(clampedDistance - lastTranslateXRef.current) >= THRESHOLD) {
+				setBodyTranslateX(clampedDistance); // Set body transform based on clamped distance
+				lastTranslateXRef.current = clampedDistance; // Update the last applied translateX value
+			}
 		}
 
 		function handleTouchEnd(e: TouchEvent) {
 			const endX = e.changedTouches[0].clientX; // Get the ending x-coordinate of the touch
 			const distance = endX - startX; // Calculate the swipe distance
-			const swipeThreshold = 50; // Minimum swipe distance to trigger navigation
+			const SWIPE_THRESHOLD = 50; // Minimum swipe distance to trigger navigation
 
-			if (Math.abs(distance) > swipeThreshold) {
+			if (Math.abs(distance) > SWIPE_THRESHOLD) {
 				setBodyTranslateX(0); // Reset body transform on touch start
 				if (distance > 0) {
 					// Swiped right
@@ -156,7 +178,7 @@ export function Site({
 			</header>
 			<main
 				style={{ transform: `translateX(${bodyTranslateX}px)` }}
-				className={cn("flex-1 transition-transform")}
+				className={cn("flex-1 transition-transform overflow-hidden")}
 			>
 				{children}
 			</main>
