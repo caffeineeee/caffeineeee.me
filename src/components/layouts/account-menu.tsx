@@ -27,7 +27,7 @@ export function AccountMenu({ session }: { session: Session }) {
 			</DropdownMenuTrigger>
 			{session.user && (
 				<DropdownMenuContent className="w-56">
-					<DropdownMenuLabel className="text-base">
+					<DropdownMenuLabel className="text-sm">
 						Hello, <span>{session?.user?.name}</span>!👋
 					</DropdownMenuLabel>
 					<DropdownMenuSeparator />

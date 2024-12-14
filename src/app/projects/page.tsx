@@ -10,16 +10,21 @@ export default function ProjectsPage() {
 				aria-labelledby="hero-heading"
 				className="mx-auto flex w-full max-w-[64rem] flex-col items-center justify-center gap-4 text-center"
 			>
-				<h1 className="text-3xl font-semibold leading-tight tracking-tighter lg:leading-[1.1] font-display">
+				<h1 className="text-2xl font-semibold leading-tight tracking-tighter lg:leading-[1.1] font-display">
 					projects
 				</h1>
 			</section>
 			<div className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 tracking-tight dark:text-neutral-300 text-neutral-900">
 				<div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
-					<p className="font-semibold text-xl text-foreground text-center">
-						(TS, Fullstack) caffeineeee.me
+					<p className="font-semibold text-lg text-foreground text-center">
+						caffeineeee.me
 					</p>
-					<span className="flex flex-row justify-center space-x-4 pb-2">
+					<span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
+						<p className="inline-flex align-middle break-words gap-1 font-bold w-fit italic">
+							(TS, Fullstack)
+						</p>
+					</span>
+					<span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
 						<Link
 							href="https://github.com/caffeineeee/caffeineeee.me"
 							as="https://github.com/caffeineeee/caffeineeee.me"
@@ -31,7 +36,7 @@ export default function ProjectsPage() {
 							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 					</span>
-					<div className="leading-5 text-justify">
+					<div className="leading-5 text-justify text-sm">
 						My personal site.
 						<br />
 						<br />
@@ -58,10 +63,15 @@ export default function ProjectsPage() {
 				</div>
 				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
-					<p className="font-semibold text-xl text-foreground text-center">
-						(TS, Fullstack) url-shortener
+					<p className="font-semibold text-lg text-foreground text-center">
+						url-shortener
 					</p>
-					<span className="flex flex-row justify-center space-x-4 pb-2">
+					<span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
+						<p className="inline-flex align-middle break-words gap-1 font-bold w-fit italic">
+							(TS, Fullstack)
+						</p>
+					</span>
+					<span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
 						<Link
 							href="https://github.com/caffeineeee/url-shortener"
 							as="https://github.com/caffeineeee/url-shortener"
@@ -83,7 +93,7 @@ export default function ProjectsPage() {
 							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 					</span>
-					<div className="leading-5 text-justify">
+					<div className="leading-5 text-justify text-sm">
 						Shorten your URL.
 						<br />
 						<br />
@@ -107,10 +117,15 @@ export default function ProjectsPage() {
 				</div>
 				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
-					<p className="font-semibold text-xl text-foreground text-center">
-						(TS, Backend) rest-api-ts-sqlite
+					<p className="font-semibold text-lg text-foreground text-center">
+						rest-api-ts-sqlite
 					</p>
-					<span className="flex flex-row justify-center space-x-4 pb-2">
+					<span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
+						<p className="inline-flex align-middle break-words gap-1 font-bold w-fit italic">
+							(TS, Backend)
+						</p>
+					</span>
+					<span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
 						<Link
 							href="https://github.com/caffeineeee/rest-api-ts-sqlite"
 							as="https://github.com/caffeineeee/rest-api-ts-sqlite"
@@ -132,7 +147,7 @@ export default function ProjectsPage() {
 							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 					</span>
-					<div className="leading-5 text-justify">
+					<div className="leading-5 text-justify text-sm">
 						A REST API backend for managing order and inventory data.
 						<br />
 						<br />
@@ -153,10 +168,15 @@ export default function ProjectsPage() {
 				</div>
 				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
-					<p className="font-semibold text-xl text-foreground text-center">
-						(TS, Backend) apollo-server-graphql-jwt-ts-simple-auth-backend
+					<p className="font-semibold text-lg text-foreground text-center">
+						apollo-server-graphql-jwt-ts-simple-auth-backend
 					</p>
-					<span className="flex flex-row justify-center space-x-4 pb-2">
+					<span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
+						<p className="inline-flex align-middle break-words gap-1 font-bold w-fit italic">
+							(TS, Backend)
+						</p>
+					</span>
+					<span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
 						<Link
 							href="https://github.com/caffeineeee/apollo-server-graphql-jwt-ts-simple-auth-backend"
 							as="https://github.com/caffeineeee/apollo-server-graphql-jwt-ts-simple-auth-backend"
@@ -168,7 +188,7 @@ export default function ProjectsPage() {
 							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 					</span>
-					<div className="leading-5 text-justify">
+					<div className="leading-5 text-justify text-sm">
 						A credentials-based (email & password) auth backend using Apollo
 						GraphQL.
 						<br />
@@ -194,10 +214,15 @@ export default function ProjectsPage() {
 				</div>
 				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
-					<p className="font-semibold text-xl text-foreground text-center">
-						(TS, Frontend) hacker-news-clone
+					<p className="font-semibold text-lg text-foreground text-center">
+						hacker-news-clone
 					</p>
-					<span className="flex flex-row justify-center space-x-4 pb-2">
+					<span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
+						<p className="inline-flex align-middle break-words gap-1 font-bold w-fit italic">
+							(TS, Frontend)
+						</p>
+					</span>
+					<span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
 						<Link
 							href="https://github.com/caffeineeee/hacker-news-clone"
 							as="https://github.com/caffeineeee/hacker-news-clone"
@@ -219,7 +244,7 @@ export default function ProjectsPage() {
 							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 					</span>
-					<div className="leading-5 text-justify break-words">
+					<div className="leading-5 text-justify text-sm break-words">
 						A 1-to-1 clone of the Hacker News website{", "}
 						<Link
 							href="https://news.ycombinator.com"
@@ -242,10 +267,15 @@ export default function ProjectsPage() {
 				</div>
 				<Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
 				<div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
-					<p className="font-semibold text-xl text-foreground text-center">
-						(Python, Machine learning) batak_toba_indonesian_nmt
+					<p className="font-semibold text-lg text-foreground text-center">
+						batak_toba_indonesian_nmt
 					</p>
-					<span className="flex flex-row justify-center space-x-4 pb-2">
+					<span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
+						<p className="inline-flex align-middle break-words gap-1 font-bold w-fit italic">
+							(Python, Machine learning)
+						</p>
+					</span>
+					<span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
 						<Link
 							href="https://github.com/caffeineeee/batak_toba_indonesian_nmt"
 							as="https://github.com/caffeineeee/batak_toba_indonesian_nmt"
@@ -257,7 +287,7 @@ export default function ProjectsPage() {
 							<Icons.externalLink className="h-4 w-4 mb-2" aria-hidden="true" />
 						</Link>
 					</span>
-					<div className="leading-5 text-justify">
+					<div className="leading-5 text-justify text-sm">
 						Like Google Translate, but for Batak Toba (BBC) and Indonesian
 						(IND), because there is no option for Batak Toba in Google
 						Translate.

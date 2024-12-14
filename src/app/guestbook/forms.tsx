@@ -10,6 +10,11 @@ import { useRef } from "react";
 import { useFormStatus } from "react-dom";
 import { ErrorBoundary } from "react-error-boundary";
 import { toast } from "sonner";
+import {
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
+} from "@/components/ui/popover";
 
 export function GuestbookForm() {
 	const formRef = useRef<HTMLFormElement>(null);
@@ -34,7 +39,7 @@ export function GuestbookForm() {
 					name="entry"
 					type="text"
 					required
-					className="block h-16 w-full rounded-md border border-neutral-500 dark:border-neutral-400 bg-gray-100 py-2 pl-4 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100 truncate text-lg"
+					className="block h-16 w-full rounded-md border border-neutral-500 dark:border-neutral-400 bg-gray-100 py-2 pl-4 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100 truncate text-sm"
 				/>
 				<div className="place-self-end">
 					<Button
@@ -69,22 +74,31 @@ export function EntriesFeed({
 					key={entry.id}
 					className="mb-4 space-y-1"
 				>
-					<div className="relative mr-1 flex w-full flex-row items-start break-words">
-						<p className="mr-4 text-primary/80">{entry.created_by}:</p>
-						<p className="w-[60%] sm:w-96 md:w-[32rem] text-justify text-primary">
+					<div className="relative flex w-full flex-col items-start break-words text-sm">
+						<span className="flex flex-row justify-between w-full">
+							<p className="font-semibold dark:text-primary/90">
+								{entry.created_by}:
+							</p>
+							{session?.user?.name === entry.created_by && (
+								<Popover>
+									<PopoverTrigger className="font-thin text-primary/60">
+										•••
+									</PopoverTrigger>
+									<PopoverContent className="text-sm p-0 w-fit bg-transparent border-none">
+										<Button
+											className="bg-red-600 font-normal text-sm text-neutral-200 dark:bg-red-600 dark:text-neutral-100 p-2 w-fit h-fit"
+											disabled={pending}
+											type="submit"
+										>
+											<p>Delete</p>
+										</Button>
+									</PopoverContent>
+								</Popover>
+							)}
+						</span>
+						<p className="w-full sm:w-96 md:w-[32rem] text-justify text-primary">
 							{entry.body}
 						</p>
-						{session?.user?.name === entry.created_by && (
-							<Button
-								className="absolute right-0 md:right-0 inline-flex w-max items-center justify-center rounded border border-neutral-800 bg-red-300/50 text-sm font-medium leading-4 text-neutral-900 transition-all dark:border-neutral-700 dark:bg-red-700/50 dark:text-neutral-100"
-								disabled={pending}
-								type="submit"
-								variant="destructive"
-							>
-								<Icons.trash className="h-4 w-4" aria-hidden="true" />
-								<span className="ml-2 sr-only">Delete</span>
-							</Button>
-						)}
 					</div>
 				</form>
 			))}
