@@ -173,7 +173,7 @@ export default function ProjectsPage() {
               </li>
               <li>
                 • Streamlined testing processes using Falso `@ngneat/falso` (a
-                tree-shakeable alternative to Faker.js) for mock data
+                better, tree-shakeable alternative to Faker.js) for mock data
                 generation.
               </li>
               <li>• Tools: TS/JS, Node.js, Turso libSQL (SQLite), Git.</li>
@@ -336,7 +336,6 @@ export default function ProjectsPage() {
                 • It's enough for translating short sentences (&lt;30 words),
                 but not for translating long paragraphs.
               </li>
-              {/* START 2 */}
               <li>
                 • Try out the live models on HuggingFace, here:{" "}
                 <ul className="ml-8">
@@ -374,7 +373,6 @@ export default function ProjectsPage() {
                   </li>
                 </ul>
               </li>
-              {/* END 2 */}
               <li className="*:inline">
                 • Published a paper in the academic journal International
                 Journal of Advances in Applied Sciences (IJAAS) indexed in
