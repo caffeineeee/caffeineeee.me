@@ -2,7 +2,8 @@ import { Icons } from "@/components/icons";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { ReactNode } from "react";
+// import Image from "next/image";
+import type { ReactNode } from "react";
 import type { UrlObject } from "url";
 
 export default function ProjectsPage() {
@@ -42,6 +43,12 @@ export default function ProjectsPage() {
               />
             </LinkWithStyles>
           </span>
+          {/* <Image
+            src="/public/projects-images/caffeineeee.me.jpg"
+            alt="Cover image of the project: caffeineeee.me"
+            width={256}
+            height={256}
+          /> */}
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
             My personal site.
             <br />
