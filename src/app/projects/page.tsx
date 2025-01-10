@@ -312,9 +312,9 @@ export default function ProjectsPage() {
             </LinkWithStyles>
           </span>
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
-            Like Google Translate, but for Batak Toba (BBC) and Indonesian
-            (IND), because there is no option for Batak Toba in Google Translate
-            (not until around June 2024, per{" "}
+            It's like Google Translate, but for Batak Toba (BBC) and Indonesian
+            (IND) language pair, because there is no option for Batak Toba in
+            Google Translate (not until around June 2024, per{" "}
             <LinkWithStyles
               href="https://support.google.com/translate/answer/15139004"
               as="https://support.google.com/translate/answer/15139004"
@@ -333,38 +333,48 @@ export default function ProjectsPage() {
             <br />
             <ul className="space-y-2">
               <li>
-                • Enough for translating short sentences (&lt;30 words), but not
-                for translating long paragraphs.
+                • It's enough for translating short sentences (&lt;30 words),
+                but not for translating long paragraphs.
               </li>
+              {/* START 2 */}
               <li>
                 • Try out the live models on HuggingFace, here:{" "}
-                <LinkWithStyles
-                  href="https://huggingface.co/kepinsam/bbc-to-ind-nmt-v5"
-                  as="https://huggingface.co/kepinsam/bbc-to-ind-nmt-v5"
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                >
-                  BBC {"->"} IND
-                  <Icons.externalLink
-                    className={cn("h-4 w-4 mb-2", "ml-1")}
-                    aria-hidden="true"
-                  />
-                </LinkWithStyles>
-                {", "}
-                <LinkWithStyles
-                  href="https://huggingface.co/kepinsam/ind-to-bbc-nmt-v5"
-                  as="https://huggingface.co/kepinsam/ind-to-bbc-nmt-v5"
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                >
-                  IND {"->"} BBC
-                  <Icons.externalLink
-                    className={cn("h-4 w-4 mb-2", "ml-1")}
-                    aria-hidden="true"
-                  />
-                </LinkWithStyles>
-                {"."}
+                <ul className="ml-8">
+                  <li>
+                    ϕ BBC {"->"} IND:{" "}
+                    <LinkWithStyles
+                      href="https://huggingface.co/kepinsam/bbc-to-ind-nmt-v5"
+                      as="https://huggingface.co/kepinsam/bbc-to-ind-nmt-v5"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                    >
+                      https://huggingface.co/kepinsam/bbc-to-ind-nmt-v5
+                      <Icons.externalLink
+                        className={cn("h-4 w-4 mb-2", "ml-1")}
+                        aria-hidden="true"
+                      />
+                    </LinkWithStyles>
+                    {"."}
+                  </li>
+                  <li>
+                    ϕ IND {"->"} BBC:{" "}
+                    <LinkWithStyles
+                      href="https://huggingface.co/kepinsam/ind-to-bbc-nmt-v5"
+                      as="https://huggingface.co/kepinsam/ind-to-bbc-nmt-v5"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                    >
+                      https://huggingface.co/kepinsam/ind-to-bbc-nmt-v5
+                      <Icons.externalLink
+                        className={cn("h-4 w-4 mb-2", "ml-1")}
+                        aria-hidden="true"
+                      />
+                    </LinkWithStyles>
+                    {"."}
+                  </li>
+                </ul>
               </li>
+              {/* END 2 */}
               <li className="*:inline">
                 • Published a paper in the academic journal International
                 Journal of Advances in Applied Sciences (IJAAS) indexed in
