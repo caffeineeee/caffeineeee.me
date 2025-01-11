@@ -2,9 +2,10 @@ import { Icons } from "@/components/icons";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-// import Image from "next/image";
+import Image from "next/image";
 import type { ReactNode } from "react";
 import type { UrlObject } from "url";
+import { CaffeineeeeMeCoverImage } from "./caffeineeee.me-cover-image";
 
 export default function ProjectsPage() {
   return (
@@ -43,12 +44,9 @@ export default function ProjectsPage() {
               />
             </LinkWithStyles>
           </span>
-          {/* <Image
-            src="/public/projects-images/caffeineeee.me.jpg"
-            alt="Cover image of the project: caffeineeee.me"
-            width={256}
-            height={256}
-          /> */}
+          <span className="m-2">
+            <CaffeineeeeMeCoverImage />
+          </span>
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
             My personal site.
             <br />
@@ -110,6 +108,15 @@ export default function ProjectsPage() {
               />
             </LinkWithStyles>
           </span>
+          <span className="m-2">
+            <Image
+              src="https://s3.us-east-1.amazonaws.com/caffeineeee.me-bucket/url-shortener.jpg"
+              alt="Cover image of the project: url-shortener"
+              width={1024}
+              height={1024}
+              className="border border-neutral-800 dark:border-neutral-200 w-full"
+            />
+          </span>
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
             Shorten your URL.
             <br />
@@ -168,6 +175,15 @@ export default function ProjectsPage() {
               />
             </LinkWithStyles>
           </span>
+          <span className="m-2">
+            <Image
+              src="https://s3.us-east-1.amazonaws.com/caffeineeee.me-bucket/rest-api-ts-sqlite.jpg"
+              alt="Cover image of the project: rest-api-ts-sqlite"
+              width={1024}
+              height={1024}
+              className="border border-neutral-800 dark:border-neutral-200 w-full"
+            />
+          </span>
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
             A REST API backend to manage order and inventory data.
             <br />
@@ -211,6 +227,13 @@ export default function ProjectsPage() {
                 aria-hidden="true"
               />
             </LinkWithStyles>
+          </span>
+          <span className="m-2">
+            <Icons.imageOff
+              className="min-w-28 min-h-28 w-2/5 h-2/5 sm:min-w-24 sm:min-h-24 md:min-w-32 md:min-h-32 lg:min-w-24 lg:min-h-24 xl:min-w-36 xl:min-h-36"
+              aria-hidden="false"
+              aria-description="Cover image of the project: apollo-server-graphql-jwt-ts-simple-auth-backend"
+            />
           </span>
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
             A credentials-based (email & password) auth backend using Apollo
@@ -272,6 +295,15 @@ export default function ProjectsPage() {
               />
             </LinkWithStyles>
           </span>
+          <span className="m-2">
+            <Image
+              src="https://s3.us-east-1.amazonaws.com/caffeineeee.me-bucket/hacker-news-clone.jpg"
+              alt="Cover image of the project: hacker-news-clone"
+              width={1024}
+              height={1024}
+              className="border border-neutral-800 dark:border-neutral-200 w-full"
+            />
+          </span>
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
             A fully responsive, 1-to-1 clone of the Hacker News website{", "}
             <LinkWithStyles
@@ -318,6 +350,15 @@ export default function ProjectsPage() {
                 aria-hidden="true"
               />
             </LinkWithStyles>
+          </span>
+          <span className="m-2">
+            <Image
+              src="https://s3.us-east-1.amazonaws.com/caffeineeee.me-bucket/batak-toba-indonesian-nmt-poster-cover-image-lighter.png"
+              alt="Cover image of the project: batak-toba-indonesian-nmt"
+              width={1024}
+              height={1024}
+              className="border border-neutral-800 dark:border-neutral-200 w-full"
+            />
           </span>
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
             It's like Google Translate, but for Batak Toba (BBC) and Indonesian
