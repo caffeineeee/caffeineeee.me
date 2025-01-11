@@ -60,8 +60,8 @@ export default function ProjectsPage() {
               </li>
               <li>
                 • Enhanced code quality by implementing CI/CD pipelines with
-                `pre-commit` hooks and Biome.js for automated linting, fixing,
-                and formatting.
+                `pre-commit` hooks and Biome.js to automate linting, fixing, and
+                formatting.
               </li>
               <li>
                 • Improved the UX by adding swipe gesture-based navigation with
@@ -169,19 +169,20 @@ export default function ProjectsPage() {
             </LinkWithStyles>
           </span>
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
-            A REST API backend for managing order and inventory data.
+            A REST API backend to manage order and inventory data.
             <br />
             <br />
             <ul className="space-y-2">
               <li>
-                • Delivered a fully functional backend, aligned with the
-                technical requirements/specifications per the client's request,
-                in 7 days.
+                • Delivered a fully functional REST API backend, aligned with
+                the technical requirements/specifications per the client's
+                request, in 7 days.
               </li>
               <li>
-                • Streamlined testing processes using Falso `@ngneat/falso` (a
-                better, tree-shakeable alternative to Faker.js) for mock data
-                generation.
+                • Streamlined testing processes using Falso `
+                <span className="font-mono text-xs">@ngneat/falso</span>` (a
+                better, tree-shakeable alternative to Faker.js) to generate mock
+                data.
               </li>
               <li>• Tools: TS/JS, Node.js, Turso libSQL (SQLite), Git.</li>
             </ul>
@@ -272,7 +273,7 @@ export default function ProjectsPage() {
             </LinkWithStyles>
           </span>
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
-            A 1-to-1 clone of the Hacker News website{", "}
+            A fully responsive, 1-to-1 clone of the Hacker News website{", "}
             <LinkWithStyles
               href="https://news.ycombinator.com"
               as="https://news.ycombinator.com"
@@ -320,8 +321,8 @@ export default function ProjectsPage() {
           </span>
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
             It's like Google Translate, but for Batak Toba (BBC) and Indonesian
-            (IND) language pair, because there is no option for Batak Toba in
-            Google Translate (not until around June 2024, per{" "}
+            (IND), because there wasn't an option for Batak Toba in Google
+            Translate (not until around June 2024, per{" "}
             <LinkWithStyles
               href="https://support.google.com/translate/answer/15139004"
               as="https://support.google.com/translate/answer/15139004"
@@ -340,8 +341,8 @@ export default function ProjectsPage() {
             <br />
             <ul className="space-y-2">
               <li>
-                • It's enough for translating short sentences (&lt;30 words),
-                but not for translating long paragraphs.
+                • It's enough to translate short sentences (&lt;30 words) but
+                not long paragraphs.
               </li>
               <li>
                 • Try out the live models on HuggingFace, here:{" "}
@@ -381,8 +382,8 @@ export default function ProjectsPage() {
                 </ul>
               </li>
               <li className="*:inline">
-                • Published a paper in the academic journal International
-                Journal of Advances in Applied Sciences (IJAAS) indexed in
+                • Published a paper in the academic journal IJAAS (International
+                Journal of Advances in Applied Sciences), which is indexed in
                 Scopus Q4 and SINTA 1 (as of June 2024):{" "}
                 <LinkWithStyles
                   href="https://doi.org/10.11591/ijaas.v13.i4.pp830-839"
