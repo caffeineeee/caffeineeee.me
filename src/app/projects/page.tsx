@@ -57,9 +57,9 @@ export default function ProjectsPage() {
                 a more secure and easier login.
               </li>
               <li>
-                • Enhanced code quality by implementing CI/CD pipelines with
-                `pre-commit` hooks and Biome.js to automate linting, fixing, and
-                formatting.
+                • Enhanced code quality by implementing CI/CD pipelines with `
+                <span className="font-mono text-xs">pre-commit</span>` hooks and
+                Biome.js to automate linting, fixing, and formatting.
               </li>
               <li>
                 • Improved the UX by adding swipe gesture-based navigation with
