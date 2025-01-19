@@ -472,6 +472,9 @@ function LinkWithStyles({
         className
       )}
       href={href}
+      as={as}
+      target={target}
+      rel={rel}
       {...props}
     >
       {children}
