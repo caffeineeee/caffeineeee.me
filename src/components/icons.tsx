@@ -64,7 +64,7 @@ import {
   X,
 } from "lucide-react";
 
-export type Icon = LucideIcon;
+type Icon = LucideIcon;
 
 export const Icons = {
   add: Plus,

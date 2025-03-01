@@ -230,7 +230,7 @@ export default function ProjectsPage() {
           </span>
           <span className="m-2">
             <Icons.imageOff
-              className="min-w-28 min-h-28 w-2/5 h-2/5 sm:min-w-24 sm:min-h-24 md:min-w-32 md:min-h-32 lg:min-w-24 lg:min-h-24 xl:min-w-36 xl:min-h-36"
+              className="min-w-20 min-h-20 w-1/5 h-1/5 sm:min-w-16 sm:min-h-16 md:min-w-24 md:min-h-24 lg:min-w-16 lg:min-h-16 xl:min-w-28 xl:min-h-28"
               aria-hidden="false"
               aria-description="Cover image of the project: apollo-server-graphql-jwt-ts-simple-auth-backend"
             />

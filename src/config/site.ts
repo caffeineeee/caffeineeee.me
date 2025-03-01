@@ -1,4 +1,4 @@
-export type SiteConfig = typeof siteConfig;
+type SiteConfig = typeof siteConfig;
 
 const links = {
   twitter: "https://x.com/caffeeeeine",
