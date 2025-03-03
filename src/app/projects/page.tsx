@@ -6,6 +6,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import type { UrlObject } from "url";
 import { CaffeineeeeMeCoverImage } from "./caffeineeee.me-cover-image";
+import { Button } from "@/components/ui/button";
 
 export default function ProjectsPage() {
   return (
@@ -53,10 +54,6 @@ export default function ProjectsPage() {
             <br />
             <ul className="space-y-2">
               <li>
-                • Built OAuth auth backend using Auth.js (NextAuth.js), enabling
-                a more secure and easier login.
-              </li>
-              <li>
                 • Enhanced code quality by implementing CI/CD pipelines with `
                 <span className="font-mono text-xs">pre-commit</span>` hooks and
                 Biome.js to automate linting, fixing, and formatting.
@@ -65,10 +62,7 @@ export default function ProjectsPage() {
                 • Improved the UX by adding swipe gesture-based navigation with
                 animation, mimicking native behavior using TouchEvent.
               </li>
-              <li>
-                • Tools: TS/JS, Node.js, React, Next.js, Tailwind, Auth.js
-                (NextAuth.js), Drizzle ORM, Turso libSQL (SQLite), Git.
-              </li>
+              <li>• Tools: TS/JS, Node.js, React, Next.js, Tailwind, Git.</li>
             </ul>
           </div>
         </div>
@@ -351,7 +345,14 @@ export default function ProjectsPage() {
               />
             </LinkWithStyles>
           </span>
-          <span className="m-2">
+          <Link
+            className="relative flex m-2 place-content-center"
+            href="/poster-ti-unri.png"
+          >
+            <span className="absolute flex flex-row text-xs self-center text-neutral-100 bg-neutral-900/60 border-2 border-neutral-50 rounded-full p-1">
+              click to view full image
+              <Icons.search className="h-4 w-4 mt-0 ml-1" aria-hidden="true" />
+            </span>
             <Image
               src="https://s3.us-east-1.amazonaws.com/caffeineeee.me-bucket/batak-toba-indonesian-nmt-poster-cover-image-lighter.png"
               alt="Cover image of the project: batak-toba-indonesian-nmt"
@@ -359,7 +360,7 @@ export default function ProjectsPage() {
               height={1024}
               className="border border-neutral-800 dark:border-neutral-200 w-full"
             />
-          </span>
+          </Link>
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
             It's like Google Translate, but for Batak Toba (BBC) and Indonesian
             (IND), because there wasn't an option for Batak Toba in Google
