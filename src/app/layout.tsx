@@ -1,7 +1,6 @@
 import "@/app/globals.css";
 import { Analytics } from "@/components/analytics";
 import { Site } from "@/components/layouts/site";
-// import SessionProvider from "@/components/session-provider";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster as SonnerToaster } from "@/components/ui/sonner";
@@ -10,7 +9,6 @@ import { bricolageGrotesque, dmSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
-// import { authSession } from "@/db/queries";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? ""),
@@ -65,7 +63,6 @@ interface RootLayoutProps {
 }
 
 export default async function RootLayout({ children }: RootLayoutProps) {
-  // const session = await authSession();
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
@@ -81,13 +78,10 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           defaultTheme="dark" // "light", "dark", "system"
           enableSystem={false} // Enable "system" theme
         >
-          {/* <SessionProvider session={session}> */}
-          {/* <Site session={session}> */}
           <Site>
             {children}
             <SpeedInsights />
           </Site>
-          {/* </SessionProvider> */}
           <TailwindIndicator />
           <Analytics />
         </ThemeProvider>

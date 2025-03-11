@@ -6,7 +6,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import type { UrlObject } from "url";
 import { CaffeineeeeMeCoverImage } from "./caffeineeee.me-cover-image";
-import { Button } from "@/components/ui/button";
+import sengkemang from "@/../public/kampung-sengkemang-compressed.jpg";
 
 export default function ProjectsPage() {
   return (
@@ -21,53 +21,7 @@ export default function ProjectsPage() {
         </h1>
       </section>
       <div className="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 tracking-tight dark:text-neutral-300 text-neutral-900">
-        <div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
-          <p className="font-semibold text-lg text-foreground text-center">
-            caffeineeee.me
-          </p>
-          <span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
-            <p className="inline-flex align-middle break-words gap-1 font-bold w-fit italic">
-              (TS, Fullstack)
-            </p>
-          </span>
-          <span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
-            <LinkWithStyles
-              href="https://github.com/caffeineeee/caffeineeee.me"
-              as="https://github.com/caffeineeee/caffeineeee.me"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              className="align-middle break-all gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 *:inline"
-            >
-              repo
-              <Icons.externalLink
-                className={cn("h-4 w-4 mb-2", "ml-1")}
-                aria-hidden="true"
-              />
-            </LinkWithStyles>
-          </span>
-          <span className="m-2">
-            <CaffeineeeeMeCoverImage />
-          </span>
-          <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
-            My personal site.
-            <br />
-            <br />
-            <ul className="space-y-2">
-              <li>
-                • Enhanced code quality by implementing CI/CD pipelines with `
-                <span className="font-mono text-xs">pre-commit</span>` hooks and
-                Biome.js to automate linting, fixing, and formatting.
-              </li>
-              <li>
-                • Improved the UX by adding swipe gesture-based navigation with
-                animation, mimicking native behavior using TouchEvent.
-              </li>
-              <li>• Tools: TS/JS, Node.js, React, Next.js, Tailwind, Git.</li>
-            </ul>
-          </div>
-        </div>
-        <Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
-        <div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
+        <div className="pt-4 pb-1 sm:p-4 sm:px-4 flex flex-col items-center">
           <p className="font-semibold text-lg text-foreground text-center">
             url-shortener
           </p>
@@ -78,24 +32,24 @@ export default function ProjectsPage() {
           </span>
           <span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
             <LinkWithStyles
-              href="https://github.com/caffeineeee/url-shortener"
-              as="https://github.com/caffeineeee/url-shortener"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-            >
-              repo
-              <Icons.externalLink
-                className={cn("h-4 w-4 mb-2", "ml-1")}
-                aria-hidden="true"
-              />
-            </LinkWithStyles>
-            <LinkWithStyles
               href="https://url.caffeineeee.me"
               as="https://url.caffeineeee.me"
               target="_blank"
               rel="noopener noreferrer nofollow"
             >
               website
+              <Icons.externalLink
+                className={cn("h-4 w-4 mb-2", "ml-1")}
+                aria-hidden="true"
+              />
+            </LinkWithStyles>
+            <LinkWithStyles
+              href="https://github.com/caffeineeee/url-shortener"
+              as="https://github.com/caffeineeee/url-shortener"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+            >
+              code
               <Icons.externalLink
                 className={cn("h-4 w-4 mb-2", "ml-1")}
                 aria-hidden="true"
@@ -112,29 +66,18 @@ export default function ProjectsPage() {
             />
           </span>
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
-            Shorten your URL.
-            <br />
-            <br />
             <ul className="space-y-2">
-              <li>• Applied BASE62 encoding to generate the shortened URL.</li>
               <li>
-                • Used Next.js middleware for redirection if a short URL maps to
-                a long URL.
-              </li>
-              <li>
-                • Adopted Test-Driven Development (TDD) to develop the core
-                functionalities by creating unit test cases with Jest,
-                increasing reliability.
-              </li>
-              <li>
-                • Tools: TS/JS, Node.js, React, Next.js, Tailwind, Auth.js
-                (NextAuth.js), Drizzle ORM, Turso libSQL (SQLite), Jest, Git.
+                • Implemented short-to-long URL redirection using middlewares,
+                unit tests using Jest, data storage using Turso libSQL
+                (SQLite)+Drizzle ORM, OAuth using Auth.js (NextAuth.js), server
+                components using React, and Server Actions from Next.js.
               </li>
             </ul>
           </div>
         </div>
         <Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
-        <div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
+        <div className="pt-4 pb-1 sm:p-4 sm:px-4 flex flex-col items-center">
           <p className="font-semibold text-lg text-foreground text-center">
             rest-api-ts-sqlite
           </p>
@@ -144,18 +87,6 @@ export default function ProjectsPage() {
             </p>
           </span>
           <span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
-            <LinkWithStyles
-              href="https://github.com/caffeineeee/rest-api-ts-sqlite"
-              as="https://github.com/caffeineeee/rest-api-ts-sqlite"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-            >
-              repo
-              <Icons.externalLink
-                className={cn("h-4 w-4 mb-2", "ml-1")}
-                aria-hidden="true"
-              />
-            </LinkWithStyles>
             <LinkWithStyles
               href="https://rest-api-ts-sqlite.vercel.app"
               as="https://rest-api-ts-sqlite.vercel.app"
@@ -168,38 +99,44 @@ export default function ProjectsPage() {
                 aria-hidden="true"
               />
             </LinkWithStyles>
+            <LinkWithStyles
+              href="https://github.com/caffeineeee/rest-api-ts-sqlite"
+              as="https://github.com/caffeineeee/rest-api-ts-sqlite"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+            >
+              code
+              <Icons.externalLink
+                className={cn("h-4 w-4 mb-2", "ml-1")}
+                aria-hidden="true"
+              />
+            </LinkWithStyles>
           </span>
           <span className="m-2">
-            <Image
-              src="https://s3.us-east-1.amazonaws.com/caffeineeee.me-bucket/rest-api-ts-sqlite.jpg"
-              alt="Cover image of the project: rest-api-ts-sqlite"
-              width={1024}
-              height={1024}
-              className="border border-neutral-800 dark:border-neutral-200 w-full"
+            <Icons.imageOff
+              className="min-w-16 min-h-16 w-1/5 h-1/5 sm:min-w-12 sm:min-h-12 md:min-w-20 md:min-h-20 lg:min-w-12 lg:min-h-12 xl:min-w-24 xl:min-h-24"
+              aria-hidden="false"
+              aria-description="Cover image of the project: apollo-server-graphql-jwt-ts-simple-auth-backend"
             />
           </span>
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
-            A REST API backend to manage order and inventory data.
-            <br />
-            <br />
             <ul className="space-y-2">
               <li>
-                • Delivered a fully functional REST API backend, aligned with
-                the technical requirements/specifications per the client's
-                request, in 7 days.
+                • Delivered a RESTful API to manage order and inventory data
+                along with other technical requirements per the client's
+                request.
               </li>
               <li>
-                • Streamlined testing processes using Falso `
+                • Used Falso `
                 <span className="font-mono text-xs">@ngneat/falso</span>` (a
-                better, tree-shakeable alternative to Faker.js) to generate mock
-                data.
+                faster, tree-shakeable alternative to Faker.js) for testing
+                purposes.
               </li>
-              <li>• Tools: TS/JS, Node.js, Turso libSQL (SQLite), Git.</li>
             </ul>
           </div>
         </div>
         <Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
-        <div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
+        <div className="pt-4 pb-1 sm:p-4 sm:px-4 flex flex-col items-center">
           <p className="font-semibold text-lg text-foreground text-center">
             apollo-server-graphql-jwt-ts-simple-auth-backend
           </p>
@@ -215,7 +152,7 @@ export default function ProjectsPage() {
               target="_blank"
               rel="noopener noreferrer nofollow"
             >
-              repo
+              code
               <Icons.externalLink
                 className={cn("h-4 w-4 mb-2", "ml-1")}
                 aria-hidden="true"
@@ -224,37 +161,121 @@ export default function ProjectsPage() {
           </span>
           <span className="m-2">
             <Icons.imageOff
-              className="min-w-20 min-h-20 w-1/5 h-1/5 sm:min-w-16 sm:min-h-16 md:min-w-24 md:min-h-24 lg:min-w-16 lg:min-h-16 xl:min-w-28 xl:min-h-28"
+              className="min-w-16 min-h-16 w-1/5 h-1/5 sm:min-w-12 sm:min-h-12 md:min-w-20 md:min-h-20 lg:min-w-12 lg:min-h-12 xl:min-w-24 xl:min-h-24"
               aria-hidden="false"
               aria-description="Cover image of the project: apollo-server-graphql-jwt-ts-simple-auth-backend"
             />
           </span>
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
-            A credentials-based (email & password) auth backend using Apollo
-            GraphQL.
-            <br />
-            <br />
             <ul className="space-y-2">
               <li>
-                • Learned Apollo GraphQL from scratch and delivered a fully
-                functional auth backend, aligned with the technical
-                requirements/specifications per the client's request, in 10
-                days.
-              </li>
-              <li>
-                • Automated the generation of JS scripts from TS using TS
-                Compiler, allowing the backend to run by consuming the generated
-                JS scripts.
-              </li>
-              <li>
-                • Tools: TS/JS, Node.js, Apollo GraphQL, Turso libSQL (SQLite),
-                JSON Web Token (JWT), Git.
+                • Built an auth backend that uses Apollo GraphQL and JWT (JSON
+                Web Token) and is based on credentials (email and password). It
+                is linked to a Turso libSQL (SQLite) database.
               </li>
             </ul>
           </div>
         </div>
         <Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
-        <div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
+        <div className="pt-4 pb-1 sm:p-4 sm:px-4 flex flex-col items-center">
+          <p className="font-semibold text-lg text-foreground text-center">
+            kampung-sengkemang
+          </p>
+          <span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
+            <p className="inline-flex align-middle break-words gap-1 font-bold w-fit italic">
+              (HTML+CSS+JS, Frontend)
+            </p>
+          </span>
+          <span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
+            <LinkWithStyles
+              href="https://kampung-sengkemang.vercel.app"
+              as="https://kampung-sengkemang.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+            >
+              website
+              <Icons.externalLink
+                className={cn("h-4 w-4 mb-2", "ml-1")}
+                aria-hidden="true"
+              />
+            </LinkWithStyles>
+            <LinkWithStyles
+              href="https://github.com/caffeineeee/kampung-sengkemang"
+              as="https://github.com/caffeineeee/kampung-sengkemang"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+            >
+              code
+              <Icons.externalLink
+                className={cn("h-4 w-4 mb-2", "ml-1")}
+                aria-hidden="true"
+              />
+            </LinkWithStyles>
+          </span>
+          <span className="m-2">
+            <Image
+              src={
+                process.env.NODE_ENV === "development"
+                  ? sengkemang
+                  : "https://s3.us-east-1.amazonaws.com/caffeineeee.me-bucket/kampung-sengkemang-compressed.jpg"
+              }
+              alt="Cover image of the project: kampung-sengkemang"
+              width={process.env.NODE_ENV === "development" ? undefined : 1024}
+              height={process.env.NODE_ENV === "development" ? undefined : 1024}
+              className="border border-neutral-800 dark:border-neutral-200 w-full"
+            />
+          </span>
+          <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
+            <ul className="space-y-2">
+              <li>
+                • Built an official website for a village hall following the
+                client's request (the village head).
+              </li>
+            </ul>
+          </div>
+        </div>
+        <Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
+        <div className="pt-4 pb-1 sm:p-4 sm:px-4 flex flex-col items-center">
+          <p className="font-semibold text-lg text-foreground text-center">
+            caffeineeee.me
+          </p>
+          <span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
+            <p className="inline-flex align-middle break-words gap-1 font-bold w-fit italic">
+              (TS, Frontend)
+            </p>
+          </span>
+          <span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
+            <LinkWithStyles
+              href="https://github.com/caffeineeee/caffeineeee.me"
+              as="https://github.com/caffeineeee/caffeineeee.me"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="align-middle break-all gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 *:inline"
+            >
+              code
+              <Icons.externalLink
+                className={cn("h-4 w-4 mb-2", "ml-1")}
+                aria-hidden="true"
+              />
+            </LinkWithStyles>
+          </span>
+          <span className="m-2">
+            <CaffeineeeeMeCoverImage />
+          </span>
+          <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
+            <ul className="space-y-2">
+              <li>
+                • Implemented CI/CD pipelines with `
+                <span className="font-mono text-xs">pre-commit</span>` hooks and
+                Biome.js.
+              </li>
+              <li>• Added gesture-based navigation for better UX.</li>
+              <li>• Used AWS S3 for storing media files (images, etc.).</li>
+            </ul>
+          </div>
+        </div>
+        <Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
+        <div className="pt-4 pb-1 sm:p-4 sm:px-4 flex flex-col items-center">
           <p className="font-semibold text-lg text-foreground text-center">
             hacker-news-clone
           </p>
@@ -265,24 +286,24 @@ export default function ProjectsPage() {
           </span>
           <span className="flex flex-row justify-center space-x-4 pb-2 text-sm">
             <LinkWithStyles
-              href="https://github.com/caffeineeee/hacker-news-clone"
-              as="https://github.com/caffeineeee/hacker-news-clone"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-            >
-              repo
-              <Icons.externalLink
-                className={cn("h-4 w-4 mb-2", "ml-1")}
-                aria-hidden="true"
-              />
-            </LinkWithStyles>
-            <LinkWithStyles
               href="https://hn.caffeineeee.me"
               as="https://hn.caffeineeee.me"
               target="_blank"
               rel="noopener noreferrer nofollow"
             >
               website
+              <Icons.externalLink
+                className={cn("h-4 w-4 mb-2", "ml-1")}
+                aria-hidden="true"
+              />
+            </LinkWithStyles>
+            <LinkWithStyles
+              href="https://github.com/caffeineeee/hacker-news-clone"
+              as="https://github.com/caffeineeee/hacker-news-clone"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+            >
+              code
               <Icons.externalLink
                 className={cn("h-4 w-4 mb-2", "ml-1")}
                 aria-hidden="true"
@@ -299,30 +320,30 @@ export default function ProjectsPage() {
             />
           </span>
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
-            A fully responsive, 1-to-1 clone of the Hacker News website{", "}
-            <LinkWithStyles
-              href="https://news.ycombinator.com"
-              as="https://news.ycombinator.com"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-            >
-              https://news.ycombinator.com
-              <Icons.externalLink
-                className={cn("h-4 w-4 mb-2", "ml-1")}
-                aria-hidden="true"
-              />
-            </LinkWithStyles>
-            {", "}
-            to practice styling skills using Tailwind.
-            <br />
-            <br />
             <ul className="space-y-2">
-              <li>• Tools: TS/JS, Node.js, React, Next.js, Tailwind, Git.</li>
+              <li>
+                • Built a fully responsive, 1-to-1 clone of the Hacker News
+                website
+                {", "}
+                <LinkWithStyles
+                  href="https://news.ycombinator.com"
+                  as="https://news.ycombinator.com"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                >
+                  https://news.ycombinator.com
+                  <Icons.externalLink
+                    className={cn("h-4 w-4 mb-2", "ml-1")}
+                    aria-hidden="true"
+                  />
+                </LinkWithStyles>
+                .
+              </li>
             </ul>
           </div>
         </div>
         <Separator className="my-1 w-full bg-neutral-700 dark:bg-neutral-500 sm:hidden place-self-center" />
-        <div className="pt-8 pb-4 sm:p-4 sm:px-4 flex flex-col items-center">
+        <div className="pt-4 pb-1 sm:p-4 sm:px-4 flex flex-col items-center">
           <p className="font-semibold text-lg text-foreground text-center">
             batak_toba_indonesian_nmt
           </p>
@@ -338,7 +359,7 @@ export default function ProjectsPage() {
               target="_blank"
               rel="noopener noreferrer nofollow"
             >
-              repo
+              code
               <Icons.externalLink
                 className={cn("h-4 w-4 mb-2", "ml-1")}
                 aria-hidden="true"
@@ -362,29 +383,12 @@ export default function ProjectsPage() {
             />
           </Link>
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
-            It's like Google Translate, but for Batak Toba (BBC) and Indonesian
-            (IND), because there wasn't an option for Batak Toba in Google
-            Translate (not until around June 2024, per{" "}
-            <LinkWithStyles
-              href="https://support.google.com/translate/answer/15139004"
-              as="https://support.google.com/translate/answer/15139004"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-            >
-              https://support.google.com/translate/answer/15139004
-              <Icons.externalLink
-                className={cn("h-4 w-4 mb-2", "ml-1")}
-                aria-hidden="true"
-              />
-            </LinkWithStyles>
-            {", "}
-            by which time I had submitted my paper).
-            <br />
-            <br />
             <ul className="space-y-2">
               <li>
-                • It's enough to translate short sentences (&lt;30 words) but
-                not long paragraphs.
+                • Created an NMT model (neural machine translation) for BBC
+                (Batak Toba) and IND (Indonesian), i.e., a kind of translation
+                system similar to Google Translate. Prior to June 2024, there
+                wasn't an option for Batak Toba in Google Translate.
               </li>
               <li>
                 • Try out the live models on HuggingFace, here:{" "}
@@ -424,9 +428,10 @@ export default function ProjectsPage() {
                 </ul>
               </li>
               <li className="*:inline">
-                • Published a paper in the academic journal IJAAS (International
-                Journal of Advances in Applied Sciences), which is indexed in
-                Scopus Q4 and SINTA 1 (as of June 2024):{" "}
+                • Published a paper (10 pages) titled “Batak Toba
+                language-Indonesian machine translation with transfer learning
+                using NLLB (No Language Left Behind)” in IJAAS 2024 (indexed in
+                Scopus Q4 and SINTA 1):{" "}
                 <LinkWithStyles
                   href="https://doi.org/10.11591/ijaas.v13.i4.pp830-839"
                   as="https://doi.org/10.11591/ijaas.v13.i4.pp830-839"
@@ -441,7 +446,6 @@ export default function ProjectsPage() {
                 </LinkWithStyles>
                 {"."}
               </li>
-              <li>• Tools: Python, PyTorch, Transformers, Git.</li>
             </ul>
           </div>
         </div>

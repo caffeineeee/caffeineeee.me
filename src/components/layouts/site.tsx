@@ -2,118 +2,32 @@
 
 import { cn } from "@/lib/utils";
 import { usePathname, useRouter } from "next/navigation";
-import {
-  useEffect,
-  useRef,
-  useState,
-  type ReactNode,
-  type TouchEvent,
-} from "react";
+import Link from "next/link";
+import { ReactNode } from "react";
 import { ThemeToggle } from "@/components/layouts/theme-toggle";
 import { SiteFooter } from "@/components/layouts/site-footer";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
 
 export function Site({ children }: { children: ReactNode }) {
   const pathname = usePathname();
-  const router = useRouter(); // Initialize router
-  const [bodyTranslateX, setBodyTranslateX] = useState(0);
-  const lastTranslateXRef = useRef(0); // Use a ref to store the last translateX value
-  const MAX_TRANSLATE_X = 100; // Set the maximum translateX value (in pixels)
-  // "Reduce state updates" approach
-  const THRESHOLD = 10; // Set the distance threshold for updating the bodyTranslateX (in pixels)
+  const router = useRouter();
 
-  // Handle swipe direction
-  useEffect(() => {
-    let startX: number;
-
-    function handleTouchStart(e: TouchEvent) {
-      startX = e.touches[0].clientX; // Get the starting x-coordinate of the touch
-      setBodyTranslateX(0); // Reset body transform on touch start
-    }
-
-    function handleTouchMove(e: TouchEvent) {
-      const currentX = e.touches[0].clientX; // Get the current x-coordinate of the touch
-      const distance = currentX - startX; // Calculate the distance
-
-      // "Reduce state updates" approach
-      // Clamp the distance to the maximum translate value
-      const clampedDistance = Math.min(
-        Math.max(distance, -MAX_TRANSLATE_X),
-        MAX_TRANSLATE_X
-      );
-
-      // Update only if the change exceeds the threshold
-      if (Math.abs(clampedDistance - lastTranslateXRef.current) >= THRESHOLD) {
-        setBodyTranslateX(clampedDistance); // Set body transform based on clamped distance
-        lastTranslateXRef.current = clampedDistance; // Update the last applied translateX value
-      }
-    }
-
-    function handleTouchEnd(e: TouchEvent) {
-      const endX = e.changedTouches[0].clientX; // Get the ending x-coordinate of the touch
-      const distance = endX - startX; // Calculate the swipe distance
-      const SWIPE_THRESHOLD = 50; // Minimum swipe distance to trigger navigation
-
-      if (Math.abs(distance) > SWIPE_THRESHOLD) {
-        setBodyTranslateX(0); // Reset body transform on touch start
-        if (distance > 0) {
-          // Swiped right
-          if (pathname === "/projects") {
-            router.push("/"); // Navigate to home
-          }
-        } else {
-          // Swiped left
-          if (pathname === "/") {
-            router.push("/projects"); // Navigate to projects
-          }
-        }
-      } else {
-        // Reset body position if swipe is not enough
-        setBodyTranslateX(0); // Reset body transform on touch start
-      }
-    }
-
-    // Attach touch event listeners
-    document.addEventListener(
-      "touchstart",
-      // TODO: fix this type error
-      handleTouchStart as unknown as EventListener
-    );
-    document.addEventListener(
-      "touchmove",
-      // TODO: fix this type error
-      handleTouchMove as unknown as EventListener
-    );
-    document.addEventListener(
-      "touchend",
-      // TODO: fix this type error
-      handleTouchEnd as unknown as EventListener
-    );
-
-    // Clean up event listeners on component unmount
-    return () => {
-      document.removeEventListener(
-        "touchstart",
-        // TODO: fix this type error
-        handleTouchStart as unknown as EventListener
-      );
-      document.removeEventListener(
-        "touchmove",
-        // TODO: fix this type error
-        handleTouchMove as unknown as EventListener
-      );
-      document.removeEventListener(
-        "touchend",
-        // TODO: fix this type error
-        handleTouchEnd as unknown as EventListener
-      );
-    };
-  }, [pathname, router]); // Dependencies to re-run effect when pathname or router changes
   return (
     <>
-      <header className={cn("sticky top-0 z-50 w-full border-b bg-background")}>
-        <div className="container flex h-16 items-center">
-          <span className="space-x-4">
-            <a
+      <header className="sticky top-0 z-50 w-full border-b bg-background h-24 flex items-center justify-between px-4 md:px-8">
+        <div className="flex md:space-x-4 flex-col md:flex-row justify-self-center items-start md:items-center">
+          <Link
+            href="/"
+            className="text-xl md:text-2xl font-bold tracking-wider"
+          >
+            caffeineeee.me
+          </Link>
+          <nav className="flex space-x-4">
+            <Link
               href="/"
               className={cn(
                 "text-primary/80 hover:text-primary",
@@ -122,8 +36,8 @@ export function Site({ children }: { children: ReactNode }) {
               )}
             >
               home
-            </a>
-            <a
+            </Link>
+            <Link
               href="/projects"
               className={cn(
                 "text-primary/80 hover:text-primary",
@@ -132,22 +46,32 @@ export function Site({ children }: { children: ReactNode }) {
               )}
             >
               projects
-            </a>
-          </span>
-          <div className="flex flex-1 items-center justify-end space-x-4">
-            <nav className="flex items-center space-x-2">
-              {/* <AccountMenuServer /> */}
-              {/* <AccountMenu session={session} /> */}
-              <ThemeToggle />
-            </nav>
-          </div>
+            </Link>
+          </nav>
+        </div>
+        <div className="flex items-center justify-center">
+          <ThemeToggle />
         </div>
       </header>
-      <main
-        style={{ transform: `translateX(${bodyTranslateX}px)` }}
-        className={cn("flex-1 transition-transform overflow-hidden")}
-      >
-        {children}
+      <main className="flex-1">
+        <Swiper
+          onSlidePrevTransitionEnd={() => {
+            if (pathname === "/") router.push("/projects");
+          }}
+          onSlideNextTransitionEnd={() => {
+            if (pathname === "/projects") router.push("/");
+          }}
+          onSlideChange={(swiper) => {
+            swiper.slideTo(1);
+          }}
+          initialSlide={1}
+        >
+          <SwiperSlide className="min-h-screen"></SwiperSlide>
+          <SwiperSlide tabIndex={1} className="min-h-screen">
+            {children}
+          </SwiperSlide>
+          <SwiperSlide className="min-h-screen"></SwiperSlide>
+        </Swiper>
       </main>
       <SiteFooter />
     </>
