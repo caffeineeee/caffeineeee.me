@@ -55,6 +55,12 @@ export function Site({ children }: { children: ReactNode }) {
       </header>
       <main className="flex-1">
         <Swiper
+          onInit={() => {
+            // FIXME: Ensure this 'hack' won't be needed.
+            if (pathname === "/") router.push("/");
+            else if (pathname === "/projects") router.push("/projects");
+            else router.push("/");
+          }}
           onSlidePrevTransitionEnd={() => {
             if (pathname === "/") router.push("/projects");
           }}

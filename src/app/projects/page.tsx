@@ -112,13 +112,13 @@ export default function ProjectsPage() {
               />
             </LinkWithStyles>
           </span>
-          <span className="m-2">
+          {/* <span className="m-2">
             <Icons.imageOff
               className="min-w-16 min-h-16 w-1/5 h-1/5 sm:min-w-12 sm:min-h-12 md:min-w-20 md:min-h-20 lg:min-w-12 lg:min-h-12 xl:min-w-24 xl:min-h-24"
               aria-hidden="false"
               aria-description="Cover image of the project: apollo-server-graphql-jwt-ts-simple-auth-backend"
             />
-          </span>
+          </span> */}
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
             <ul className="space-y-2">
               <li>
@@ -159,13 +159,13 @@ export default function ProjectsPage() {
               />
             </LinkWithStyles>
           </span>
-          <span className="m-2">
+          {/* <span className="m-2">
             <Icons.imageOff
               className="min-w-16 min-h-16 w-1/5 h-1/5 sm:min-w-12 sm:min-h-12 md:min-w-20 md:min-h-20 lg:min-w-12 lg:min-h-12 xl:min-w-24 xl:min-h-24"
               aria-hidden="false"
               aria-description="Cover image of the project: apollo-server-graphql-jwt-ts-simple-auth-backend"
             />
-          </span>
+          </span> */}
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
             <ul className="space-y-2">
               <li>
@@ -385,10 +385,33 @@ export default function ProjectsPage() {
           <div className="leading-5 text-justify text-sm w-full sm:min-w-64 sm:w-full md:min-w-72 md:w-full xl:min-w-96 xl:w-full *:inline">
             <ul className="space-y-2">
               <li>
-                • Created an NMT model (neural machine translation) for BBC
-                (Batak Toba) and IND (Indonesian), i.e., a kind of translation
-                system similar to Google Translate. Prior to June 2024, there
-                wasn't an option for Batak Toba in Google Translate.
+                • Developed a Neural Machine Translation (NMT) model for
+                translating between BBC (Batak Toba) and IND (Indonesian), a
+                low-resource language pair, aiming to bridge the linguistic gap
+                for Batak Toba speakers. Before June 2024, Batak Toba was not
+                supported in Google Translate, making this model a pioneering
+                effort in facilitating automated translation for the language.
+              </li>
+              <li>
+                • Curated a parallel corpus by sourcing Batak Toba-Indonesian
+                text pairs from various resources, including academic papers and
+                community-driven translations.
+              </li>
+              <li>
+                • Directly surveyed elderly, native Batak Toba speakers in
+                Tebing Tinggi, North Sumatra to gather additional supporting
+                data for linguistic analysis, validate translation accuracy, and
+                include culturally relevant expressions often missing from
+                written sources.
+              </li>
+              <li>
+                • Preprocessed the data by tokenizing text, and fixed misaligned
+                sentence pairs.
+              </li>
+              <li>
+                • Achieved better results than all previous research in this
+                area, proving that my approach works effectively and improves
+                translation quality.
               </li>
               <li>
                 • Try out the live models on HuggingFace, here:{" "}
