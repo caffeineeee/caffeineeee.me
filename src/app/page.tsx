@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 // import yoshinoya from "@/../public/yoshinoya.jpg";
 import kawahPutih from "@/../public/kawah-putih-compressed.jpg";
 import Link from "next/link";
