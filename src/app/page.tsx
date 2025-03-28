@@ -33,13 +33,13 @@ export default function HomePage() {
           }
           priority
           alt="Profile picture of Cevin Samuel"
-          className="rounded-full w-40 h-40 md:w-56 md:h-56"
+          className="rounded-full w-48 h-48 md:w-56 md:h-56"
         />
         <div className="space-y-0">
           <h1 className="text-4xl font-extrabold leading-tight tracking-tighter md:text-5xl lg:text-6xl lg:leading-[1.1] font-display">
             Cevin Samuel
           </h1>
-          <h2 className="text-lg font-semibold tracking-normal md:text-xl lg:text-2xl font-display text-neutral-300">
+          <h2 className="text-lg font-semibold tracking-normal md:text-xl lg:text-2xl font-display text-neutral-800 dark:text-neutral-300">
             Software engineer with 1+ yoe (TS/JS, Go, Python, SQL)
           </h2>
         </div>
