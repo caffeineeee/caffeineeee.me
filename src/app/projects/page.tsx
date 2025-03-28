@@ -3,8 +3,7 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
-import type { ReactNode } from "react";
-import type { UrlObject } from "url";
+import { LinkWithStyles } from "@/components/link-with-styles";
 import { CaffeineeeeMeCoverImage } from "./caffeineeee.me-cover-image";
 import sengkemang from "@/../public/kampung-sengkemang-compressed.jpg";
 
@@ -474,38 +473,5 @@ export default function ProjectsPage() {
         </div>
       </div>
     </div>
-  );
-}
-
-function LinkWithStyles({
-  children,
-  href,
-  as,
-  target,
-  rel,
-  className,
-  ...props
-}: {
-  children?: ReactNode;
-  href: string | UrlObject;
-  as?: string;
-  target?: string;
-  rel?: string;
-  className?: string;
-}) {
-  return (
-    <Link
-      className={cn(
-        "align-middle break-all gap-1 underline font-bold underline-offset-2 w-fit text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 *:inline",
-        className
-      )}
-      href={href}
-      as={as}
-      target={target}
-      rel={rel}
-      {...props}
-    >
-      {children}
-    </Link>
   );
 }

@@ -57,6 +57,10 @@ export function Site({ children }: { children: ReactNode }) {
         <Swiper
           onInit={() => {
             // FIXME: Ensure this 'hack' won't be needed.
+            // Problem: Without this hack, whenever the app is loaded initially and not in the `/` page (homepage), it will redirect the user to the homepage.
+            // Steps to reproduce: Copy and paste this URL to your browser: "http://localhost:3000/projects"(when running locally) or "https://caffeineeee.me/projects"(when accessing the production version).
+            // Expected behavior: The page stays in the `/projects` page.
+            // Actual behavior: The app redirects the user to the `/` page.
             if (pathname === "/") router.push("/");
             else if (pathname === "/projects") router.push("/projects");
             else router.push("/");
