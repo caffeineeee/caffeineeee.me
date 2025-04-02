@@ -8,6 +8,7 @@ import { siteConfig } from "@/config/site";
 import { bricolageGrotesque, dmSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import PlausibleProvider from "next-plausible";
 import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
@@ -78,6 +79,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           defaultTheme="dark" // "light", "dark", "system"
           enableSystem={false} // Enable "system" theme
         >
+          <PlausibleProvider domain="example.com" />
           <Site>
             {children}
             <SpeedInsights />
